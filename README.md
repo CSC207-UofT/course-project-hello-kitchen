@@ -12,6 +12,7 @@ Produced by the Group: Jerry YYDS!
 - Search: search the recipe 
   - similar dish recommend
   - classification search
+  - filter search (advanced)
 - Create: create a new dish with steps and food
   - can upload a video about how to cook this dish 
 - Favourite: like a dish and get quick access when you want to cook

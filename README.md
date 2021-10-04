@@ -1,6 +1,30 @@
-# UofT CSC207 2021Fall Group Project
-## Group: Jerry YYDS!
-Currently, it's empty here.
+[comment]: <> ( UofT CSC207 2021Fall Group Project)
+# Recipe Organizer
+
+Produced by the Group: Jerry YYDS!
+
+- This is a java application designed for organising recipe.
+- Support custom and search from internet.
+
+
+## Basic Functions
+
+- Search: search the recipe 
+  - similar dish recommend
+  - classification search
+- Create: create a new dish with steps and food
+  - can upload a video about how to cook this dish 
+- Favourite: like a dish and get quick access when you want to cook
+
+## Extra "Exciting"  Functions
+
+- Cooking Support: help you to cook with the given food data
+  - timer: how long you should cook
+- Comment: rate & share your idea about the dish
+
+[comment]: <> (- Cloud: access personal data whenever login)
+ 
+
 Some requirements and useful information given below.
 - Project Phase 0 [introduction](https://q.utoronto.ca/courses/233945/pages/project-phase-0)
 - Project [Domain](https://q.utoronto.ca/courses/233945/pages/project-domains)

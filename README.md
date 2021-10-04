@@ -23,9 +23,10 @@ Produced by the Group: Jerry YYDS!
 - Comment: rate & share your idea about the dish
 
 [comment]: <> (- Cloud: access personal data whenever login)
- 
-
-Some requirements and useful information given below.
+### More information about program could be read on [Specification](\phase0\specification.md)
+### Currently Working: [The progress report](\phase0\progress_report.md)
+### The Scenario Walk-Through: [Check document descrption](\phase0\walkthrough.md)
+## Some requirements and useful information given below.
 - Project Phase 0 [introduction](https://q.utoronto.ca/courses/233945/pages/project-phase-0)
 - Project [Domain](https://q.utoronto.ca/courses/233945/pages/project-domains)
 - [JavaShell Study](https://github.com/CSC207-UofT/Java-Shell)

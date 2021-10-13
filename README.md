@@ -26,6 +26,8 @@ Produced by the Group: Jerry YYDS!
 ### More information about program could be read on [Specification](https://github.com/CSC207-UofT/course-project-jerryyyds/blob/main/phase0/specification.md)
 ### Currently Working: [The progress report](https://github.com/CSC207-UofT/course-project-jerryyyds/blob/main/phase0/progress_report.md)
 ### The Scenario Walk-Through: [Check document descrption](https://github.com/CSC207-UofT/course-project-jerryyyds/blob/main/phase0/walkthrough.md)
+
+
 ## Some requirements and useful information given below.
 - Project Phase 0 [introduction](https://q.utoronto.ca/courses/233945/pages/project-phase-0)
 - Project [Domain](https://q.utoronto.ca/courses/233945/pages/project-domains)

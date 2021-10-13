@@ -1,6 +1,6 @@
-# Dish
+# Recipe
 
-Class Name:|Dish|&nbsp;|&nbsp;|&nbsp;
+Class Name:|Recipe|&nbsp;|&nbsp;|&nbsp;
 :--|:--|:--:|--:|--:
-Responsibility:|&nbsp;|&nbsp;|Collaborators|&nbsp;
+Responsibility:|Store|&nbsp;|Collaborators:|Dish
 &nbsp;|&nbsp;|&nbsp;|&nbsp;|&nbsp;

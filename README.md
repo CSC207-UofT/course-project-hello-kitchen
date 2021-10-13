@@ -34,7 +34,7 @@ Produced by the Group: Jerry YYDS!
 - [Markdown formatting](https://guides.github.com/features/mastering-markdown/)
 
 
-This project is contributed by @Tony @Jessica @Quark @Jerry @[Yorafa](https://github.com/Yorafa) @Tyler @沙漏
+This project is contributed by @Tony @Jessica @Quark @Jerry @[Yorafa](https://github.com/Yorafa) @Tyler @Kurt @沙漏
 
 Further information or advice, please contact the group leader @Tyler by email [botao.su@mail.utoronto.ca](mailto: botao.su@mail.utoronto.ca)
 

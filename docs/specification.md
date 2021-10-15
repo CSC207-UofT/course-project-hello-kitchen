@@ -61,17 +61,96 @@ delete `id`: Delete a user with `id` from the signed-up users list.
 
 current: Display the information of the current logged-in user.
          The information will include the **name**, **description** and
-         **id** of the current user.
+         **id** and **type** of the current user.
 
 ls: Display the list of all the sign-up users. The list will show the
     name, description, type, and id of a user.
     The types of the users are viewingUser and adminUser.
 
+guest*
+
 ### Recipe
 
-add:
+add: Start the process to create a new recipe. The prompt will
+     ask for user input of the following parts in order.
+     `name`, `description`, `ingredients`, `procedure` and
+     `estimated cooking time`.
+     Note that when taking in inputs for `procedure` and
+     `ingredients`, after one step or ingredient is typed in,
+     the prompt will ask the user whether the user want to 
+     add another ingredient or step.
+     The prompt will then take `Y` for yes and `N` for no.
+     After a new recipe is created, it will be assigned an
+     **id** automatically.
 
-modify `id`:
+modify `id` -n: Modify the **name** of a recipe with `id`.
+                The prompt will first display the old **name**
+                of the recipe and then ask the user for an input
+                to give the recipe a new **name**.
+
+modify `id` -d: Modify the **description** of a recipe with `id`.
+                The prompt will first display the old **description**
+                of the recipe and then ask the user for an input
+                to give the recipe a new **description**.
+
+modify `id` -t: Modify the **estimated cooking time** of a recipe
+                with `id`. The prompt will first display the old
+                **estimated cooking time** of the recipe and then
+                ask the user for an input to give the recipe a
+                new **estimated cooking time**.
+
+modify `id` -i: Modify the **ingredients** of a recipe with `id`.
+                The prompt will first display the full representation
+                of all the ingredients.
+                Then the prompt will ask the user for an input
+                indicating the `name` of the ingredient they want
+                to modify.
+                Then the user will be asked for input for `name`
+                and `quantity` in order.
+
+modify `id` -i -d: Delete one **ingredient** of the recipe.
+                   The prompt will first display the full representation
+                   of all the ingredients.
+                   Then the prompt will ask the user for an input
+                   indicating the `name` of the ingredient they want
+                   to delete.
+                   If the ingredient is deleted, it will print message
+                   successful, unsuccessful otherwise.
+
+modify `id` -i -a: Add one **ingredient** to the recipe.
+                   The prompt will first display the full representation
+                   of all the ingredients.
+                   Then the prompt will ask the user for inputs
+                   indicating the `name` and `value` in order 
+                   of the ingredient they want to add.
+                   If the ingredient is added, it will print message
+                   successful, unsuccessful otherwise.
+
+modify `id` -p: Modify the **procedures** of a recipe with `id`.
+                The prompt will first display the full representation
+                of all the procedures.
+                Then the prompt will ask the user for an input
+                indicating the `number` of the procedure they want
+                to modify.
+                Then the user will be asked for input for the new procedure.
+
+modify `id` -p -d: Delete one **procedures** of the recipe.
+                   The prompt will first display the full representation
+                   of all the procedures.
+                   Then the prompt will ask the user for an input
+                   indicating the `number` of the procedure they want
+                   to delete.
+                   If the procedure is deleted, it will print message
+                   successful, unsuccessful otherwise.
+
+modify `id`-p -a: Add one **procedure** to the recipe.
+                  The prompt will first display the full representation
+                  of all the procedures.
+                  Then the prompt will ask the user for inputs
+                  indicating the `numbe of step` and `description` in order
+                  of the procedure they want to add.
+                  If the procedure is added, it will print message
+                  successful, unsuccessful otherwise.
 
 delete `id`: Delete the recipe with `id` from the data. The recipe will
              no longer be able to be viewed, searched or modified.

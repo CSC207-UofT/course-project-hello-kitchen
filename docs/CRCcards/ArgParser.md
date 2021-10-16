@@ -1,10 +1,14 @@
-#ArgParser (Controller)
+# ArgParser (Controller)
+
 Parent class: None
+
 Child class: None 
 
-#Responsibility
-split inputs from the user into tokens
+# Responsibility
 
-#Collaborator
-1. CommandLine
-2. all managers
+- split inputs from the user into tokens
+
+# Collaborator
+
+- CommandLine 
+- all managers

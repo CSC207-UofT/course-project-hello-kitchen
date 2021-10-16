@@ -1,9 +1,12 @@
-#LoginManager (Use Case)
+# LoginManager (Use Case)
+
 Parent class: None
+
 Child class: None
 
-#Responsibility
-1. signin/signout user
-2. sign up a new user
+# Responsibility
 
-#Collaborator
+- signin/signout user 
+- sign up a new user
+
+# Collaborator

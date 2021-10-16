@@ -1,13 +1,17 @@
-#Recipe Manager (Use Case)
+# Recipe Manager (Use Case)
+
 Parent class: None
+
 Child class: None 
 
-#Responsibility
-1. store recipes
-2. create new recipe
-3. delete recipe 
-4. delete recipe
-5. modify recipe
+# Responsibility
 
-#Collaborator
-1. PermissionManager
+- store recipes 
+- create new recipe 
+- delete recipe 
+- delete recipe 
+- modify recipe
+
+# Collaborator
+
+- PermissionManager

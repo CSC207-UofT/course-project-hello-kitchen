@@ -4,9 +4,12 @@ Parent class: None
 
 Child class: None
 
-# Responsibility
+## Responsibility
 
 - signin/signout user 
 - sign up a new user
 
-# Collaborator
+## Collaborator
+
+- AdminUser
+- CommonUser

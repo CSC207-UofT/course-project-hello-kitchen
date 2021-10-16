@@ -4,14 +4,14 @@ Parent class: None
 
 Child class: None 
 
-# Responsibility
+## Responsibility
 
 - store recipes 
 - create new recipe 
-- delete recipe 
-- delete recipe 
+- delete recipe
 - modify recipe
 
-# Collaborator
+## Collaborator
 
 - PermissionManager
+- Recipe

@@ -1,16 +1,16 @@
-# UserAdmin (Entity)
+# CommonUser (Entity)
 
 Parent class: User
 
 Child class: None
 
-# Responsibility
+## Responsibility
 
 - have a unique id, username 
 - toString by returning id+username 
 - set/get name/id 
 - favorite a recipe
 
-# Collaborator
+## Collaborator
 
 - UserManager

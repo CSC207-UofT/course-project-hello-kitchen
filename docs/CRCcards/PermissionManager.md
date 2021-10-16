@@ -4,12 +4,14 @@ Parent class: None
 
 Child class: None
 
-# Responsibility
+## Responsibility
 
 - decide whether to grant permission for adding/deleting/changing users 
 - decide whether to grant permission for adding/deleting/changing recipes
 
-# Collaborator 
+## Collaborator 
 
-- Usermanager
+- UserManager
 - RecipeManager
+- AdminUser
+- CommonUser

@@ -9,7 +9,7 @@ Child class: None
 - decide whether to grant permission for adding/deleting/changing users 
 - decide whether to grant permission for adding/deleting/changing recipes
 
-#Collaborator 
+# Collaborator 
 
 - Usermanager
 - RecipeManager

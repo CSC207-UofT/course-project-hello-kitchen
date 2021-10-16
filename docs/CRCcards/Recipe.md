@@ -1,5 +1,4 @@
-# Recipe
-
+# Recipe (Entity)
 Abstract
 
 Parent class: None
@@ -7,8 +6,6 @@ Parent class: None
 Child class: SoupRecipe, DesertRecipe, *
 
 ## Responsibilities
-
-Stores the recipe for a dish.
 
 ### Attributes
 
@@ -33,6 +30,4 @@ Stores the recipe for a dish.
 
 ## Collaborators
 
-- Dish
-- Ingredient
 - RecipeManager

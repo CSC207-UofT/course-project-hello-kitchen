@@ -19,4 +19,4 @@ Produced by the Group: Jerry YYDS!
 
 This project is contributed by @[Tony](https://github.com/TonyXiChen) @[Jessica](https://github.com/JessicaHu03) @[Quark]() @[Jerry](https://github.com/jerryweixd) @[Yorafa](https://github.com/Yorafa) @[Tyler](https://github.com/sbhsxsb) @[Kurt](https://github.com/kurtxue) @[Sandsieve](https://github.com/sandsieve)
 
-Further information or advice, please contact the group leader @Tyler by email [botao.su@mail.utoronto.ca](mailto: botao.su@mail.utoronto.ca)
+Further information or advice, please contact the group leader @Tyler by email botao.su@mail.utoronto.ca

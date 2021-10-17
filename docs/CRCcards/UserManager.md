@@ -14,5 +14,5 @@ Child class: None
 ## Collaborator
 
 - AdminUser 
-- NormalUser
+- CommonUser
 - LoginManager

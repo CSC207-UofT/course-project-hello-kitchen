@@ -1,7 +1,7 @@
 # Specification
 
-## Intro
-This is a desktop app developed using Java with no backend and no DB,
+## Intro to Hello Kitchen 
+Hello Kitchen is a command line app developed using Java with no backend and no DB,
 with stored data written to disk.
 
 This app will run with a command line interface which will open a prompt
@@ -13,6 +13,44 @@ and **upload** recipes on the go.
 The users can search for recipes in the app by recipe names and categories.
 The users can also mark a recipe as favourite. 
 The user can create their own recipes and upload it.
+
+## Statement of Scope
+
+The app will be built using gradle to a JAR file and run in JRE 11. It will
+have a CLI (Command Line Interface).
+
+## Architectural and component-level design
+
+### User
+
+- The user can sign up an account with a unique username and will be assigned
+a unique `id`.
+- The user can log in to the app using his/her unique `id`.
+- The user will have a customized description, with default value if left
+blank.
+- There will be two types of users, `CommonUser` and `AdminUser`, and they
+will have access to different commands.
+- After logged in, the user will have access to their favourite list, where
+they can check all the recipes they marked as favourite.
+- AdminUser will be authorized to delete existing user.
+- The user will be able to log out after he/she is done.
+- The app will also have the ability to show the list of all signed-up user
+in case the user forget his/her `id`.
+
+### Recipe
+- Recipe is a class that stores different attributes.
+- The recipe will have two different toString methods with simplified or
+detailed display, showing different information.
+- The users can create different recipes by providing information to the
+attributes. The name of a recipe is not necessarily unique, however, when
+a recipe is created, it will be assigned a unique `id` for future access
+to it.
+- The recipe will also be able to be modified for the field specified by the
+user.
+- The recipe can be marked as favourite by a user.
+- The recipe cna also be searched using keyword or using categories.
+- The app will also be able to print out a list showing information
+about all the recipes it stores.
 
 ## Commands
 
@@ -198,5 +236,6 @@ ls -d: Display a list of all the recipes in a detailed display.
 
 ### Config*
 
+description*
 
 The sections and commands marked with * will be designed later.

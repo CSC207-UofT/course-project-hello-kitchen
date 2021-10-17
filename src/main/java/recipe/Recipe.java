@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public abstract class Recipe {
-    String name;
-    String description;
+    protected String name;
+    protected String description;
     /* String is the ingredient, and Double is the mass required for one person portion */
-    HashMap<String, Double> ingredients;
-    ArrayList<String> procedures;
-    double estimatedCookingTime;
+    protected HashMap<String, Double> ingredients;
+    protected ArrayList<String> procedures;
+    protected double estimatedCookingTime;
 
     public Recipe() {
     }
@@ -29,6 +29,10 @@ public abstract class Recipe {
 
     public List<String> getProcedures() {
         return this.procedures;
+    }
+
+    public double getEstimatedCookingTime() {
+        return this.estimatedCookingTime;
     }
 
     public void setName(String name) {

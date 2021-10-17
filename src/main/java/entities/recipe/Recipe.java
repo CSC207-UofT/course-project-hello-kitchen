@@ -1,4 +1,4 @@
-package recipe;
+package entities.recipe;
 
 import java.util.List;
 import java.util.ArrayList;

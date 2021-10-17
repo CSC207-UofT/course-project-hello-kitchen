@@ -1,0 +1,1 @@
+Public abstract class User

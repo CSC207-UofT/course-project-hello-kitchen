@@ -44,4 +44,13 @@ public abstract class User{
     public void addBookmark(Recipe recipe, LocalDateTime time) {
         this.bookmark.put(recipe, time);
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "usertype='" + usertype + '\'' +
+                ", username='" + username + '\'' +
+                '}';
+    }
+
 }

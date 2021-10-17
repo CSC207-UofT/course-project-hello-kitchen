@@ -1,15 +1,56 @@
 package user;
 
-public abstract class User{
-    String name;
-    String description;
+import java.time.LocalDateTime;
+import java.util.HashMap;
 
-    public User(String name, String description){
-        this.name = name;
-        this.description = description;
+import recipe.Recipe;
+
+public abstract class User{
+    protected String usertype;
+    protected String username;
+    protected HashMap<Recipe, LocalDateTime> bookmark;
+
+    public User() {
     }
 
-    public abstract String getName();
+    public String getUserType() {
+        return this.usertype;
+    }
 
-    public abstract String toString();
+    public void setUsertype(String usertype) {
+        this.usertype = usertype;
+    }
+
+    public void setUserName(String username) {
+        this.username = username;
+    }
+
+    public String getUserName() {
+        return this.username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public HashMap<Recipe, LocalDateTime> getBookmark() {
+        return this.bookmark;
+    }
+
+    public void setBookmark(HashMap<Recipe, LocalDateTime> bookmark) {
+        this.bookmark = bookmark;
+    }
+
+    public void addBookmark(Recipe recipe, LocalDateTime time) {
+        this.bookmark.put(recipe, time);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "usertype='" + usertype + '\'' +
+                ", username='" + username + '\'' +
+                '}';
+    }
+
 }

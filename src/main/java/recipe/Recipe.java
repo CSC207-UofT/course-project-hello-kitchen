@@ -39,7 +39,7 @@ public abstract class Recipe {
         this.ingredients = ingredients;
     }
 
-    public List<String> getProcedures() {
+    public ArrayList<String> getProcedures() {
         return this.procedures;
     }
 

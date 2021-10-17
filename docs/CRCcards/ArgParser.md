@@ -4,11 +4,12 @@ Parent class: None
 
 Child class: None 
 
-# Responsibility
+## Responsibility
 
-- split inputs from the user into tokens
+- take string inputs from the user
+- parse the sting command into tokens
+- put the tokens in a tree
 
-# Collaborator
+## Collaborator
 
-- CommandLine 
-- all managers
+- CommandLine

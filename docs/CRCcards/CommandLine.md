@@ -3,12 +3,12 @@
 Parent class: None 
 Child class: None
 
-# Responsibility
+## Responsibility
 
 - input commands from user 
 - output information from user cases
 
-# Collaborator
+## Collaborator
 
 - UserManager
 - LoginManager

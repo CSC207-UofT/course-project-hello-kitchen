@@ -4,15 +4,15 @@ Parent class: None
 
 Child class: None
 
-# Responsibility
+## Responsibility
 
 - store different types users in different hashmaps 
 - Create new user 
 - delete users 
 - modify users
 
-# Collaborator
+## Collaborator
 
-- UserAdmin 
-- UserNonAdmin 
+- AdminUser 
+- NormalUser
 - LoginManager

@@ -55,6 +55,7 @@ public abstract class Recipe {
         this.estimatedCookingTime = estimatedCookingTime;
     }
 
+    @Override
     public String toString() {
         return "Recipe{" +
                 "name='" + name + '\'' +

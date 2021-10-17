@@ -13,6 +13,6 @@ Child class: None
 
 ## Collaborator
 
-- AdminUser 
+- AdminUser
 - CommonUser
 - LoginManager

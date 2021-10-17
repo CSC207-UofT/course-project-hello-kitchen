@@ -16,5 +16,4 @@ Produced by the Group: Jerry YYDS!
 - Project [Information and overview](https://q.utoronto.ca/courses/233945/pages/course-project?module_item_id=2973653)
 - [Markdown formatting](https://guides.github.com/features/mastering-markdown/)
 
-
 Further information or advice, please contact the group leader @Tyler by email botao.su@mail.utoronto.ca

@@ -3,7 +3,7 @@ Abstract
 
 Parent class: None
 
-Child class: SoupRecipe, DesertRecipe, *
+Child class: SoupRecipe, DesertRecipe, EntreeRecipe, MainCourseRecipe
 
 ## Responsibilities
 
@@ -12,7 +12,7 @@ Child class: SoupRecipe, DesertRecipe, *
 - `String name`
 - `String description`
 - `Hashmap<Ingredient, double> ingredients`
-- `List<String> procedures`
+- `ArryList<String> procedures`
 - `double estimatedCookingTime`
 
 ### Methods

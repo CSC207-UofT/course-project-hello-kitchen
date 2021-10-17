@@ -1,8 +1,8 @@
 package entities.recipe;
 
-import java.util.List;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public abstract class Recipe {
     protected String name;
@@ -19,39 +19,39 @@ public abstract class Recipe {
         return this.name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getDescription() {
         return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public HashMap<String, Double> getIngredients() {
         return ingredients;
     }
 
+    public void setIngredients(HashMap<String, Double> ingredients) {
+        this.ingredients = ingredients;
+    }
+
     public List<String> getProcedures() {
         return this.procedures;
+    }
+
+    public void setProcedures(ArrayList<String> procedures) {
+        this.procedures = procedures;
     }
 
     public double getEstimatedCookingTime() {
         return this.estimatedCookingTime;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setDescription(String description){
-        this.description = description;
-    }
-
-    public void setIngredients(HashMap<String, Double> map) {
-        this.ingredients = map;
-    }
-
-    public void setProcedures(ArrayList<String> procedures){
-        this.procedures = procedures;
-    }
-
-    public void setEstimatedCookingTime(double estimatedCookingTime){
+    public void setEstimatedCookingTime(double estimatedCookingTime) {
         this.estimatedCookingTime = estimatedCookingTime;
     }
 }

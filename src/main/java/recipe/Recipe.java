@@ -1,4 +1,4 @@
-package entities.recipe;
+package recipe;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -54,4 +54,15 @@ public abstract class Recipe {
     public void setEstimatedCookingTime(double estimatedCookingTime) {
         this.estimatedCookingTime = estimatedCookingTime;
     }
+
+    public String toString() {
+        return "Recipe{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", ingredients=" + ingredients +
+                ", procedures=" + procedures +
+                ", estimatedCookingTime=" + estimatedCookingTime +
+                '}';
+    }
+
 }

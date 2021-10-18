@@ -20,6 +20,8 @@ public class Recipe {
         this.estimatedCookingTime = estimatedCookingTime;
     }
 
+    public Recipe(){}
+
     public String getName() {
         return this.name;
     }
@@ -63,10 +65,10 @@ public class Recipe {
     @Override
     public String toString() {
         return "Recipe{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", ingredients=" + ingredients +
-                ", procedures=" + procedures +
+                "name='" + name +
+                "', description= '" + description + "'" +
+                ", ingredients=" + ingredients.toString() +
+                ", procedures=" + procedures.toString() +
                 ", estimatedCookingTime=" + estimatedCookingTime +
                 '}';
     }

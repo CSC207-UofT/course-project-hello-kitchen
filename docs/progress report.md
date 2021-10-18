@@ -34,7 +34,7 @@ to create in order to deal with more complicate scenario.
 ## Group member tasks (working on and plan to work on):
 Everyone takes participation in CRC model and share idea.\
 Kurt Xue: CRC model, scenario walk-through, progress report.\
-Jiantong Lyu: Specification, CRC model, user part code.\
+Jiantong Lyu: Specification, CRC model, user part code, code review and merge pr, coordinate group tasks.\
 Tianle Wang: All basic stuffs (README.md, old Specification, old CRC cards), unit test code, and review all code & adds some description.\
 Xi Chen: recipe part code, specification(plan).\
 Xiaodong Wei: CRC model, Manager, Bookmark Code.\

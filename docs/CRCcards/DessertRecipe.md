@@ -1,4 +1,4 @@
-# DessertRecipe (Use Case)
+# DessertRecipe (Entity)
 
 Parent class: Recipe
 

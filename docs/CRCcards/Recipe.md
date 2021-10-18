@@ -1,10 +1,10 @@
-# Recipe (Entity)
+# Recipe (entity)
 
 Abstract
 
 Parent class: None
 
-Child class: SoupRecipe, DesertRecipe, EntreeRecipe, MainCourseRecipe
+Child class: SoupRecipe, DessertRecipe, MainCourseRecipe
 
 ## Responsibilities
 

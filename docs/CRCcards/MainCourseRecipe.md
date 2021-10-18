@@ -4,7 +4,7 @@ Parent class: Recipe
 
 Child class: None
 
-##Responsibilities
+## Responsibilities
 
 - implement Searchable interface
 

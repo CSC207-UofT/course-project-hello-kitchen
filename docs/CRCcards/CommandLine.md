@@ -1,6 +1,7 @@
-# CommandLine (Controller)
+# CommandLine (manager)
 
 Parent class: None 
+
 Child class: None
 
 ## Responsibility

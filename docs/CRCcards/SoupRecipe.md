@@ -4,7 +4,7 @@ Parent class: Recipe
 
 Child class: HotSoupRecipe, ColdSoupRecipe
 
-##Responsibilities
+## Responsibilities
 
 - implement Searchable interface
 

@@ -1,4 +1,4 @@
-# AdminUser (Entity)
+# AdminUser (user)
 
 Parent class: User
 
@@ -9,7 +9,7 @@ Child class: None
 - have a unique id, username 
 - toString by returning id+username 
 - set/get name/id 
-- favorite a recipe
+- list of favorite recipes
 
 ## Collaborator 
 

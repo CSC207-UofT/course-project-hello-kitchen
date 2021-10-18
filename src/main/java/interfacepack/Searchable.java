@@ -1,4 +1,4 @@
-package inter_pac;
+package interfacepack;
 
 public interface Searchable {
 

@@ -1,10 +1,10 @@
-# DesertRecipe (Entity)
+# DessertRecipe (Use Case)
 
 Parent class: Recipe
 
 Child class: None
 
-##Responsibilities
+## Responsibilities
 
 - implement Searchable interface
 

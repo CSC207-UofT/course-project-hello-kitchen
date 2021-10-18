@@ -4,7 +4,7 @@ Parent class: None
 
 Child class: None
 
-##Responsibilities
+## Responsibilities
 
 - initialize system
 - take commands from user

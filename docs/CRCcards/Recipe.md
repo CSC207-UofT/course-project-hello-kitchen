@@ -1,4 +1,5 @@
 # Recipe (Entity)
+
 Abstract
 
 Parent class: None

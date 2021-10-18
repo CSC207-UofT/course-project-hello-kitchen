@@ -1,4 +1,4 @@
-# AdminUser (Entity)
+# AdminUser (Use Case)
 
 Parent class: User
 

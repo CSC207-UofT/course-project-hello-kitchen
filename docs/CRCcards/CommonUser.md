@@ -1,4 +1,4 @@
-# CommonUser (Entity)
+# CommonUser (Use Case)
 
 Parent class: User
 

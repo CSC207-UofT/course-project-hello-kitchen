@@ -1,6 +1,6 @@
 # UserManager (Use Case)
 
-Parent class: None
+Parent class: Manager
 
 Child class: None
 
@@ -15,4 +15,4 @@ Child class: None
 
 - AdminUser
 - CommonUser
-- LoginManager
+- PermissionManager

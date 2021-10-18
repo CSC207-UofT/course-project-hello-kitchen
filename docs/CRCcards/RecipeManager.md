@@ -1,6 +1,6 @@
 # Recipe Manager (Use Case)
 
-Parent class: None
+Parent class: Manager
 
 Child class: None 
 

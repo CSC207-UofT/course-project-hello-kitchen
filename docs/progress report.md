@@ -39,7 +39,8 @@ Tianle Wang: All basic stuffs (README.md, old Specification, old CRC cards), uni
 Xi Chen: recipe part code, specification(plan).\
 Xiaodong Wei: CRC model, Manager, Bookmark Code.\
 Yucen Liu: CRC Model, Recipe, User Code.\
-Botao Su: CRC model, specification, user code.
+Botao Su: CRC model, specification, user code.  \
+Wanting Hu: CRC model, specification(plan).
 
 ## Open questions struggling with:
 - We encountered big problems in group cooperation. Because of the large number of members, we can't negotiate a common 

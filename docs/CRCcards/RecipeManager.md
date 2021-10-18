@@ -1,17 +1,31 @@
-# Recipe Manager (Use Case)
+# RecipeManager (Use Case)
 
-Parent class: Manager
+Parent class: None
 
-Child class: None 
+Child class: None
 
-## Responsibility
+## Responsibilities
 
-- store recipes 
-- create new recipe 
-- delete recipe
-- modify recipe
+Create, modify
 
-## Collaborator
+### Attributes
 
-- PermissionManager
+- `List<Recipe> recipes`
+
+### Methods
+
+- `boolean add(String name, String description, Hashmap<Ingredient, double> ingredients, List<String> procedures, double estimatedCookingTime)`
+- `Recipe delete(String id)`
+- 
+- `boolean modifyRecipeName(Recipe, String)`
+- 
+- `boolean modifyRecipeDescription(Recipe, String)`
+- `boolean modifyRecipeIngredients(Recipe, Hashmap<Ingredient, double>)`
+- `boolean modifyRecipeProcedures(Recipe, List<String>)`
+- `boolean modifyRecipeEstimatedCookingTime(Recipe, double)`
+- `List<Recipe> searchRecipe(String)`
+
+## Collaborators
+
 - Recipe
+- UserManager

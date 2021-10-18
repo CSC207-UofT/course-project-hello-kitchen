@@ -10,17 +10,17 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class AdminUserTest {
-    AdminUser adminUser;
+public class CommonUserTest {
+    CommonUser commonUser;
 
 
     @Before
-    public void setAdminUser(){adminUser = new AdminUser("Thomas", "Test Registration");}
+    public void setCommonUser(){commonUser = new CommonUser("Thomas", "Test Registration");}
 
     @Test(timeout = 50)
     public void testGetBookmarkList(){
         List<BookmarkList> empty = new ArrayList<>();
-        assertEquals(empty, adminUser.getBookmarkLists());
+        assertEquals(empty, commonUser.getBookmarkLists());
     }
 
     @Test(timeout = 50)
@@ -28,28 +28,28 @@ public class AdminUserTest {
         List<BookmarkList> bookmarkLists = new ArrayList<>();
         BookmarkList bookmarkList = new BookmarkList("test1","test purpose");
         bookmarkLists.add(0, bookmarkList);
-        adminUser.setBookmarkLists(bookmarkLists);
-        assertEquals(bookmarkLists, adminUser.getBookmarkLists());
+        commonUser.setBookmarkLists(bookmarkLists);
+        assertEquals(bookmarkLists, commonUser.getBookmarkLists());
     }
 
     @Test(timeout = 50)
     public void testCreateList(){
-        adminUser.createList("test2","test purpose");
-        List<BookmarkList> bookmarkLists = adminUser.getBookmarkLists();
+        commonUser.createList("test2","test purpose");
+        List<BookmarkList> bookmarkLists = commonUser.getBookmarkLists();
         assertEquals(bookmarkLists.get(0).getName(), "test2");
     }
 
     @Test(timeout = 50)
     public void testDeleteList(){
-        adminUser.createList("test2","test purpose");
-        List<BookmarkList> bookmarkLists = adminUser.getBookmarkLists();
-        assertTrue(adminUser.deleteList(0));
-        assertFalse(adminUser.deleteList(0));
+        commonUser.createList("test2","test purpose");
+        List<BookmarkList> bookmarkLists = commonUser.getBookmarkLists();
+        assertTrue(commonUser.deleteList(0));
+        assertFalse(commonUser.deleteList(0));
     }
 
     @Test(timeout = 50)
     public void testToString(){
-        String name = "User{usertype='AdminUser', username='Thomas'}";
-        assertEquals(name, adminUser.toString());
+        String name = "User{usertype='CommonUser', username='Thomas'}";
+        assertEquals(name, commonUser.toString());
     }
 }

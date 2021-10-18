@@ -2,14 +2,10 @@ package manager;
 
 import org.junit.Before;
 import org.junit.Test;
-import user.AdminUser;
-import user.CommonUser;
-
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import user.AdminUser;
+import user.CommonUser;
 
 public class PermissionManagerTest {
     PermissionManager permissionManager;

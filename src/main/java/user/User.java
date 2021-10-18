@@ -11,6 +11,7 @@ public abstract class User{
     protected HashMap<Recipe, LocalDateTime> bookmark;
 
     public User() {
+        username = "common";
     }
 
     public String getUserType() {
@@ -53,4 +54,7 @@ public abstract class User{
                 '}';
     }
 
+    public User copy(){
+        return this;
+    }
 }

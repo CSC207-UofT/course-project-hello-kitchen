@@ -6,8 +6,10 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class DessertRecipeTest {
-    DesertRecipe desertRecipe;
+    DessertRecipe desertRecipe;
 
     @Before
-    public void setDesertRecipe(){desertRecipe = new DesertRecipe();}
+    public void setDesertRecipe(){
+        desertRecipe = new DessertRecipe();
+    }
 }

@@ -1,4 +1,4 @@
-# CommandLine (Controller)
+# CommandLine (manager)
 
 Parent class: None 
 

@@ -1,4 +1,4 @@
-# MainCourseRecipe (Use Case)
+# MainCourseRecipe (Entity)
 
 Parent class: Recipe
 

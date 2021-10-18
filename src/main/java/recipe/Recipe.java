@@ -1,19 +1,26 @@
 package recipe;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public abstract class Recipe {
+public class Recipe {
     protected String name;
     protected String description;
     /* String is the ingredient, and Double is the mass required for one person portion */
     protected HashMap<String, Double> ingredients;
-    protected ArrayList<String> procedures;
+    protected List<String> procedures;
     protected double estimatedCookingTime;
 
-    public Recipe() {
+    public Recipe(String name, String description, HashMap<String, Double> ingredients, List<String> procedures,
+                  double estimatedCookingTime) {
+        this.name = name;
+        this.description = description;
+        this.ingredients = ingredients;
+        this.procedures = procedures;
+        this.estimatedCookingTime = estimatedCookingTime;
     }
+
+    public Recipe(){}
 
     public String getName() {
         return this.name;
@@ -39,11 +46,11 @@ public abstract class Recipe {
         this.ingredients = ingredients;
     }
 
-    public ArrayList<String> getProcedures() {
+    public List<String> getProcedures() {
         return this.procedures;
     }
 
-    public void setProcedures(ArrayList<String> procedures) {
+    public void setProcedures(List<String> procedures) {
         this.procedures = procedures;
     }
 
@@ -58,10 +65,10 @@ public abstract class Recipe {
     @Override
     public String toString() {
         return "Recipe{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", ingredients=" + ingredients +
-                ", procedures=" + procedures +
+                "name='" + name +
+                "', description= '" + description + "'" +
+                ", ingredients=" + ingredients.toString() +
+                ", procedures=" + procedures.toString() +
                 ", estimatedCookingTime=" + estimatedCookingTime +
                 '}';
     }

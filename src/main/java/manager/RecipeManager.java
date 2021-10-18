@@ -18,6 +18,11 @@ public class RecipeManager {
         Recipe recipe = new Recipe(name, description, ingredients, procedures, estimatedCookingTime);
         recipes.add(recipe);
     }
+
+    public void addRecipe(Recipe recipe){
+        recipes.add(recipe);
+    }
+
     public boolean removeRecipe(int i) {
         if (i >= 0 && i < recipes.size()) {
             recipes.remove(i);

@@ -1,6 +1,6 @@
 # UserManager (Use Case)
 
-Parent class: Manager
+Parent class: None
 
 Child class: None
 

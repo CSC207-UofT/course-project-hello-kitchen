@@ -1,5 +1,7 @@
 # RecipeManager (Use Case)
 
+Not abstract
+
 Parent class: None
 
 Child class: None

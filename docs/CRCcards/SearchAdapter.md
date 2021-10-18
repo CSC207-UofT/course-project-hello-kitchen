@@ -1,1 +1,1 @@
-# SearchAdapter (manager)
+# SearchAdapter (Controller)

@@ -1,4 +1,4 @@
-# Recipe (user)
+# Recipe (Entity)
 
 Abstract
 

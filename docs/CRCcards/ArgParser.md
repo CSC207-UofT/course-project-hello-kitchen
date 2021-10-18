@@ -1,4 +1,4 @@
-# ArgParser (manager)
+# ArgParser (Controller)
 
 Parent class: None
 

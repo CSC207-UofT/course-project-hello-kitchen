@@ -1,4 +1,4 @@
-# Manager (Entity)
+# Manager (Use Case)
 
 Abstract
 

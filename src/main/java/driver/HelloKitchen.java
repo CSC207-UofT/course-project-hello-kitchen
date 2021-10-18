@@ -10,13 +10,13 @@ import java.util.Scanner;
 public class HelloKitchen {
     public static void main(String[] args) throws IOException {
         Shell shell = new Shell();
-        CommandExecutor exectuor = new CommandExecutor();
+        CommandExecutor exe = new CommandExecutor();
         Scanner in = new Scanner(System.in);
         while (shell.isRunning()){
             System.out.print("$ ");
             String commandLine = in.nextLine();
             try {
-                String output = exectuor.execute(commandLine);
+                String output = exe.execute(commandLine);
 
             }
             catch(Exception e){

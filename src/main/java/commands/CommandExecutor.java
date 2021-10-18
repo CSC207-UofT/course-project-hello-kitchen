@@ -6,5 +6,9 @@ import java.util.List;
 
 
 public class CommandExecutor {
+    public CommandExecutor(){}
 
+    public String execute(String command) {
+        return "";
+    }
 }

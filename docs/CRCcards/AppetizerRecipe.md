@@ -1,4 +1,4 @@
-# AppetizerRecipe (Use Case)
+# AppetizerRecipe (user)
 
 Parent class: Recipe
 

@@ -1,4 +1,6 @@
-package entity;
+package bookmark;
+
+import recipe.Recipe;
 
 public class Bookmark {
     private String remark;

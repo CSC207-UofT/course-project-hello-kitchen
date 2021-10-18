@@ -1,6 +1,6 @@
-package use_case;
+package manager;
 
-import entity.Recipe;
+import recipe.Recipe;
 
 import java.util.ArrayList;
 import java.util.HashMap;

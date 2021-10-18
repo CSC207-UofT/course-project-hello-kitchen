@@ -1,4 +1,4 @@
-# AppetizerRecipe (entity)
+# AppetizerRecipe (user)
 
 Parent class: Recipe
 

@@ -1,8 +1,8 @@
-package use_case;
+package manager;
 
-import entity.AdminUser;
-import entity.CommonUser;
-import entity.User;
+import user.AdminUser;
+import user.CommonUser;
+import user.User;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package entity;
+package user;
 
 public abstract class User {
     protected String usertype;

@@ -1,4 +1,6 @@
-package entity;
+package user;
+
+import bookmark.BookmarkList;
 
 import java.util.ArrayList;
 import java.util.List;

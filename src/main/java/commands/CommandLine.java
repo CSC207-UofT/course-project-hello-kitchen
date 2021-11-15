@@ -3,7 +3,7 @@ package commands;
 import java.util.List;
 
 /*
-* Used to separate command line with command and arguement
+* Used to separate command line with command and argument
 */
 public class CommandLine {
     private final String command;

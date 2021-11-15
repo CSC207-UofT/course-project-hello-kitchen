@@ -19,3 +19,7 @@ Future tasks
 - Our program seems to be working well functionally. All tests we wrote has passed and seems no obvious bug.
 - The structure of the basic command line has finished, we only have to add more methods in phase 2.
 ## Questions:
+- How does the serializable interface in the Java library work?
+- What is the template for the file path if we write the IOAdaptor?
+- Now parsing tokens for raw arguments and put them into factories doesn't work as desired, if I use if/else
+conditions in factory, it will only give me error messages without initializing command classes instances.

@@ -9,4 +9,4 @@ methods.
 - Interface Segregation Principle: Public interfaces of our classes are all reasonable. No single irrelevant part that the program has to implement.
 - Dependency Inversion Principle:
 ## Design patterns
-Adapter pattern: We used this design pattern for our database
+We utilizes two adapters and multiples factories for design pattern. There an adapter in charge of write and read. Another is the search adapter. For each command that was input in, we have command factories to sort the class that this command belongs to, the method it will be calling, the action it will take. 

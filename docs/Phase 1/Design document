@@ -1,0 +1,12 @@
+# Design Document
+## Major design decisions
+## Clean Architecture
+## SOLID
+- Single Responsibility Principle: The majority of our classes follow the single responsibility principle since they only have few methods that are clearly inseparable.
+- Open/Closed Principle: All of our classes can be extended and be modified freely. For example, we can freely add new 
+methods.
+- Liskov Substitution Principle: There's no hierarchies in our program.
+- Interface Segregation Principle: Public interfaces of our classes are all reasonable. No single irrelevant part that the program has to implement.
+- Dependency Inversion Principle:
+## Design patterns
+We utilizes two adapters and multiples factories for design pattern. There an adapter in charge of write and read. Another is the search adapter. For each command that was input in, we have command factories to sort the class that this command belongs to, the method it will be calling, the action it will take. 

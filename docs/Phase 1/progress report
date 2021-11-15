@@ -16,5 +16,5 @@ Future tasks
 - Hu Wanting: GUI, test and debug
 ## What has worked well so far:
 - Our program seems to be working well functionally. All tests we wrote has passed and seems no obvious bug.
-
+- The structure of the basic command line has finished, we only have to add more methods in phase 2.
 ## Questions:

@@ -2,6 +2,9 @@
 ## Changes from phase 0:
 - Completed the basic functions of the program.
 - Changed the structure of the program and added the tests
+- Cut down and modify the features from Phase 0 to suit team size.
+- Constructed a basic CLI interface where the user can create new users.
+- Modified the input template for commands.
 ## To do list for phase 2:
 - Add more functions to the program
 - Improve the structure of the program

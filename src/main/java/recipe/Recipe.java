@@ -2,8 +2,9 @@ package recipe;
 
 import java.util.HashMap;
 import java.util.List;
+import java.io.Serializable;
 
-public class Recipe {
+public class Recipe implements Serializable{
     protected String name;
     protected String description;
     /* String is the ingredient, and Double is the mass required for one person portion */

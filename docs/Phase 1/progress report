@@ -1,0 +1,19 @@
+# Phase 1 Progress Report
+## Changes from phase 0:
+- Completed the basic functions of the program.
+- Changed the structure of the program and added the tests
+## To do list for phase 2:
+- Add more functions to the program
+- Improve the structure of the program
+- Do well in clean architecture
+## Group member tasks:
+Phase 1 tasks
+- Xue Chengyuan: design document, progress report, code
+- 
+Future tasks
+- Xue Chengyuan: GUI, test and debug
+- 
+## What has worked well so far:
+- Our program seems to be working well functionally. All tests we wrote has passed and seems no obvious bug.
+
+## Questions:

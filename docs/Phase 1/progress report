@@ -9,10 +9,12 @@
 ## Group member tasks:
 Phase 1 tasks
 - Xue Chengyuan: design document, progress report, code
-- 
+- Jiantong Lyu: command part code, design, structure, code reviewing and work coordinating
+-
 Future tasks
 - Xue Chengyuan: GUI, test and debug
-- 
+- Jiantong Lyu: code, design, structure, code reviewing and work coordinating
+-
 ## What has worked well so far:
 - Our program seems to be working well functionally. All tests we wrote has passed and seems no obvious bug.
 

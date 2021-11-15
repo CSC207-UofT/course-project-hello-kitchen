@@ -1,18 +1,22 @@
 package Database;
 
 import manager.UserManager;
+import recipe.Recipe;
+import user.User;
 
 import java.io.*;
 
 public class Userdata implements Datasaver {
+    private UserManager userlist;
 
-    private UserManager userlist = new UserManager();
-
+    public Userdata(UserManager userlist){
+        this.userlist = userlist;
+    }
 
     public String readData() {
         String output;
         try {
-            FileInputStream fileIn = new FileInputStream(systemFilePath);
+            FileInputStream fileIn = new FileInputStream("/tmp/user.ser");
             ObjectInputStream in = new ObjectInputStream(fileIn);
             this.userlist = (UserManager) in.readObject();
             in.close();
@@ -29,7 +33,7 @@ public class Userdata implements Datasaver {
     @Override
     public String writeData() {
         try {
-            FileOutputStream fileOut = new FileOutputStream(systemFilePath);
+            FileOutputStream fileOut = new FileOutputStream("/tmp/user.ser");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             out.writeObject(this.userlist);
             out.close();

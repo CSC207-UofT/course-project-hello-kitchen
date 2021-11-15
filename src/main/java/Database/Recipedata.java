@@ -9,12 +9,17 @@ import java.io.*;
 
 public class Recipedata implements Datasaver {
 
-    private RecipeManager recipelist = new RecipeManager();
+
+    private RecipeManager recipelist;
+
+    public Recipedata(RecipeManager recipelist){
+        this.recipelist = recipelist;
+    }
 
     public String readData() {
         String output;
         try {
-            FileInputStream fileIn = new FileInputStream(systemFilePath);
+            FileInputStream fileIn = new FileInputStream("/tmp/recipe.ser");
             ObjectInputStream in = new ObjectInputStream(fileIn);
             this.recipelist = (RecipeManager) in.readObject();
             in.close();
@@ -31,7 +36,7 @@ public class Recipedata implements Datasaver {
     @Override
     public String writeData() {
         try {
-            FileOutputStream fileOut = new FileOutputStream(systemFilePath);
+            FileOutputStream fileOut = new FileOutputStream("/tmp/recipe.ser");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             out.writeObject(this.recipelist);
             out.close();

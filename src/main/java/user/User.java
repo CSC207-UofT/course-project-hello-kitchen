@@ -1,25 +1,17 @@
 package user;
 
-import java.io.Serializable;
-
-public abstract class User implements Serializable{
-    protected String usertype;
+public abstract class User {
     protected String username;
+    protected String password;
     protected String description;
 
-    public User(String usertype, String username, String description) {
-        this.usertype = usertype;
+    public User(String username, String password, String description) {
         this.username = username;
+        this.password = password;
         this.description = description;
     }
 
-    public String getUserType() {
-        return this.usertype;
-    }
-
-    public void setUserType(String usertype) {
-        this.usertype = usertype;
-    }
+    public abstract void display();
 
     public String getUserName() {
         return this.username;
@@ -29,6 +21,13 @@ public abstract class User implements Serializable{
         this.username = username;
     }
 
+    public String getPassword() {
+        return this.password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
     public String getDescription() {
         return description;
     }

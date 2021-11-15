@@ -8,9 +8,14 @@ import java.util.List;
 public class AdminUser extends User {
     private List<BookmarkList> bookmarkLists;
 
-    public AdminUser(String username, String description) {
-        super("AdminUser", username, description);
+    public AdminUser(String username, String password, String description) {
+        super(username, password, description);
         this.bookmarkLists = new ArrayList<>();
+    }
+
+    @Override
+    public void display() {
+
     }
 
     public List<BookmarkList> getBookmarkLists() {
@@ -36,7 +41,7 @@ public class AdminUser extends User {
     @Override
     public String toString() {
         return "User{" +
-                "usertype='" + usertype + '\'' +
+                "usertype='" + password + '\'' +
                 ", username='" + username + '\'' +
                 '}';
     }

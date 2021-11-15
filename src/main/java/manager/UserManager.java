@@ -17,6 +17,8 @@ public class UserManager {
     public void createCommonUser(String name, String description) {
         CommonUser user = new CommonUser(name, description);
         users.add(user);
+        System.out.println("Create user successful, name:" + user.getUserName() +
+                " description:" + user.getDescription());
     }
 
     public void createAdminUser(String name, String description) {

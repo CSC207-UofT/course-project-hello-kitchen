@@ -8,11 +8,9 @@
 - Do well in clean architecture
 ## Group member tasks:
 Phase 1 tasks
-- Xue Chengyuan: design document, progress report, code
--
+- Xue Chengyuan: design document, progress report, database
 Future tasks
 - Xue Chengyuan: GUI, test and debug
--
 ## What has worked well so far:
 - Our program seems to be working well functionally. All tests we wrote has passed and seems no obvious bug.
 

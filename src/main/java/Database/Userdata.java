@@ -7,11 +7,7 @@ import user.User;
 import java.io.*;
 
 public class Userdata implements Datasaver {
-    private UserManager userlist;
-
-    public Userdata(UserManager userlist){
-        this.userlist = userlist;
-    }
+    private UserManager userlist = new UserManager();
 
     public String readData() {
         String output;

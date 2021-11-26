@@ -10,11 +10,7 @@ import java.io.*;
 public class Recipedata implements Datasaver {
 
 
-    private RecipeManager recipelist;
-
-    public Recipedata(RecipeManager recipelist){
-        this.recipelist = recipelist;
-    }
+    private RecipeManager recipelist = new RecipeManager();
 
     public String readData() {
         String output;
@@ -28,7 +24,7 @@ public class Recipedata implements Datasaver {
         } catch (IOException i) {
             output = "Data not found. We are starting with a new empty system.";
         } catch (ClassNotFoundException c) {
-            output = "UserList class not found. We are starting with a new empty system.";
+            output = "RecipeList class not found. We are starting with a new empty system.";
         }
         return output;
     }

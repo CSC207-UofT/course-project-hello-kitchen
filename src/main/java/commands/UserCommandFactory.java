@@ -1,6 +1,5 @@
 package commands;
 
-import manager.UserManager;
 
 import java.util.HashMap;
 
@@ -10,6 +9,9 @@ public class UserCommandFactory {
     public HashMap<String, Command> userCommandType = new HashMap<>() {{
         put("add", new AddUserCommand());
         put("delete", new DeleteUserCommand());
+        put("signin", new SignInUserCommand());
+        put("signout", new SignOutUserCommand());
+        put("current", new CurrentUserCommand());
     }};
 
     public UserCommandFactory(Token token) {

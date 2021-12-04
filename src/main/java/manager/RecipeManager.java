@@ -11,7 +11,7 @@ public class RecipeManager {
     private int counter;
     private RecipeManager instance;
 
-    public RecipeManager() {
+    private RecipeManager() {
         this.recipes = new ArrayList<>();
         this.counter = 0;
     }
@@ -43,6 +43,11 @@ public class RecipeManager {
         throw new Error("Recipe not found.");
     }
 
+    /**
+     * Get recipe with `id`.
+     * @param id The `id` of the desired recipe.
+     * @return The recipe with `id`.
+     */
     public Recipe getRecipe(int id) {
         for(Recipe recipe: recipes) {
             if(recipe.id == id) {
@@ -52,6 +57,10 @@ public class RecipeManager {
         throw new Error("Recipe not found.");
     }
 
+    /**
+     * Get recipe list in this manager.
+     * @return The recipe list in this manager.
+     */
     public List<Recipe> getRecipeList() {
         return recipes;
     }

@@ -16,6 +16,10 @@ public class DeleteRecipeCommand extends RecipeCommand{
 
     public DeleteRecipeCommand() {}
 
+    /**
+     * Parse the `commandLine` according to usage template and execute command after parsing.
+     * @param commandLine The `commandLine` to be processed.
+     */
     @Override
     public void run(String commandLine) {
         Token token = new Token(commandLine);
@@ -31,6 +35,9 @@ public class DeleteRecipeCommand extends RecipeCommand{
         this.execute();
     }
 
+    /**
+     * Execute the command.
+     */
     public void execute() {
         HashMap<String, String> map = new HashMap<>();
         for (ValuePair valuePair: this.valuePairs) {

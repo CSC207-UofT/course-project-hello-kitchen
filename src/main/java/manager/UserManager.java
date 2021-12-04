@@ -15,10 +15,15 @@ public class UserManager extends Manager {
     }
 
     /**
-     * Register `user` to the manager.
+     * Register `user` to the manager, ensuring the registered username is unique.
      * @param user User to manage.
      */
     public void register(User user) {
+        for(String username: this.users.keySet()){
+            if(username.equals(user.username)) {
+                throw new Error("Username occupied, change another name");
+            }
+        }
         users.put(user.username, user);
         System.out.println("Create user successful, name:" + user.username +
                 " description:" + user.description);

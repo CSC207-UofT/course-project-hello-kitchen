@@ -15,8 +15,15 @@ public abstract class Command {
     public Command() {
     }
 
-    public void execute(){}
+    /**
+     * Abstract method to execute the command, will be implemented by children classes.
+     */
+    public abstract void execute();
 
+    /**
+     * Parse the `commandLine` according to usage template and execute command after parsing.
+     * @param commandLine The `commandLine` to be processed.
+     */
     public void run(String commandLine){
         Token token = new Token(commandLine);
         if(!this.acceptRoots.contains(token.root)) {

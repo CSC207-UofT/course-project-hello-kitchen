@@ -11,11 +11,18 @@ public class ListRecipeCommand extends RecipeCommand{
 
     public ListRecipeCommand() {}
 
+    /**
+     * Execute the command since there's no args to be taken in.
+     * @param commandLine Keep the same structure.
+     */
     @Override
     public void run(String commandLine) {
         this.execute();
     }
 
+    /**
+     * Execute the command.
+     */
     public void execute() {
         StringBuilder outPut = new StringBuilder();
         this.recipeManager = recipeManager.getInstance();

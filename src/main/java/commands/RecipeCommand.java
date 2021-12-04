@@ -13,6 +13,10 @@ public class RecipeCommand extends Command{
 
     }
 
+    /**
+     * Parse the `commandLine` according to usage template and execute command after parsing.
+     * @param commandLine The `commandLine` to be processed.
+     */
     public void run(String commandLine) {
         Token token = new Token(commandLine);
         if(!acceptRoots.contains(token.root)) {
@@ -30,5 +34,8 @@ public class RecipeCommand extends Command{
         this.execute();
     }
 
+    /**
+     * Execute the command.
+     */
     public void execute (){}
 }

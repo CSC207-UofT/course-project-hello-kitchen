@@ -16,6 +16,10 @@ public class DeleteUserCommand extends UserCommand{
     public DeleteUserCommand() {
     }
 
+    /**
+     * Parse the `commandLine` according to usage template and execute command after parsing.
+     * @param commandLine The `commandLine` to be processed.
+     */
     public void run(String commandLine) {
         Token token = new Token(commandLine);
         this.valuePairs = new ArrayList<>();
@@ -29,6 +33,10 @@ public class DeleteUserCommand extends UserCommand{
         }
         this.execute();
     }
+
+    /**
+     * Execute the command.
+     */
     public void execute() {
         HashMap<String, String> map = new HashMap<>();
         for (ValuePair valuePair: this.valuePairs) {

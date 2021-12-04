@@ -15,6 +15,10 @@ public class ModifyUserCommand extends UserCommand{
 
     public ModifyUserCommand() {}
 
+    /**
+     * Parse the `commandLine` according to usage template and execute command after parsing.
+     * @param commandLine The `commandLine` to be processed.
+     */
     @Override
     public void run(String commandLine) {
         Token token = new Token(commandLine);
@@ -30,6 +34,9 @@ public class ModifyUserCommand extends UserCommand{
         this.execute();
     }
 
+    /**
+     * Execute the command.
+     */
     public void execute() {
         Scanner scanner = new Scanner(System.in);
         HashMap<String, String> map = new HashMap<>();
@@ -39,11 +46,11 @@ public class ModifyUserCommand extends UserCommand{
         this.userManager = userManager.getInstance();
         User user = this.userManager.getUser(map.get("username"));
         if(Objects.equals(map.get("field"), "password")) {
-            System.out.println("Please type your new password:");
+            System.out.println("Please enter your new password:");
             user.password = scanner.nextLine();
         }
         if (Objects.equals(map.get("field"), "description")) {
-            System.out.println("Please type your new description:");
+            System.out.println("Please enter your new description:");
             user.description = scanner.nextLine();
         }
     }

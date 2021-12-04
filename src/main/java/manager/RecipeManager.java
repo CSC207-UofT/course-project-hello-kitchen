@@ -3,12 +3,11 @@ package manager;
 import recipe.Recipe;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class RecipeManager extends Manager {
     private ArrayList<Recipe> recipes;
     private int counter;
-    private RecipeManager instance;
+    private static RecipeManager instance;
 
     private RecipeManager() {
         this.recipes = new ArrayList<>();
@@ -64,10 +63,10 @@ public class RecipeManager extends Manager {
         return recipes;
     }
 
-    public RecipeManager getInstance() {
-        if(this.instance == null) {
-            this.instance = new RecipeManager();
+    public static RecipeManager getInstance() {
+        if(instance == null) {
+            instance = new RecipeManager();
         }
-        return this.instance;
+        return instance;
     }
 }

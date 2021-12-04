@@ -3,7 +3,6 @@ package commands;
 
 import java.util.HashMap;
 
-
 public class CommandFactory {
     public Token token;
     public HashMap<String, UserCommand> userCommandType = new HashMap<>() {{
@@ -26,6 +25,11 @@ public class CommandFactory {
         this.token = token;
     }
 
+    /**
+     * Using the hashmap stored, identify the root and type of the token, and process it as required.
+     * Command according to the query will be produced and returned.
+     * @return The command according to the query.
+     */
     public Command getCommand() {
         if (this.token.root.equals("user")) {
                 return this.userCommandType.get(this.token.type);

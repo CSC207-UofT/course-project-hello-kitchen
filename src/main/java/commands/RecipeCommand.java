@@ -5,7 +5,7 @@ import java.util.HashSet;
 
 public class RecipeCommand extends Command{
     private static final HashSet<String> acceptArgs = new HashSet<>();
-    private static final HashSet<String> acceptRoots = new HashSet<String>() {{
+    private static final HashSet<String> acceptRoots = new HashSet<>() {{
         add("recipe");
     }};
 
@@ -26,7 +26,7 @@ public class RecipeCommand extends Command{
         String[] valuePairs = token.body.split("&");
         for(String rawValuePair: valuePairs) {
             ValuePair valuePair = new ValuePair(rawValuePair);
-            if (!this.acceptArgs.contains(valuePair.field)) {
+            if (!acceptArgs.contains(valuePair.field)) {
                 throw new Error("Invalid recipe command.");
             }
             this.valuePairs.add(valuePair);

@@ -1,5 +1,6 @@
 package manager;
 
+import recipe.Recipe;
 import user.User;
 
 import java.util.HashMap;
@@ -89,6 +90,13 @@ public class UserManager extends Manager {
      */
     public User[] getUserList() {
         return this.users.values().toArray(new User[0]);
+    }
+
+    public void favourite(Recipe recipe) {
+        if(this.currentUser == null) {
+            throw new Error("You need to sign in to use this feature.");
+        }
+        this.currentUser.addFavourite(recipe);
     }
 
     public static UserManager getInstance() {

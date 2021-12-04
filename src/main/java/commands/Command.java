@@ -7,7 +7,7 @@ import java.util.HashSet;
 public abstract class Command {
     public ArrayList<ValuePair> valuePairs;
     private static final HashSet<String> acceptArgs = new HashSet<>();
-    private static final HashSet<String> acceptRoots = new HashSet<String>() {{
+    private static final HashSet<String> acceptRoots = new HashSet<>() {{
         add("user");
         add("recipe");
     }};
@@ -26,14 +26,14 @@ public abstract class Command {
      */
     public void run(String commandLine){
         Token token = new Token(commandLine);
-        if(!this.acceptRoots.contains(token.root)) {
+        if(!acceptRoots.contains(token.root)) {
             throw  new Error("Invalid command.");
         }
         this.valuePairs = new ArrayList<>();
         String[] valuePairs = token.body.split("&");
         for(String rawValuePair: valuePairs) {
             ValuePair valuePair = new ValuePair(rawValuePair);
-            if(!this.acceptArgs.contains(valuePair.field)) {
+            if(!acceptArgs.contains(valuePair.field)) {
                 throw new Error("Invalid command");
             }
             this.valuePairs.add(valuePair);

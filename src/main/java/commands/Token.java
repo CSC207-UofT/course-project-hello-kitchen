@@ -11,6 +11,11 @@ public class Token {
         String[] args = rawArgs.split(":");
         this.root = root;
         this.type = args[0].replace(root + " ", "");
-        this.body = args[1];
+        if(args.length <2) {
+            this.body = "";
+        }
+        else {
+            this.body = args[1];
+        }
     }
 }

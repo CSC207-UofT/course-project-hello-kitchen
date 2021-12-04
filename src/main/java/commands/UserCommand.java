@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 public class UserCommand extends Command{
-    public UserManager userManager;
     private static final HashSet<String> acceptArgs = new HashSet<>();
     private static final HashSet<String> acceptRoots = new HashSet<String>() {{
         add("user");

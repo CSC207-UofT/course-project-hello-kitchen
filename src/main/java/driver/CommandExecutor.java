@@ -1,15 +1,12 @@
 package driver;
 
 import commands.Token;
-import commands.UserCommand;
 import commands.Command;
-import commands.UserCommandFactory;
-import manager.UserManager;
+import commands.CommandFactory;
 
-import java.io.IOException;
 import java.util.Scanner;
 
-public class UserCommandExecutor {
+public class CommandExecutor {
 
     public static void main(String[] args) {
         Shell shell = new Shell();
@@ -18,7 +15,7 @@ public class UserCommandExecutor {
             System.out.print("$ ");
             String commandLine = in.nextLine();
             Token token = new Token(commandLine);
-            UserCommandFactory factory = new UserCommandFactory(token);
+            CommandFactory factory = new CommandFactory(token);
             Command command = factory.getCommand();
             command.run(commandLine);
         }

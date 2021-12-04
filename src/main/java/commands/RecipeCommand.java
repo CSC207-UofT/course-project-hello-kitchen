@@ -1,14 +1,34 @@
 package commands;
 
-public abstract class RecipeCommand {
+import java.util.ArrayList;
+import java.util.HashSet;
 
-    public String commandBody;
+public class RecipeCommand extends Command{
+    private static final HashSet<String> acceptArgs = new HashSet<>();
+    private static final HashSet<String> acceptRoots = new HashSet<String>() {{
+        add("recipe");
+    }};
 
-    public RecipeCommand (String commandBody) {
-        this.commandBody = commandBody;
+    public RecipeCommand () {
+
     }
 
-    public RecipeCommand(){}
+    public void run(String commandLine) {
+        Token token = new Token(commandLine);
+        if(!acceptRoots.contains(token.root)) {
+            throw new Error("Invalid recipe command.");
+        }
+        this.valuePairs = new ArrayList<>();
+        String[] valuePairs = token.body.split("&");
+        for(String rawValuePair: valuePairs) {
+            ValuePair valuePair = new ValuePair(rawValuePair);
+            if (!this.acceptArgs.contains(valuePair.field)) {
+                throw new Error("Invalid recipe command.");
+            }
+            this.valuePairs.add(valuePair);
+        }
+        this.execute();
+    }
 
     public void execute (){}
 }

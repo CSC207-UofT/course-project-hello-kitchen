@@ -4,9 +4,9 @@ package commands;
 import java.util.HashMap;
 
 
-public class UserCommandFactory {
+public class CommandFactory {
     public Token token;
-    public HashMap<String, Command> userCommandType = new HashMap<>() {{
+    public HashMap<String, UserCommand> userCommandType = new HashMap<>() {{
         put("add", new AddUserCommand());
         put("delete", new DeleteUserCommand());
         put("signin", new SignInUserCommand());
@@ -14,8 +14,12 @@ public class UserCommandFactory {
         put("current", new CurrentUserCommand());
         put("list", new ListUserCommand());
     }};
+    public HashMap<String, RecipeCommand> recipeCommandType = new HashMap<>() {{
+       put("delete", new DeleteRecipeCommand());
+       put("show", new ShowRecipeCommand());
+    }};
 
-    public UserCommandFactory(Token token) {
+    public CommandFactory(Token token) {
         this.token = token;
     }
 

@@ -94,7 +94,7 @@ public class UserManager extends Manager {
 
     public void favourite(Recipe recipe) {
         if(this.currentUser == null) {
-            throw new Error("You need to sign in to user this feature.");
+            throw new Error("You need to sign in to use this feature.");
         }
         this.currentUser.addFavourite(recipe);
     }

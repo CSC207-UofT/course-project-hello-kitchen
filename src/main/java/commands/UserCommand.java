@@ -1,13 +1,14 @@
 package commands;
 
-public abstract class UserCommand {
-    public String commandBody;
+import manager.UserManager;
 
-    public UserCommand (String commandBody) {
-        this.commandBody = commandBody;
+public class UserCommand extends Command{
+    public UserManager userManager;
+
+    public UserCommand (String commandBody, UserManager userManager) {
+        super(commandBody);
+        this.userManager = userManager;
     }
 
-    public UserCommand(){}
-
-    public void execute (){}
+    public void execute(){}
 }

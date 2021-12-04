@@ -13,10 +13,12 @@ public class CommandFactory {
         put("signout", new SignOutUserCommand());
         put("current", new CurrentUserCommand());
         put("list", new ListUserCommand());
+        put("modify", new ModifyUserCommand());
     }};
     public HashMap<String, RecipeCommand> recipeCommandType = new HashMap<>() {{
        put("delete", new DeleteRecipeCommand());
        put("show", new ShowRecipeCommand());
+       put("list", new ListRecipeCommand());
     }};
 
     public CommandFactory(Token token) {
@@ -27,6 +29,6 @@ public class CommandFactory {
         if (this.token.root.equals("user")) {
                 return this.userCommandType.get(this.token.type);
             }
-        return null;
+        return this.recipeCommandType.get(this.token.type);
     }
 }

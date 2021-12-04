@@ -5,7 +5,7 @@ import user.User;
 import java.util.HashMap;
 
 
-public class UserManager {
+public class UserManager extends Manager {
     private HashMap<String, User> users;
     private User currentUser;
     private static UserManager instance;
@@ -67,6 +67,15 @@ public class UserManager {
      */
     public User getCurrentUser() {
         return this.currentUser;
+    }
+
+    /**
+     * Get user with `username`.
+     * @param username The `username` of the desired user.
+     * @return The user with `username`.
+     */
+    public User getUser(String username) {
+        return this.users.get(username);
     }
 
     /**

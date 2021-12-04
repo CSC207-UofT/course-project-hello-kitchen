@@ -3,11 +3,10 @@ package manager;
 import recipe.Recipe;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
-public class RecipeManager {
-    private List<Recipe> recipes;
+public class RecipeManager extends Manager {
+    private ArrayList<Recipe> recipes;
     private int counter;
     private RecipeManager instance;
 
@@ -61,7 +60,7 @@ public class RecipeManager {
      * Get recipe list in this manager.
      * @return The recipe list in this manager.
      */
-    public List<Recipe> getRecipeList() {
+    public ArrayList<Recipe> getRecipeList() {
         return recipes;
     }
 

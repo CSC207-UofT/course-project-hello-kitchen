@@ -20,7 +20,7 @@ public class ListUserCommand extends UserCommand{
         this.userManager = userManager.getInstance();
         User[] usersList = this.userManager.getUserList();
         for(User user: usersList) {
-            outPut.append("username:").append(user.username).append(", description:").
+            outPut.append("username: ").append(user.username).append(", description: ").
                     append(user.description).append("\n");
         }
         System.out.println(outPut);

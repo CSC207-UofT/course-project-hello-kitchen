@@ -12,6 +12,7 @@ public class UserCommandFactory {
         put("signin", new SignInUserCommand());
         put("signout", new SignOutUserCommand());
         put("current", new CurrentUserCommand());
+        put("list", new ListUserCommand());
     }};
 
     public UserCommandFactory(Token token) {

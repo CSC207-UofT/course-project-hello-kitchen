@@ -1,14 +1,36 @@
 package commands;
 
 
+import java.util.ArrayList;
+import java.util.HashSet;
 
 public abstract class Command {
-    public String commandBody;
+    public ArrayList<ValuePair> valuePairs;
+    private static final HashSet<String> acceptArgs = new HashSet<>();
+    private static final HashSet<String> acceptRoots = new HashSet<String>() {{
+        add("user");
+        add("recipe");
+    }};
 
-    public Command(String commandBody){
-        this.commandBody = commandBody;
+    public Command() {
     }
 
     public void execute(){}
 
+    public void run(String commandLine){
+        Token token = new Token(commandLine);
+        if(!this.acceptRoots.contains(token.root)) {
+            throw  new Error("Invalid command.");
+        }
+        this.valuePairs = new ArrayList<>();
+        String[] valuePairs = token.body.split("&");
+        for(String rawValuePair: valuePairs) {
+            ValuePair valuePair = new ValuePair(rawValuePair);
+            if(!this.acceptArgs.contains(valuePair.field)) {
+                throw new Error("Invalid command");
+            }
+            this.valuePairs.add(valuePair);
+        }
+        this.execute();
+    }
 }

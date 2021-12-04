@@ -14,14 +14,13 @@ public class UserCommandExecutor {
     public static void main(String[] args) {
         Shell shell = new Shell();
         Scanner in = new Scanner(System.in);
-        UserManager userManager = new UserManager();
         while (shell.isRunning()) {
             System.out.print("$ ");
             String commandLine = in.nextLine();
             Token token = new Token(commandLine);
-            UserCommandFactory factory = new UserCommandFactory(token, userManager);
+            UserCommandFactory factory = new UserCommandFactory(token);
             Command command = factory.getCommand();
-            command.execute();
+            command.run(commandLine);
         }
     }
 }

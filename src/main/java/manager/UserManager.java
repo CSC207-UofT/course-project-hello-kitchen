@@ -8,8 +8,9 @@ import java.util.HashMap;
 public class UserManager {
     private HashMap<String, User> users;
     private User currentUser;
+    private static UserManager instance;
 
-    public UserManager() {
+    private UserManager() {
         this.users = new HashMap<>();
     }
 
@@ -74,6 +75,13 @@ public class UserManager {
      */
     public User[] getUserList() {
         return this.users.values().toArray(new User[0]);
+    }
+
+    public static UserManager getInstance() {
+        if(instance == null) {
+            instance = new UserManager();
+        }
+        return instance;
     }
 
 }

@@ -9,6 +9,7 @@ import java.util.List;
 public class RecipeManager {
     private List<Recipe> recipes;
     private int counter;
+    private RecipeManager instance;
 
     public RecipeManager() {
         this.recipes = new ArrayList<>();
@@ -53,5 +54,12 @@ public class RecipeManager {
 
     public List<Recipe> getRecipeList() {
         return recipes;
+    }
+
+    public RecipeManager getInstance() {
+        if(this.instance == null) {
+            this.instance = new RecipeManager();
+        }
+        return this.instance;
     }
 }

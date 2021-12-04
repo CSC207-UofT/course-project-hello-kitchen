@@ -20,5 +20,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="main" scope="TEST" />
+    <orderEntry type="library" name="junit" level="project" />
   </component>
 </module>

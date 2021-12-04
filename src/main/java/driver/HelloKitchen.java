@@ -1,8 +1,6 @@
 package driver;
 
-import commands.Command;
 import commands.CommandExecutor;
-import user.CommonUser;
 
 import java.io.IOException;
 import java.util.Scanner;

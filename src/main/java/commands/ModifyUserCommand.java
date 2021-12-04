@@ -8,7 +8,7 @@ import java.util.*;
 public class ModifyUserCommand extends UserCommand{
     public ArrayList<ValuePair> valuePairs;
     public UserManager userManager;
-    private static final HashSet<String> acceptArgs = new HashSet<String>() {{
+    private static final HashSet<String> acceptArgs = new HashSet<>() {{
         add("username");
         add("field");
     }};
@@ -26,7 +26,7 @@ public class ModifyUserCommand extends UserCommand{
         String[] valuePairs = token.body.split("&");
         for(String rawValuePair: valuePairs) {
             ValuePair valuePair = new ValuePair(rawValuePair);
-            if (!this.acceptArgs.contains(valuePair.field)) {
+            if (!acceptArgs.contains(valuePair.field)) {
                 throw new Error("Invalid user command");
             }
             this.valuePairs.add(valuePair);
@@ -43,7 +43,7 @@ public class ModifyUserCommand extends UserCommand{
         for (ValuePair valuePair: this.valuePairs) {
             map.put(valuePair.field, valuePair.value);
         }
-        this.userManager = userManager.getInstance();
+        this.userManager = UserManager.getInstance();
         User user = this.userManager.getUser(map.get("username"));
         if(Objects.equals(map.get("field"), "password")) {
             System.out.println("Please enter your new password:");

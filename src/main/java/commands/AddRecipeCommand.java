@@ -27,12 +27,12 @@ public class AddRecipeCommand extends RecipeCommand{
      */
     public void execute() {
         Scanner scanner = new Scanner(System.in);
-        this.recipeManager = recipeManager.getInstance();
+        this.recipeManager = RecipeManager.getInstance();
         System.out.println("Please enter the name of the recipe:");
         String name = scanner.nextLine();
         System.out.println("Please enter the description of the recipe:");
         String description = scanner.nextLine();
-        Boolean moreIngredients = true;
+        boolean moreIngredients = true;
         HashMap<String, String> ingredients = new HashMap<>();
         while (moreIngredients) {
             System.out.println("Please enter one ingredient:");
@@ -46,7 +46,7 @@ public class AddRecipeCommand extends RecipeCommand{
                 moreIngredients = false;
             }
         }
-        Boolean moreProcedures = true;
+        boolean moreProcedures = true;
         HashMap<Integer, String> procedures = new HashMap<>();
         int counter = 1;
         while (moreProcedures) {

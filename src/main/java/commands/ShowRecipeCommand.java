@@ -10,7 +10,7 @@ import java.util.HashSet;
 public class ShowRecipeCommand extends RecipeCommand{
     public ArrayList<ValuePair> valuePairs;
     public RecipeManager recipeManager;
-    private static final HashSet<String> acceptArgs = new HashSet<String>() {{
+    private static final HashSet<String> acceptArgs = new HashSet<>() {{
         add("id");
     }};
 
@@ -27,7 +27,7 @@ public class ShowRecipeCommand extends RecipeCommand{
         String[] valuePairs = token.body.split("&");
         for (String rawValuePair : valuePairs) {
             ValuePair valuePair = new ValuePair(rawValuePair);
-            if (!this.acceptArgs.contains(valuePair.field)) {
+            if (!acceptArgs.contains(valuePair.field)) {
                 throw new Error("Invalid recipe command.");
             }
             this.valuePairs.add(valuePair);
@@ -43,7 +43,7 @@ public class ShowRecipeCommand extends RecipeCommand{
         for (ValuePair valuePair: this.valuePairs) {
             map.put(valuePair.field, valuePair.value);
         }
-        this.recipeManager = recipeManager.getInstance();
+        this.recipeManager = RecipeManager.getInstance();
         Recipe recipe = this.recipeManager.getRecipe(Integer.parseInt(map.get("id")));
         StringBuilder outPut = new StringBuilder("Recipe \n"
                 + "name: " + recipe.name + "\n"

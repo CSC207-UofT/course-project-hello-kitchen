@@ -19,6 +19,7 @@ public class CommandFactory {
         put("delete", new DeleteRecipeCommand());
         put("show", new ShowRecipeCommand());
         put("list", new ListRecipeCommand());
+        put("modify", new ModifyRecipeCommand());
     }};
 
     public CommandFactory(Token token) {

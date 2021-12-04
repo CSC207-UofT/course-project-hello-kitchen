@@ -37,7 +37,7 @@ public class AddRecipeCommand extends RecipeCommand{
         while (moreIngredients) {
             System.out.println("Please enter one ingredient:");
             String ingredient = scanner.nextLine();
-            System.out.printf("Please enter the amount of this ingredient (including unit of measurement):");
+            System.out.println("Please enter the amount of this ingredient (including unit of measurement):");
             String amount = scanner.nextLine();
             ingredients.put(ingredient, amount);
             System.out.println("Do you need to add more entry? (y/n):");

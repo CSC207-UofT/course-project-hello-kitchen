@@ -1,6 +1,7 @@
 package commands;
 
 import manager.UserManager;
+import user.User;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,6 +26,7 @@ public class AddUserCommand extends UserCommand {
         for (ValuePair valuePair: this.valuePairs) {
             map.put(valuePair.field, valuePair.value);
         }
-        this.userManager.createUser(map.get("name"), map.get("password"), map.get("description"));
+        User user = new User(map.get("name"), map.get("password"), map.get("description"));
+        this.userManager.register(user);
     }
 }

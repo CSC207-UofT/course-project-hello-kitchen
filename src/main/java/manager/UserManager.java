@@ -14,7 +14,7 @@ public class UserManager {
     }
 
     /**
-     * Register `user` to the manager and auto-assign an `id` to the `user`.
+     * Register `user` to the manager.
      * @param user User to manage.
      */
     public void register(User user) {

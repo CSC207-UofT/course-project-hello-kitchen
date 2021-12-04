@@ -23,6 +23,6 @@ public class DeleteUserCommand extends UserCommand{
         for (ValuePair valuePair: this.valuePairs) {
             map.put(valuePair.field, valuePair.value);
         }
-        this.userManager.removeUser(Integer.parseInt(map.get("id")));
+        this.userManager.removeUser(map.get("username"));
     }
 }

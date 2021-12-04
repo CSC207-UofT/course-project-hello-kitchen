@@ -1,39 +1,24 @@
 package user;
 
+import recipe.Recipe;
+
 import java.io.Serializable;
+import java.util.ArrayList;
 
-public abstract class User implements Serializable{
-    protected String usertype;
-    protected String username;
-    protected String description;
+public class User implements Serializable{
+    public String username;
+    public String password;
+    public String description;
+    public ArrayList<Recipe> favouriteList;
 
-    public User(String usertype, String username, String description) {
-        this.usertype = usertype;
+    public User(String username, String password, String description) {
         this.username = username;
+        this.password = password;
         this.description = description;
+        this.favouriteList = new ArrayList<>();
     }
 
-    public String getUserType() {
-        return this.usertype;
-    }
-
-    public void setUserType(String usertype) {
-        this.usertype = usertype;
-    }
-
-    public String getUserName() {
-        return this.username;
-    }
-
-    public void setUserName(String username) {
-        this.username = username;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+    public void addFavourite(Recipe recipe) {
+        this.favouriteList.add(recipe);
     }
 }

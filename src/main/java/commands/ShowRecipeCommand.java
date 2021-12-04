@@ -41,10 +41,12 @@ public class ShowRecipeCommand extends RecipeCommand{
         StringBuilder outPut = new StringBuilder("Recipe \n"
                 + "name: " + recipe.name + "\n"
                 + "id: " + recipe.id + "\n"
-                + "description: " + recipe.description + "\n");
+                + "description: " + recipe.description + "\n"
+                + "Ingredients: \n");
         for (String ingredient: recipe.ingredients.keySet()) {
             outPut.append(ingredient).append(": ").append(recipe.ingredients.get(ingredient)).append("\n");
         }
+        outPut.append("Steps: \n");
         for (int procedure: recipe.procedures.keySet()) {
             outPut.append("Step").append(procedure).append(": ").append(recipe.procedures.get(procedure)).append("\n");
         }

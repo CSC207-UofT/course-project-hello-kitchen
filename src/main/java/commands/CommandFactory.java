@@ -16,9 +16,10 @@ public class CommandFactory {
         put("modify", new ModifyUserCommand());
     }};
     public HashMap<String, RecipeCommand> recipeCommandType = new HashMap<>() {{
-       put("delete", new DeleteRecipeCommand());
-       put("show", new ShowRecipeCommand());
-       put("list", new ListRecipeCommand());
+        put("add", new AddRecipeCommand());
+        put("delete", new DeleteRecipeCommand());
+        put("show", new ShowRecipeCommand());
+        put("list", new ListRecipeCommand());
     }};
 
     public CommandFactory(Token token) {

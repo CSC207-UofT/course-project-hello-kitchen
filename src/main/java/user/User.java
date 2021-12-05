@@ -1,11 +1,13 @@
 package user;
 
+import interfacepack.Serializable;
 import recipe.Recipe;
 
-import java.io.Serializable;
-import java.util.ArrayList;
 
-public class User implements Serializable{
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class User implements Serializable {
     public String username;
     public String password;
     public String description;
@@ -20,5 +22,15 @@ public class User implements Serializable{
 
     public void addFavourite(Recipe recipe) {
         this.favouriteList.add(recipe);
+    }
+
+    @Override
+    public HashMap<String, Object> serialize() {
+        return null;
+    }
+
+    @Override
+    public void deserialize(HashMap<String, Object> title) {
+
     }
 }

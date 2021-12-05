@@ -35,6 +35,9 @@ public class SearchRecipeCommand extends RecipeCommand{
         this.execute();
     }
 
+    /**
+     * Execute the command.
+     */
     public void execute() {
         StringBuilder outPut = new StringBuilder();
         HashMap<String, String> map = new HashMap<>();

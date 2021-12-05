@@ -17,13 +17,13 @@ public class HelpRecipeCommand extends RecipeCommand{
         String help = "Recipe commands help guide:\n" +
                 "add: Add a new recipe with prompt questions, required arguments: none\n" +
                 "delete: Delete a recipe with id, required arguments \"id\"\n" +
-                "show: Show the name and description of the recipe with id," +
+                "show: Show all information of the recipe with id," +
                 "required arguments: \"id\"\n" +
-                "list: Show the names and descriptions of all stored recipes, required arguments: none\n" +
+                "list: Show the names, descriptions and ids of all stored recipes, required arguments: none\n" +
                 "modify: Modify a specified field of the recipe with id using prompt questions, " +
                 "required arguments: \"id\", \"field\" " +
-                "(field only takes values \"name\", \"description\", \"ingredients\", \"procedures\", \"time\")\n" +
-                "favourite: put the recipe with id into current user's favourite list, required arguments: \"id\"\n" +
+                "(field only accepts values \"name\", \"description\", \"ingredients\", \"procedures\", \"time\")\n" +
+                "favourite: Put the recipe with id into current user's favourite list, required arguments: \"id\"\n" +
                 "help: Display help guide for recipe commands, required arguments: none";
         System.out.println(help);
     }

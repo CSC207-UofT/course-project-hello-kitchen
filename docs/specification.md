@@ -10,9 +10,10 @@ The user will be able to type commands in the prompt to use the features.
 
 When using this application, users can **browse**, **save**, 
 and **upload** recipes on the go.
-The users can search for recipes in the app by recipe names and categories.
+The users can search for recipes in the app by keyword.
 The users can also mark a recipe as favourite. 
-The user can create their own recipes and upload it.
+The user can also see a list of all stored recipes.
+The users will also be able to login and logout of the app.
 
 ## Statement of Scope
 
@@ -23,219 +24,99 @@ have a CLI (Command Line Interface).
 
 ### User
 
-- The user can sign up an account with a unique username and will be assigned
-a unique `id`.
-- The user can log in to the app using his/her unique `id`.
-- The user will have a customized description, with default value if left
-blank.
-- There will be two types of users, `CommonUser` and `AdminUser`, and they
-will have access to different commands.
+- The user can sign up an account with a unique `username`, they will
+also provide their own `password` and `description` when signing up.
+- The user can log in to the app using his/her unique `username` and
+providing the right `password` they created.
+- The user will have a customized `description` which can be modified
+at any time after signing up.
+- The user will also be able to change their `password` to their preference
+after signing up.
+- The `username` will be unique to every user thus it cannot be modified
+after signing up.
 - After logged in, the user will have access to their favourite list, where
 they can check all the recipes they marked as favourite.
-- AdminUser will be authorized to delete existing user.
 - The user will be able to log out after he/she is done.
 - The app will also have the ability to show the list of all signed-up user
-in case the user forget his/her `id`.
+in case the user forget his/her `username`.
 
 ### Recipe
 - Recipe is a class that stores different attributes.
-- The recipe will have two different toString methods with simplified or
-detailed display, showing different information.
 - The users can create different recipes by providing information to the
-attributes. The name of a recipe is not necessarily unique, however, when
+attributes. The `name` of a recipe is not necessarily unique, however, when
 a recipe is created, it will be assigned a unique `id` for future access
 to it.
 - The recipe will also be able to be modified for the field specified by the
 user.
 - The recipe can be marked as favourite by a user.
-- The recipe cna also be searched using keyword or using categories.
+- The recipe cna also be searched using keyword.
 - The app will also be able to print out a list showing information
 about all the recipes it stores.
 
 ## Commands
+Since the layout of input is defined differently, please consult the help
+guide to use the input commands.
 
 ### User
 
-signup: Start the signup process for a new user. The app will ask for
-        the input from the user for `name` and `description`.
-        If the `name` already exists in the users list, then the app
-        will ask for another input until there's no conflict.
-        If the user choose to leave `description` blank, there will be
-        a default `description` "Hello Kitchen!".
-        All users after signing up will be assigned 
-        an **id** automatically.
-        This command will create a viewingUser by default.
+add: Signup a new user. The user will provide `username`, `passsword` and `description`
+        for the signup process.
+        The `username` must be unique.
+        If the `username` already exists in the users list, the app will
+        throw an error indicating that the username is not available.
 
-signup -a: Start the signup process for a new user. The app will ask for
-           the input from the user for `name` and `description`.
-           If the `name` already exists in the users list, then the app
-           will ask for another input until there's no conflict.
-           If the user choose to leave `description` blank, there will be
-           a default `description` "I am in charge!".
-           All users after signing up will be assigned
-           an **id** automatically.
-           This command will create a adminUser by default.
-
-signin `id`: Sign in to the user with `id`. The operator can then use the
+signin: Sign in to the user with `username` and `password`. The operator can then use the
              account to access the features for recipes.
 
-signout: Sign out current user account. No more commands for recipes will
-         be accepted.
+signout: Sign out current user account. Favourite feature will not be able
+            to be accessed.
 
-favourite: Display the list of all favourite recipes of the current user. 
-    There will be 5 recipes on one page by default and the users will 
-    be able to navigate through pages using commands p and n.
-    The list will be in simplified display by default, showing only 
-    **name** and **id** of a recipe.
+favourite: Display the list of all favourite recipes of the current user.
+    The list will show only the **name**, **description** and **id** of a recipe.
 
-favourite -d: Display the list of all favourite recipes of the current user.
-       There will be 5 recipes on one page by default and the users will
-       be able to navigate through pages using commands p and n.
-       The list will be in detailed display, showing
-       **name**, **description**, and **id** of a recipe.
-
-delete `id`: Delete a user with `id` from the signed-up users list. 
-             Only executable by adminUser.
+delete: Delete a user with `username` from the signed-up users list.
 
 current: Display the information of the current logged-in user.
-         The information will include the **name**, **description** and
-         **id** and **type** of the current user.
+         The information will include the **name** and **description** of the current user.
 
-ls: Display the list of all the sign-up users. The list will show the
-    name, description, type, and id of a user.
-    The types of the users are viewingUser and adminUser.
+list: Display the list of all the sign-up users. The list will show the
+    **name** and **description** of the users.
 
-guest*
+help: Display the help message for all the commands related to user.
 
 ### Recipe
 
 add: Start the process to create a new recipe. The prompt will
      ask for user input of the following parts in order.
-     `name`, `description`, `ingredients`, `procedure` and
+     `name`, `description`, `ingredients`, `procedures` and
      `estimated cooking time`.
-     Note that when taking in inputs for `procedure` and
+     Note that when taking in inputs for `procedures` and
      `ingredients`, after one step or ingredient is typed in,
      the prompt will ask the user whether the user want to 
      add another ingredient or step.
-     The prompt will then take `Y` for yes and `N` for no.
+     The prompt will then take `y` for yes and `n` for no.
      After a new recipe is created, it will be assigned an
      **id** automatically.
 
-modify `id` -n: Modify the **name** of a recipe with `id`.
-                The prompt will first display the old **name**
-                of the recipe and then ask the user for an input
-                to give the recipe a new **name**.
+modify: Modify a specific field of a recipe with `id`. There will also be
+different actions for `procedures` and `ingredients`, including add, delete and modify.
 
-modify `id` -d: Modify the **description** of a recipe with `id`.
-                The prompt will first display the old **description**
-                of the recipe and then ask the user for an input
-                to give the recipe a new **description**.
-
-modify `id` -t: Modify the **estimated cooking time** of a recipe
-                with `id`. The prompt will first display the old
-                **estimated cooking time** of the recipe and then
-                ask the user for an input to give the recipe a
-                new **estimated cooking time**.
-
-modify `id` -i: Modify the **ingredients** of a recipe with `id`.
-                The prompt will first display the full representation
-                of all the ingredients.
-                Then the prompt will ask the user for an input
-                indicating the `name` of the ingredient they want
-                to modify.
-                Then the user will be asked for input for `name`
-                and `quantity` in order.
-
-modify `id` -i -d: Delete one **ingredient** of the recipe.
-                   The prompt will first display the full representation
-                   of all the ingredients.
-                   Then the prompt will ask the user for an input
-                   indicating the `name` of the ingredient they want
-                   to delete.
-                   If the ingredient is deleted, it will print message
-                   successful, unsuccessful otherwise.
-
-modify `id` -i -a: Add one **ingredient** to the recipe.
-                   The prompt will first display the full representation
-                   of all the ingredients.
-                   Then the prompt will ask the user for inputs
-                   indicating the `name` and `value` in order 
-                   of the ingredient they want to add.
-                   If the ingredient is added, it will print message
-                   successful, unsuccessful otherwise.
-
-modify `id` -p: Modify the **procedures** of a recipe with `id`.
-                The prompt will first display the full representation
-                of all the procedures.
-                Then the prompt will ask the user for an input
-                indicating the `number` of the procedure they want
-                to modify.
-                Then the user will be asked for input for the new procedure.
-
-modify `id` -p -d: Delete one **procedures** of the recipe.
-                   The prompt will first display the full representation
-                   of all the procedures.
-                   Then the prompt will ask the user for an input
-                   indicating the `number` of the procedure they want
-                   to delete.
-                   If the procedure is deleted, it will print message
-                   successful, unsuccessful otherwise.
-
-modify `id`-p -a: Add one **procedure** to the recipe.
-                  The prompt will first display the full representation
-                  of all the procedures.
-                  Then the prompt will ask the user for inputs
-                  indicating the `numbe of step` and `description` in order
-                  of the procedure they want to add.
-                  If the procedure is added, it will print message
-                  successful, unsuccessful otherwise.
-
-delete `id`: Delete the recipe with `id` from the data. The recipe will
+delete: Delete the recipe with `id` from the data. The recipe will
              no longer be able to be viewed, searched or modified.
 
-favourite `id`: Mark the recipe with `id` as favourite.
+favourite: Mark the recipe with `id` as favourite.
                 The user can view the list of the favourite recipes
-                using the user ls command.
+                using the user favourite command.
 
-view `id`: Display the recipe with `id` in a simplified display by default.
-           The simplified display of the recipe will only contain 
-           **name**, **ingredients**, and **procedures**.
+show: Display the recipe with `id`. The recipe will be displayed in full version
+containing all information.
 
-view `id` -d: Display the recipe with `id` in a detailed display.
-              The detailed display of the recipe will contain **name**,
-              **description**, **ingredients**, **procedures**,
-              and **estimated cooking time** in the display.
+search： Display a list of recipes which contain the
+                        `key words` in their names or descriptions.
+                        The list will be showing only **name**, **description** and **id**.
 
-search -k `key words`： Display a list of recipes which contain the
-                        `key words` in their names.
-                        There will be 5 recipes on one page by default 
-                        and the users will be able to navigate through 
-                        pages using commands p and n.
-                        The list will be in a simplified display showing
-                        only **name** and **id**.
-
-search -c `category`: Display a list of recipes which are under a certain
-                      `category`.
-                      There will be 5 recipes on one page by default
-                      and the users will be able to navigate through
-                      pages using commands p and n.
-                      The list will be in a simplified display showing
-                      only **name** and **id**.       
-
-ls: Display a list of all the recipes in a simplified display by default.
-    There will be 5 recipes on one page by default and the users will
-    be able to navigate through pages using commands p and n.
-    The simplified display will only show the **name** and **id** 
+list: Display a list of all the recipes.
+    The list will only show the **name**, **description** and **id** 
     of a recipe.
 
-ls -d: Display a list of all the recipes in a detailed display.
-       There will be 5 recipes on one page by default and the users will
-       be able to navigate through pages using commands p and n.
-       The detailed display will show the **name**, **description**, 
-       and **id** of a recipe.
-
-### Config*
-
-description*
-
-The sections and commands marked with * will be designed later.
+help: Display the help message for all the commands related to recipe.

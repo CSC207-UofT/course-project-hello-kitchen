@@ -63,6 +63,22 @@ public class RecipeManager extends Manager {
         return recipes;
     }
 
+    /**
+     * Get a list of recipes according to desired `keyWord`.
+     * If a recipe contains the `keyWord` in the name or description, it will be added to the list.
+     * @param keyword The desired keyWord for searching.
+     * @return A list of recipes which satisfy search conditions, empty list if no such recipe found.
+     */
+    public ArrayList<Recipe> searchRecipe(String keyword) {
+        ArrayList<Recipe> searchResult = new ArrayList<>();
+        for(Recipe recipe: recipes) {
+            if(recipe.name.contains(keyword) || recipe.description.contains(keyword)) {
+                searchResult.add(recipe);
+            }
+        }
+        return searchResult;
+    }
+
     public static RecipeManager getInstance() {
         if(instance == null) {
             instance = new RecipeManager();

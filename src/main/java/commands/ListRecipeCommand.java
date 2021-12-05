@@ -29,7 +29,7 @@ public class ListRecipeCommand extends RecipeCommand{
         ArrayList<Recipe> recipesList = this.recipeManager.getRecipeList();
         for (Recipe recipe : recipesList) {
             outPut.append("name: ").append(recipe.name).append(", id: ").append(recipe.id).append("\n").
-                    append("description: ").append(recipe.description);
+                    append("description: ").append(recipe.description).append("\n");
         }
         System.out.println(outPut);
     }

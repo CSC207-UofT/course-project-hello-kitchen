@@ -1,6 +1,7 @@
 package commands;
 
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class CommandFactory {
@@ -34,7 +35,7 @@ public class CommandFactory {
     }
 
     private String getKeysRepr(HashMap map) {
-        return String.join(", ", (String[]) map.keySet().toArray());
+        return Arrays.toString(map.keySet().toArray());
     }
 
     /**

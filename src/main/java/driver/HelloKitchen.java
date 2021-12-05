@@ -6,7 +6,6 @@ import commands.Command;
 import commands.CommandFactory;
 import commands.Token;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 

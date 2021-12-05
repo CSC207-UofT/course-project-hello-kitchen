@@ -22,6 +22,7 @@ public class CommandFactory {
         put("list", new ListRecipeCommand());
         put("modify", new ModifyRecipeCommand());
         put("favourite", new FavouriteRecipeCommand());
+        put("search", new SearchRecipeCommand());
     }};
 
     public CommandFactory(Token token) {

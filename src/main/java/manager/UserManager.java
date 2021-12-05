@@ -7,12 +7,12 @@ import java.util.HashMap;
 
 
 public class UserManager extends Manager {
-    private HashMap<String, User> users;
+    private final HashMap<String, User> userMap;
     private User currentUser;
     private static UserManager instance;
 
     private UserManager() {
-        this.users = new HashMap<>();
+        this.userMap = new HashMap<>();
     }
 
     /**
@@ -20,12 +20,12 @@ public class UserManager extends Manager {
      * @param user User to manage.
      */
     public void register(User user) {
-        for(String username: this.users.keySet()){
+        for(String username: this.userMap.keySet()){
             if(username.equals(user.username)) {
                 throw new Error("Username occupied, change another name");
             }
         }
-        users.put(user.username, user);
+        userMap.put(user.username, user);
         System.out.println("Create user successful, name:" + user.username +
                 " description:" + user.description);
     }
@@ -35,10 +35,10 @@ public class UserManager extends Manager {
      * @param username The `name` of the user.
      */
     public void removeUser(String username) {
-        if(!(this.users.containsKey(username))) {
+        if(!(this.userMap.containsKey(username))) {
             throw new Error("User does not exist.");
         }
-        users.remove(username);
+        userMap.remove(username);
         System.out.println("Remove successful, username:" + username);
     }
 
@@ -48,10 +48,10 @@ public class UserManager extends Manager {
      * @param password The `password` of the user trying to log in.
      */
     public void signIn(String username, String password) {
-        if(!(this.users.containsKey(username))) {
+        if(!(this.userMap.containsKey(username))) {
             throw new Error("Invalid username or password.");
         }
-        User user = this.users.get(username);
+        User user = this.userMap.get(username);
         if(!(user.password.equals(password))) {
             throw new Error("Invalid username or password.");
         }
@@ -81,7 +81,7 @@ public class UserManager extends Manager {
      * @return The user with `username`.
      */
     public User getUser(String username) {
-        return this.users.get(username);
+        return this.userMap.get(username);
     }
 
     /**
@@ -89,7 +89,7 @@ public class UserManager extends Manager {
      * @return The list of all users in the manager.
      */
     public User[] getUserList() {
-        return this.users.values().toArray(new User[0]);
+        return this.userMap.values().toArray(new User[0]);
     }
 
     public void favourite(Recipe recipe) {

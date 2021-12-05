@@ -1,20 +1,22 @@
-package Database;
-
-import manager.UserManager;
-import recipe.Recipe;
-import user.User;
+package DiskIO;
 
 import java.io.*;
+import java.util.HashMap;
 
-public class Userdata implements Datasaver {
-    private UserManager userlist = new UserManager();
+public class DiskOperator {
 
-    public String readData() {
+
+    private DiskOperator() {
+    }
+
+
+    public String readData(String filename, Serializable model) {
         String output;
+        HashMap<String, String>  dataRec = null;
         try {
-            FileInputStream fileIn = new FileInputStream("/tmp/user.ser");
+            FileInputStream fileIn = new FileInputStream(filename);
             ObjectInputStream in = new ObjectInputStream(fileIn);
-            this.userlist = (UserManager) in.readObject();
+            dataRec = (HashMap<String, String>) in.readObject();
             in.close();
             fileIn.close();
             output = "Data has been loaded successfully.";
@@ -23,15 +25,16 @@ public class Userdata implements Datasaver {
         } catch (ClassNotFoundException c) {
             output = "UserList class not found. We are starting with a new empty system.";
         }
+        model.deserialize(dataRec);
         return output;
     }
 
-    @Override
-    public String writeData() {
+    public String writeData(String filename, Serializable model) {
+        HashMap dataToSave = model.serialize();
         try {
-            FileOutputStream fileOut = new FileOutputStream("/tmp/user.ser");
+            FileOutputStream fileOut = new FileOutputStream(filename);
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            out.writeObject(this.userlist);
+            out.writeObject(dataToSave);
             out.close();
             fileOut.close();
             return "Data has been saved successfully.";

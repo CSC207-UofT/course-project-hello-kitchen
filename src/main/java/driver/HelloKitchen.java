@@ -1,14 +1,12 @@
 package driver;
 
-import Database.Recipedata;
-import Database.Userdata;
-import commands.Command;
+import DiskIO.DiskOperator;
 import commands.CommandExecutor;
-import manager.RecipeManager;
-import user.CommonUser;
 
 import java.io.IOException;
 import java.util.Scanner;
+
+import static DiskIO.DiskOperator.*;
 
 
 public class HelloKitchen {
@@ -16,10 +14,6 @@ public class HelloKitchen {
         Shell shell = new Shell();
         CommandExecutor exectuor = new CommandExecutor();
         Scanner in = new Scanner(System.in);
-        Recipedata recipedata = new Recipedata();
-        System.out.println(recipedata.readData());
-        Userdata userdata = new Userdata();
-        System.out.println(userdata.readData());
         while (shell.isRunning()){
             System.out.print("$ ");
             String commandLine = in.nextLine();
@@ -31,7 +25,5 @@ public class HelloKitchen {
                 System.out.println(e.getMessage());
             }
         }
-        System.out.println(userdata.writeData());
-        System.out.println(recipedata.writeData());
     }
 }

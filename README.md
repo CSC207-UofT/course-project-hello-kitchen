@@ -4,9 +4,9 @@
 Produced by the Group: Jerry YYDS!
 
 - This is a java application designed for organising recipe.
-- More information about program could be read on [**Specification**](https://github.com/CSC207-UofT/course-project-jerryyyds/blob/Main/docs/specification.md)
-### Currently Working: [The progress report](https://github.com/CSC207-UofT/course-project-jerryyyds/blob/Main/docs/progress_report.md)
-### The Scenario Walk-Through: [Check document descrption](https://github.com/CSC207-UofT/course-project-jerryyyds/blob/Main/docs/walkthrough.md)
+- More information about program could be read on [**Specification**](https://github.com/CSC207-UofT/course-project-jerryyyds/blob/main/docs/specification.md)
+### Currently Working: [The progress report](https://github.com/CSC207-UofT/course-project-jerryyyds/blob/main/docs/progress_report.md)
+### The Scenario Walk-Through: [Check document descrption](https://github.com/CSC207-UofT/course-project-jerryyyds/blob/main/docs/walkthrough.md)
 
 
 ## Some requirements and useful information given below.

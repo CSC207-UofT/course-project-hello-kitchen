@@ -12,7 +12,7 @@ Child class: None
 
 ### method
 
-`void Main`
+`void main`
 
 ## Collaborator
 

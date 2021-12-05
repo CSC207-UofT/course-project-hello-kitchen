@@ -28,6 +28,7 @@ public class UserManagerTest {
         users.put(user.username, user);
         users.put(testUser.username, testUser);
         try {
+            userManager.register(user);
             userManager.register(testUser);
             fail();
         } catch (Error e){
@@ -60,11 +61,11 @@ public class UserManagerTest {
      * Test the signIn method Error
      */
     @Test
-    public void testsignInError() {
+    public void testSignInError() {
         User testUser = new User("Jessica", "111000", "test2");
         try {
             userManager.register(testUser);
-            userManager.signIn(testUser.username, testUser.password);
+            userManager.signIn(testUser.username, "123456");
             fail();
         } catch (Error e){
             assertEquals(e.getMessage(), "Invalid username or password.");
@@ -97,6 +98,7 @@ public class UserManagerTest {
     @Test
     public void testGetCurrentUser() {
         User testUser = new User("Jessica", "111000", "test2");
+        userManager.register(testUser);
         userManager.signIn(testUser.username, testUser.password);
         Assert.assertEquals(testUser, userManager.getCurrentUser());
     }

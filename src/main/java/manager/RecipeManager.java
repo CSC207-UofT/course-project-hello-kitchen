@@ -5,7 +5,7 @@ import recipe.Recipe;
 import java.util.ArrayList;
 
 public class RecipeManager extends Manager {
-    private ArrayList<Recipe> recipes;
+    private final ArrayList<Recipe> recipes;
     private int counter;
     private static RecipeManager instance;
 
@@ -19,8 +19,7 @@ public class RecipeManager extends Manager {
      * @param recipe The recipe to manage.
      */
     public void createRecipe(Recipe recipe) {
-        int id = this.counter;
-        recipe.id = id;
+        recipe.id = this.counter;
         recipes.add(recipe);
         counter += 1;
         System.out.println("Add recipe name:" + recipe.name);

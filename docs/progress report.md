@@ -2,7 +2,7 @@
 ## Specification:
 Our project is a recipe manager app. We have a general introduction to our program in the specification. The basic features
 and statement of scope for our program is introduced. Despite the introduction, we have two major parts in our specification.
-- In the Architectural design part, we introduce the two main entities of our project which are User and Recipe. The attributes 
+- In the Architectural design part, we introduce the two Main entities of our project which are User and Recipe. The attributes 
 of these two entities are listed as well as how they interact with different commands and other entities.
 - The second part is Commands used in our project. We divide this part into User and Recipe. All the commands User and Recipe 
 will use are listed as well as their detailed description.
@@ -14,7 +14,7 @@ AdminUser. User and Recipe store data of all users and different recipes. User i
 Recipe is the parent class of AppetizerRecipe, DessertRecipe, MainCourseRecipe, SoupRecipe.
 - Use case: Use case classes manage use cases for entities. For example, RecipeManager will add new recipe and then modify and store it.
 - Controllers: CommandLine, which receives user inputs and then execute.
-- Driver: HelloKitchen is our main driver where the program is run.
+- Driver: HelloKitchen is our Main driver where the program is run.
 
 ## Scenario walk-through:
 Our scenario walk-through describes a typical scenario how a user will use our app. 

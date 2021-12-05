@@ -1,11 +1,9 @@
 package manager;
 
-import static org.junit.Assert.assertThat;
 import junit.framework.Assert;
 import manager.UserManager;
 import user.User;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import java.util.HashMap;

@@ -13,12 +13,16 @@ public class CommandFactory {
         put("current", new CurrentUserCommand());
         put("list", new ListUserCommand());
         put("modify", new ModifyUserCommand());
+        put("favourite", new FavouriteUserCommand());
     }};
     public HashMap<String, RecipeCommand> recipeCommandType = new HashMap<>() {{
         put("add", new AddRecipeCommand());
         put("delete", new DeleteRecipeCommand());
         put("show", new ShowRecipeCommand());
         put("list", new ListRecipeCommand());
+        put("modify", new ModifyRecipeCommand());
+        put("favourite", new FavouriteRecipeCommand());
+        put("search", new SearchRecipeCommand());
     }};
 
     public CommandFactory(Token token) {

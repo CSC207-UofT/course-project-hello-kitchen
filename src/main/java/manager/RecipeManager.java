@@ -5,7 +5,7 @@ import recipe.Recipe;
 import java.util.ArrayList;
 
 public class RecipeManager extends Manager {
-    private ArrayList<Recipe> recipes;
+    private final ArrayList<Recipe> recipes;
     private int counter;
     private static RecipeManager instance;
 
@@ -19,8 +19,7 @@ public class RecipeManager extends Manager {
      * @param recipe The recipe to manage.
      */
     public void createRecipe(Recipe recipe) {
-        int id = this.counter;
-        recipe.id = id;
+        recipe.id = this.counter;
         recipes.add(recipe);
         counter += 1;
         System.out.println("Add recipe name:" + recipe.name);
@@ -61,6 +60,22 @@ public class RecipeManager extends Manager {
      */
     public ArrayList<Recipe> getRecipeList() {
         return recipes;
+    }
+
+    /**
+     * Get a list of recipes according to desired `keyWord`.
+     * If a recipe contains the `keyWord` in the name or description, it will be added to the list.
+     * @param keyword The desired keyWord for searching.
+     * @return A list of recipes which satisfy search conditions, empty list if no such recipe found.
+     */
+    public ArrayList<Recipe> searchRecipe(String keyword) {
+        ArrayList<Recipe> searchResult = new ArrayList<>();
+        for(Recipe recipe: recipes) {
+            if(recipe.name.contains(keyword) || recipe.description.contains(keyword)) {
+                searchResult.add(recipe);
+            }
+        }
+        return searchResult;
     }
 
     public static RecipeManager getInstance() {

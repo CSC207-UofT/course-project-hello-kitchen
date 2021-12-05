@@ -23,7 +23,7 @@ public class CurrentUserCommand extends UserCommand{
      * Execute the command.
      */
     public void execute() {
-        this.userManager = userManager.getInstance();
+        this.userManager = UserManager.getInstance();
         User curr = this.userManager.getCurrentUser();
         System.out.println("Current User is, username:" + curr.username + ", description:" + curr.description);
     }

@@ -22,7 +22,7 @@ public class SignOutUserCommand extends UserCommand{
      * Execute the command.
      */
     public void execute() {
-        this.userManager = userManager.getInstance();
+        this.userManager = UserManager.getInstance();
         this.userManager.signOut();
     }
 }

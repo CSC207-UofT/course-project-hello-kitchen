@@ -9,7 +9,7 @@ import java.util.HashSet;
 public class DeleteUserCommand extends UserCommand{
     public ArrayList<ValuePair> valuePairs;
     public UserManager userManager;
-    private static final HashSet<String> acceptArgs = new HashSet<String>() {{
+    private static final HashSet<String> acceptArgs = new HashSet<>() {{
         add("username");
     }};
 
@@ -26,7 +26,7 @@ public class DeleteUserCommand extends UserCommand{
         String[] valuePairs = token.body.split("&");
         for(String rawValuePair: valuePairs) {
             ValuePair valuePair = new ValuePair(rawValuePair);
-            if (!this.acceptArgs.contains(valuePair.field)) {
+            if (!acceptArgs.contains(valuePair.field)) {
                 throw new Error("Invalid Command");
             }
             this.valuePairs.add(valuePair);
@@ -42,7 +42,7 @@ public class DeleteUserCommand extends UserCommand{
         for (ValuePair valuePair: this.valuePairs) {
             map.put(valuePair.field, valuePair.value);
         }
-        this.userManager = userManager.getInstance();
+        this.userManager = UserManager.getInstance();
         this.userManager.removeUser(map.get("username"));
     }
 }

@@ -1,10 +1,8 @@
 # Recipe (Entity)
 
-Abstract
-
 Parent class: None
 
-Child class: SoupRecipe, DessertRecipe, MainCourseRecipe
+Child class: None
 
 ## Responsibilities
 

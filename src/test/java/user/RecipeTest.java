@@ -19,7 +19,7 @@ public class RecipeTest {
         String expectedDescription = "edible";
 
         Assert.assertEquals(recipe.name, expectedName);
-        Assert.assertEquals(recipe.estimatedCookingTime, java.util.Optional.of(expectedCookingTime));
+        Assert.assertEquals(recipe.estimatedCookingTime, (int)expectedCookingTime);
         Assert.assertEquals(recipe.description, expectedDescription);
         Assert.assertEquals(recipe.ingredients, ingredients);
         Assert.assertEquals(recipe.procedures, procedure);

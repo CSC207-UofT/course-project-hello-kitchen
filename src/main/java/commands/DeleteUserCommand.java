@@ -1,16 +1,19 @@
 package commands;
 
+import manager.UserManager;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 
-public class RecipeCommand extends Command{
-    private static final HashSet<String> acceptArgs = new HashSet<>();
-    private static final HashSet<String> acceptRoots = new HashSet<>() {{
-        add("recipe");
+public class DeleteUserCommand extends UserCommand{
+    public ArrayList<ValuePair> valuePairs;
+    public UserManager userManager;
+    private static final HashSet<String> acceptArgs = new HashSet<>() {{
+        add("username");
     }};
 
-    public RecipeCommand () {
-
+    public DeleteUserCommand() {
     }
 
     /**
@@ -19,15 +22,12 @@ public class RecipeCommand extends Command{
      */
     public void run(String commandLine) {
         Token token = new Token(commandLine);
-        if(!acceptRoots.contains(token.root)) {
-            throw new Error("Invalid recipe command.");
-        }
         this.valuePairs = new ArrayList<>();
         String[] valuePairs = token.body.split("&");
         for(String rawValuePair: valuePairs) {
             ValuePair valuePair = new ValuePair(rawValuePair);
             if (!acceptArgs.contains(valuePair.field)) {
-                throw new Error("Invalid recipe command.");
+                throw new Error("Invalid Command");
             }
             this.valuePairs.add(valuePair);
         }
@@ -37,5 +37,12 @@ public class RecipeCommand extends Command{
     /**
      * Execute the command.
      */
-    public void execute (){}
+    public void execute() {
+        HashMap<String, String> map = new HashMap<>();
+        for (ValuePair valuePair: this.valuePairs) {
+            map.put(valuePair.field, valuePair.value);
+        }
+        this.userManager = UserManager.getInstance();
+        this.userManager.removeUser(map.get("username"));
+    }
 }

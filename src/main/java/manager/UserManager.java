@@ -1,40 +1,109 @@
 package manager;
 
-import user.AdminUser;
-import user.CommonUser;
+import recipe.Recipe;
 import user.User;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
-public class UserManager {
-    private List<User> users;
 
-    public UserManager() {
-        users = new ArrayList<>();
+public class UserManager extends Manager {
+    private final HashMap<String, User> userMap;
+    private User currentUser;
+    private static UserManager instance;
+
+    private UserManager() {
+        this.userMap = new HashMap<>();
     }
 
-    public void createCommonUser(String name, String description) {
-        CommonUser user = new CommonUser(name, description);
-        users.add(user);
-        System.out.println("Create user successful, name:" + user.getUserName() +
-                " description:" + user.getDescription());
-    }
-
-    public void createAdminUser(String name, String description) {
-        AdminUser user = new AdminUser(name, description);
-        users.add(user);
-    }
-
-    public boolean removeUser(int i) {
-        if (i >= 0 && i < users.size()) {
-            users.remove(i);
-            return true;
+    /**
+     * Register `user` to the manager, ensuring the registered username is unique.
+     * @param user User to manage.
+     */
+    public void register(User user) {
+        for(String username: this.userMap.keySet()){
+            if(username.equals(user.username)) {
+                throw new Error("Username occupied, change another name");
+            }
         }
-        return false;
+        userMap.put(user.username, user);
+        System.out.println("Create user successful, name:" + user.username +
+                " description:" + user.description);
     }
 
-    public List<User> getUsers() {
-        return users;
+    /**
+     * Remove user with `name`.
+     * @param username The `name` of the user.
+     */
+    public void removeUser(String username) {
+        if(!(this.userMap.containsKey(username))) {
+            throw new Error("User does not exist.");
+        }
+        userMap.remove(username);
+        System.out.println("Remove successful, username:" + username);
     }
+
+    /**
+     * Sign a user in with `username` and `password`.
+     * @param username The `username` of the user trying to log in.
+     * @param password The `password` of the user trying to log in.
+     */
+    public void signIn(String username, String password) {
+        if(!(this.userMap.containsKey(username))) {
+            throw new Error("Invalid username or password.");
+        }
+        User user = this.userMap.get(username);
+        if(!(user.password.equals(password))) {
+            throw new Error("Invalid username or password.");
+        }
+        this.currentUser = user;
+        System.out.println("Sign in Successful.");
+    }
+
+    /**
+     * Sign out current user from the manager.
+     */
+    public void signOut() {
+        this.currentUser = null;
+        System.out.println("Signed out.");
+    }
+
+    /**
+     * Get current user.
+     * @return The current user instance.
+     */
+    public User getCurrentUser() {
+        return this.currentUser;
+    }
+
+    /**
+     * Get user with `username`.
+     * @param username The `username` of the desired user.
+     * @return The user with `username`.
+     */
+    public User getUser(String username) {
+        return this.userMap.get(username);
+    }
+
+    /**
+     * Get user list.
+     * @return The list of all users in the manager.
+     */
+    public User[] getUserList() {
+        return this.userMap.values().toArray(new User[0]);
+    }
+
+    public void favourite(Recipe recipe) {
+        if(this.currentUser == null) {
+            throw new Error("You need to sign in to use this feature.");
+        }
+        this.currentUser.addFavourite(recipe);
+    }
+
+    public static UserManager getInstance() {
+        if(instance == null) {
+            instance = new UserManager();
+        }
+        return instance;
+    }
+
 }

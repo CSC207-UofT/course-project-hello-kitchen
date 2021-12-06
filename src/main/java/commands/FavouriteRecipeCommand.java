@@ -1,23 +1,21 @@
 package commands;
 
+import manager.RecipeManager;
 import manager.UserManager;
-import user.User;
+import recipe.Recipe;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class AddUserCommand extends UserCommand {
+public class FavouriteRecipeCommand extends RecipeCommand{
     public ArrayList<ValuePair> valuePairs;
-    public UserManager userManager;
+    public RecipeManager recipeManager;
     private static final HashSet<String> acceptArgs = new HashSet<>() {{
-        add("username");
-        add("password");
-        add("description");
+        add("id");
     }};
 
-    public AddUserCommand() {
-    }
+    public FavouriteRecipeCommand() {}
 
     /**
      * Parse the `commandLine` according to usage template and execute command after parsing.
@@ -46,8 +44,9 @@ public class AddUserCommand extends UserCommand {
         for (ValuePair valuePair: this.valuePairs) {
             map.put(valuePair.field, valuePair.value);
         }
-        User user = new User(map.get("username"), map.get("password"), map.get("description"));
-        this.userManager = UserManager.getInstance();
-        this.userManager.register(user);
+        UserManager userManager = UserManager.getInstance();
+        this.recipeManager = RecipeManager.getInstance();
+        Recipe recipe = this.recipeManager.getRecipe(Integer.parseInt(map.get("id")));
+        userManager.favourite(recipe);
     }
 }

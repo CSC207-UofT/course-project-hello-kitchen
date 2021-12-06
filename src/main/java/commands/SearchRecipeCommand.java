@@ -1,23 +1,20 @@
 package commands;
 
-import manager.UserManager;
-import user.User;
+import manager.RecipeManager;
+import recipe.Recipe;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class AddUserCommand extends UserCommand {
+public class SearchRecipeCommand extends RecipeCommand{
     public ArrayList<ValuePair> valuePairs;
-    public UserManager userManager;
+    public RecipeManager recipeManager;
     private static final HashSet<String> acceptArgs = new HashSet<>() {{
-        add("username");
-        add("password");
-        add("description");
+        add("keyword");
     }};
 
-    public AddUserCommand() {
-    }
+    public SearchRecipeCommand() {}
 
     /**
      * Parse the `commandLine` according to usage template and execute command after parsing.
@@ -28,10 +25,10 @@ public class AddUserCommand extends UserCommand {
         Token token = new Token(commandLine);
         this.valuePairs = new ArrayList<>();
         String[] valuePairs = token.body.split("&");
-        for(String rawValuePair: valuePairs) {
+        for (String rawValuePair : valuePairs) {
             ValuePair valuePair = new ValuePair(rawValuePair);
             if (!acceptArgs.contains(valuePair.field)) {
-                throw new Error("Invalid Command");
+                throw new Error("Invalid recipe command.");
             }
             this.valuePairs.add(valuePair);
         }
@@ -42,12 +39,23 @@ public class AddUserCommand extends UserCommand {
      * Execute the command.
      */
     public void execute() {
+        StringBuilder outPut = new StringBuilder();
         HashMap<String, String> map = new HashMap<>();
         for (ValuePair valuePair: this.valuePairs) {
             map.put(valuePair.field, valuePair.value);
         }
-        User user = new User(map.get("username"), map.get("password"), map.get("description"));
-        this.userManager = UserManager.getInstance();
-        this.userManager.register(user);
+        this.recipeManager = RecipeManager.getInstance();
+        ArrayList<Recipe> searchResult = this.recipeManager.searchRecipe(map.get("keyword"));
+        if(searchResult.isEmpty()) {
+            System.out.println("No search result available.");
+        }
+        else {
+            for(Recipe recipe: searchResult) {
+                outPut.append("name: ").append(recipe.name).append(", id: ").append(recipe.id).append("\n")
+                        .append("description: ").append(recipe.description).append("\n");
+            }
+        }
+        System.out.println(outPut);
     }
+
 }

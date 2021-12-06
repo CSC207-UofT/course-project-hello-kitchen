@@ -1,65 +1,22 @@
 package recipe;
 
 import java.util.HashMap;
-import java.util.List;
 import java.io.Serializable;
 
 public class Recipe implements Serializable{
-    protected String name;
-    protected String description;
-    /* String is the ingredient, and Double is the mass required for one person portion */
-    protected HashMap<String, Double> ingredients;
-    protected List<String> procedures;
-    protected double estimatedCookingTime;
+   public String name;
+   public String description;
+   public HashMap<String, String> ingredients;
+   public HashMap<Integer, String> procedures;
+   public int estimatedCookingTime;
+   public int id;
 
-    public Recipe(String name, String description, HashMap<String, Double> ingredients, List<String> procedures,
-                  double estimatedCookingTime) {
+    public Recipe(String name, String description, HashMap<String, String> ingredients,
+                  HashMap<Integer, String> procedures, int estimatedCookingTime) {
         this.name = name;
         this.description = description;
         this.ingredients = ingredients;
         this.procedures = procedures;
-        this.estimatedCookingTime = estimatedCookingTime;
-    }
-
-    public Recipe(){}
-
-    public String getName() {
-        return this.name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public HashMap<String, Double> getIngredients() {
-        return ingredients;
-    }
-
-    public void setIngredients(HashMap<String, Double> ingredients) {
-        this.ingredients = ingredients;
-    }
-
-    public List<String> getProcedures() {
-        return this.procedures;
-    }
-
-    public void setProcedures(List<String> procedures) {
-        this.procedures = procedures;
-    }
-
-    public double getEstimatedCookingTime() {
-        return this.estimatedCookingTime;
-    }
-
-    public void setEstimatedCookingTime(double estimatedCookingTime) {
         this.estimatedCookingTime = estimatedCookingTime;
     }
 
@@ -73,5 +30,4 @@ public class Recipe implements Serializable{
                 ", estimatedCookingTime=" + estimatedCookingTime +
                 '}';
     }
-
 }

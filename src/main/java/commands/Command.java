@@ -1,24 +1,43 @@
 package commands;
 
-import java.util.List;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 
 public abstract class Command {
-    protected final int maxArguments;
-    protected final int minArguments;
+    public ArrayList<ValuePair> valuePairs;
+    private static final HashSet<String> acceptArgs = new HashSet<>();
+    private static final HashSet<String> acceptRoots = new HashSet<>() {{
+        add("user");
+        add("recipe");
+    }};
 
-    public Command(int maxArguments, int minArguments) {
-        this.maxArguments = 16;
-        this.minArguments = 0;
+    public Command() {
     }
 
-    protected void checkArgumentsNum(List<String> arguments) throws Exception {
-        if (arguments.size() > maxArguments) {
-            throw new Exception("your input out of range");
-        }
-        if (arguments.size() < minArguments) {
-            throw new Exception("you do not input anything");
-        }
-    }
+    /**
+     * Abstract method to execute the command, will be implemented by children classes.
+     */
+    public abstract void execute();
 
+    /**
+     * Parse the `commandLine` according to usage template and execute command after parsing.
+     * @param commandLine The `commandLine` to be processed.
+     */
+    public void run(String commandLine){
+        Token token = new Token(commandLine);
+        if(!acceptRoots.contains(token.root)) {
+            throw  new Error("Invalid command.");
+        }
+        this.valuePairs = new ArrayList<>();
+        String[] valuePairs = token.body.split("&");
+        for(String rawValuePair: valuePairs) {
+            ValuePair valuePair = new ValuePair(rawValuePair);
+            if(!acceptArgs.contains(valuePair.field)) {
+                throw new Error("Invalid command");
+            }
+            this.valuePairs.add(valuePair);
+        }
+        this.execute();
+    }
 }

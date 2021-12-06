@@ -1,33 +1,35 @@
 package commands;
 
+import manager.UserManager;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 
-public class RecipeCommand extends Command{
-    private static final HashSet<String> acceptArgs = new HashSet<>();
-    private static final HashSet<String> acceptRoots = new HashSet<>() {{
-        add("recipe");
+public class SignInUserCommand extends UserCommand{
+    public ArrayList<ValuePair> valuePairs;
+    public UserManager userManager;
+    private static final HashSet<String> acceptArgs = new HashSet<>() {{
+        add("username");
+        add("password");
     }};
 
-    public RecipeCommand () {
-
+    public SignInUserCommand() {
     }
 
     /**
      * Parse the `commandLine` according to usage template and execute command after parsing.
      * @param commandLine The `commandLine` to be processed.
      */
+    @Override
     public void run(String commandLine) {
         Token token = new Token(commandLine);
-        if(!acceptRoots.contains(token.root)) {
-            throw new Error("Invalid recipe command.");
-        }
         this.valuePairs = new ArrayList<>();
         String[] valuePairs = token.body.split("&");
         for(String rawValuePair: valuePairs) {
             ValuePair valuePair = new ValuePair(rawValuePair);
             if (!acceptArgs.contains(valuePair.field)) {
-                throw new Error("Invalid recipe command.");
+                throw new Error("Invalid Command");
             }
             this.valuePairs.add(valuePair);
         }
@@ -37,5 +39,12 @@ public class RecipeCommand extends Command{
     /**
      * Execute the command.
      */
-    public void execute (){}
+    public void execute() {
+        HashMap<String, String> map = new HashMap<>();
+        for (ValuePair valuePair: this.valuePairs) {
+            map.put(valuePair.field, valuePair.value);
+        }
+        this.userManager = UserManager.getInstance();
+        this.userManager.signIn(map.get("username"), map.get("password"));
+    }
 }

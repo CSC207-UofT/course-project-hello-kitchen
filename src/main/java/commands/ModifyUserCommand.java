@@ -3,21 +3,17 @@ package commands;
 import manager.UserManager;
 import user.User;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.*;
 
-public class AddUserCommand extends UserCommand {
+public class ModifyUserCommand extends UserCommand{
     public ArrayList<ValuePair> valuePairs;
     public UserManager userManager;
     private static final HashSet<String> acceptArgs = new HashSet<>() {{
         add("username");
-        add("password");
-        add("description");
+        add("field");
     }};
 
-    public AddUserCommand() {
-    }
+    public ModifyUserCommand() {}
 
     /**
      * Parse the `commandLine` according to usage template and execute command after parsing.
@@ -31,7 +27,7 @@ public class AddUserCommand extends UserCommand {
         for(String rawValuePair: valuePairs) {
             ValuePair valuePair = new ValuePair(rawValuePair);
             if (!acceptArgs.contains(valuePair.field)) {
-                throw new Error("Invalid Command");
+                throw new Error("Invalid user command");
             }
             this.valuePairs.add(valuePair);
         }
@@ -42,12 +38,21 @@ public class AddUserCommand extends UserCommand {
      * Execute the command.
      */
     public void execute() {
+        Scanner scanner = new Scanner(System.in);
         HashMap<String, String> map = new HashMap<>();
         for (ValuePair valuePair: this.valuePairs) {
             map.put(valuePair.field, valuePair.value);
         }
-        User user = new User(map.get("username"), map.get("password"), map.get("description"));
         this.userManager = UserManager.getInstance();
-        this.userManager.register(user);
+        User user = this.userManager.getUser(map.get("username"));
+        if(Objects.equals(map.get("field"), "password")) {
+            System.out.println("Please enter your new password:");
+            user.password = scanner.nextLine();
+        }
+        if (Objects.equals(map.get("field"), "description")) {
+            System.out.println("Please enter your new description:");
+            user.description = scanner.nextLine();
+        }
     }
+
 }

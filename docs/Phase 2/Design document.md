@@ -28,12 +28,28 @@ There is an adapter in charge of write and read. Another one is the search adapt
 For each command that was input in, we have command factories to sort the class that this command belongs to, 
 the method it will be calling, the action it will take. 
 
+##WalkThrough
+After opening the program, we can sign up a user. In this case, we sign up four users with usernames "test", "Hello World", "Fish lover"`, 
+"wrong". Each user need to have username, password and description. 
+Then we can sign in with the username and the password. List command can be used to list all the stored users. 
+
+Considering users have the need to delete the user, we have command called 
+delete user. After deleting the user "wrong", let us use list command to check the users.
+
+Current command help users check their usernames and description. Users can sign out the account and sign in another.
+
+We sign in the user "Fish Lover" and use command favourite to check the favourite recipe list.
+
+Recipe command make users can add and modify recipes.
+
 ##Use of GitHub Features
 During phase 2, we made good use of the branch function of GitHub. We opened a separate branch for each 
 function in order to facilitate our team members to review and merge branches to the main branch. We also added our names 
 before the branches. Through these behaviors, when the member in charge of reviewing merges the code, it is easy to find which 
 member is responsible for the part. Opening different branches for different functions also allows us to clearly find the cause 
-of the problem. We flexibly use the pull request function instead of directly merging to main. We open different branches and 
+of the problem. 
+
+We flexibly use the pull request function instead of directly merging to main. We open different branches and 
 push the updated code from the local to different branches, and then use pull request to merge. The pull request allows us 
 to clearly see the part of the code modification. We will delete the corresponding branch after the merge code to avoid 
 branch redundancy.

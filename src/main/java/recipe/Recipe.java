@@ -1,15 +1,19 @@
 package recipe;
 
-import java.util.HashMap;
-import java.io.Serializable;
+import interfacepack.Serializable;
+import interfacepack.SerializableObject;
 
-public class Recipe implements Serializable{
+import java.util.HashMap;
+
+public class Recipe extends SerializableObject {
    public String name;
    public String description;
    public HashMap<String, String> ingredients;
    public HashMap<Integer, String> procedures;
    public int estimatedCookingTime;
    public int id;
+
+   public Recipe() {}
 
     public Recipe(String name, String description, HashMap<String, String> ingredients,
                   HashMap<Integer, String> procedures, int estimatedCookingTime) {

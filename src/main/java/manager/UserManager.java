@@ -1,18 +1,26 @@
 package manager;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import interfacepack.Serializable;
 import recipe.Recipe;
 import user.User;
 
 import java.util.HashMap;
 
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class UserManager extends Manager {
     private final HashMap<String, User> userMap;
     private User currentUser;
     private static UserManager instance;
 
-    private UserManager() {
+    public UserManager() {
         this.userMap = new HashMap<>();
+    }
+
+
+    public HashMap<String, User> getUserMap() {
+        return userMap;
     }
 
     /**

@@ -22,7 +22,7 @@ public class RecipeManager extends Manager {
         recipe.id = this.counter;
         recipes.add(recipe);
         counter += 1;
-        System.out.println("Add recipe name:" + recipe.name);
+        System.out.println("Add recipe name: " + recipe.name);
     }
 
     /**

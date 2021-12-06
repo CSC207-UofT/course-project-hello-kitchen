@@ -24,6 +24,7 @@ public class Recipe extends SerializableObject {
         this.estimatedCookingTime = estimatedCookingTime;
     }
 
+
     @Override
     public String toString() {
         return "Recipe{" +

@@ -1,16 +1,27 @@
 # User (Entity)
 
-Abstract
-
 Parent class: None
 
-Child class: CommonUser, AdminUser
+Child class: None
 
-## Responsibility
+## Responsibilities
+- Store the information of a user.
+- Add favourite recipe to the user's favourite list.
 
-- a description
-- indicating user type
+### Attributes
+
+- `String username`: Unique string indicating the username
+- `String password`: The password for the user, used in login action
+- `String description`: The customized description of a user
+- `ArrayList<Recipe> favouriteList`: Arraylist which stores all recipes marked favourite by
+the user
+
+### Methods
+- constructor: Construct User
+- `addFavourite(Recipe recipe)`: Add a `recipe` to the user's `favouriteList`
 
 ## Collaborator
 
-None
+- UserManager
+- Recipe
+- Command

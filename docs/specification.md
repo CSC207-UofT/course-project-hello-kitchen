@@ -108,10 +108,12 @@ favourite: Mark the recipe with `id` as favourite.
                 The user can view the list of the favourite recipes
                 using the user favourite command.
 
+unfavourite: Remove the recipe with `id` from favourite list.
+
 show: Display the recipe with `id`. The recipe will be displayed in full version
 containing all information.
 
-search： Display a list of recipes which contain the
+search：Display a list of recipes which contain the
                         `key words` in their names or descriptions.
                         The list will be showing only **name**, **description** and **id**.
 

@@ -107,6 +107,13 @@ public class UserManager extends Manager {
         this.currentUser.addFavourite(recipe);
     }
 
+    public void unFavourite(Recipe recipe) {
+        if(!this.currentUser.favouriteList.contains(recipe)) {
+            throw new Error("Recipe not in favourite list.");
+        }
+        this.currentUser.unFavourite(recipe);
+    }
+
     public static UserManager getInstance() {
         if(instance == null) {
             instance = new UserManager();

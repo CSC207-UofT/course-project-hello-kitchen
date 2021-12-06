@@ -3,11 +3,14 @@ import commands.Command;
 import commands.CommandFactory;
 import commands.Token;
 import driver.Shell;
+import manager.RecipeManager;
+import manager.UserManager;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         System.out.println("Hello");
         ObjectMapper mapper = new ObjectMapper();
         Shell shell = new Shell();

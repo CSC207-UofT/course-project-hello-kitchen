@@ -24,6 +24,7 @@ public class CommandFactory {
         put("list", new ListRecipeCommand());
         put("modify", new ModifyRecipeCommand());
         put("favourite", new FavouriteRecipeCommand());
+        put("unfavourite", new UnFavouriteRecipeCommand());
         put("search", new SearchRecipeCommand());
         put("help", new HelpRecipeCommand());
     }};

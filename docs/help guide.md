@@ -139,6 +139,18 @@ provided a `value` to it with themselves as the `key` to the `value`. If the
     Example input: `recipe favourite:id=0`
 
 
+- unfavourite: Remove a recipe with id from current user's favourite list, 
+               required arguments: `id`
+
+    Example input: `recipe unfavourite:id=0`
+
+
+- search: search: Search for recipes with `keyword`, 
+                  required arguments: `keyword`
+
+    Example input: `recipe search:keyword=fish`
+
+
 - help: Display help guide for recipe commands, 
         required arguments: none.
 

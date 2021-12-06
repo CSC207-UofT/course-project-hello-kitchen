@@ -20,6 +20,7 @@ public class Recipe implements Serializable{
         this.estimatedCookingTime = estimatedCookingTime;
     }
 
+
     @Override
     public String toString() {
         return "Recipe{" +

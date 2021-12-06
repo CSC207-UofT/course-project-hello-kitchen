@@ -24,6 +24,8 @@ public class HelpRecipeCommand extends RecipeCommand{
                 "required arguments: \"id\", \"field\" " +
                 "(field only accepts values \"name\", \"description\", \"ingredients\", \"procedures\", \"time\")\n" +
                 "favourite: Put the recipe with id into current user's favourite list, required arguments: \"id\"\n" +
+                "unfavourite: Remove a recipe with id from current user's favourite list, required arguments: \"id\"\n" +
+                "search: Search for recipes with keyword, required arguments: \"keyword\"\n" +
                 "help: Display help guide for recipe commands, required arguments: none";
         System.out.println(help);
     }

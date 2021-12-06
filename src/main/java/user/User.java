@@ -26,4 +26,8 @@ public class User extends SerializableObject {
     public void addFavourite(Recipe recipe) {
         this.favouriteList.add(recipe);
     }
+
+    public void unFavourite(Recipe recipe) {
+        this.favouriteList.remove(recipe);
+    }
 }

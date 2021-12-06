@@ -28,7 +28,7 @@ There is an adapter in charge of write and read. Another one is the search adapt
 For each command that was input in, we have command factories to sort the class that this command belongs to, 
 the method it will be calling, the action it will take. 
 
-##WalkThrough
+## WalkThrough
 After opening the program, we can sign up a user. In this case, we sign up four users with usernames "test", "Hello World", "Fish lover"`, 
 "wrong". Each user need to have username, password and description. 
 Then we can sign in with the username and the password. List command can be used to list all the stored users. 
@@ -42,7 +42,7 @@ We sign in the user "Fish Lover" and use command favourite to check the favourit
 
 Recipe command make users can add and modify recipes.
 
-##Use of GitHub Features
+## Use of GitHub Features
 During phase 2, we made good use of the branch function of GitHub. We opened a separate branch for each 
 function in order to facilitate our team members to review and merge branches to the main branch. We also added our names 
 before the branches. Through these behaviors, when the member in charge of reviewing merges the code, it is easy to find which 
@@ -54,6 +54,6 @@ push the updated code from the local to different branches, and then use pull re
 to clearly see the part of the code modification. We will delete the corresponding branch after the merge code to avoid 
 branch redundancy.
 
-##Testing
+## Testing
 We have already tested the main functions of our program such as user and recipe command. The serialization uni test is 
 hard to write due to the design of the IO adapter. However, the read and write function is worked well during using the program.

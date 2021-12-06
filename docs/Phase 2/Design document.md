@@ -29,18 +29,23 @@ For each command that was input in, we have command factories to sort the class 
 the method it will be calling, the action it will take. 
 
 ## WalkThrough
-After opening the program, we can sign up a user. In this case, we sign up four users with usernames "test", "Hello World", "Fish lover"`, 
-"wrong". Each user need to have username, password and description. 
-Then we can sign in with the username and the password. List command can be used to list all the stored users. 
+Four users have already signed up in the program with usernames "test", "Hello World", "Fish lover"`,
+"wrong". Each user has different username, password and description.
 
-Considering users have the need to delete the user, we have command called 
-delete user. After deleting the user "wrong", let us use list command to check the users.
+User "test" sign in the program and use list command to see all the users store in the program. User "test" wants to delete 
+user "wrong" because he signed up this user with wrong username. After deleting the user "wrong", he uses list to check if the user "wrong" exist.
 
-Current command help users check their usernames and description. Users can sign out the account and sign in another.
+User "test" want to see his username and description, so he uses current command and sign out.
 
-We sign in the user "Fish Lover" and use command favourite to check the favourite recipe list.
+Now user "Fish Lover" signs in and use command favourite to check the favourite recipe list. He then adds a new recipe called fish and chips to the program.
+After adding the recipe, he uses list to see all the recipe stored in the program and he finds some problems about the recipe ingredients and procedure. So he 
+tries to modify the recipe. User "Fish lover" keeps adding new recipe to the program, this time he adds magic soup and something wrong to the program. He deletes something wrong
+from the recipe list. The user searches something is fish from the recipe lsit, and he marks two fish recipe as his favourite and sign out.
 
-Recipe command make users can add and modify recipes.
+Next user "Hello World" signs in the program and he searched something is soup from the recipe list. He marks one soup as favourite and then check the whole recipe list
+to find something he likes. He then marks one recipe as favourite and check all the recipe he marked as favourite. "Hello World" finds a recipe he doesn't like and unfavoured the recipe.
+Then he signs out.
+
 
 ## Use of GitHub Features
 During phase 2, we made good use of the branch function of GitHub. We opened a separate branch for each 

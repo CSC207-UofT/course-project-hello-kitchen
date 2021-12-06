@@ -28,11 +28,13 @@
 
 - ###Principle 5: Tolerance for Error
     a) The syntax of commands for our program is strict in order to avoid unexpected error.
-    b) There is feedback message after an error appear to the user, so that our users can know what is going on.
+    
+  b) There is feedback message after an error appear to the user, so that our users can know what is going on.
 
 - ###Principle 6: Low Physical Effort
     a) Since our program can work on a computer, it allows user to maintain a neutral body position.
-    b) Our program minimize repetitive actions and users can easily access the recipe they want to find.
+    
+  b) Our program minimize repetitive actions and users can easily access the recipe they want to find.
 
 - ###Principle 7: Size and Space for Approach and Use
   Since we don't have a graphic user interface, the size and space actually depend on users' computer setting.

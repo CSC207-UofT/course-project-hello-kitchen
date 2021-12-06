@@ -1,10 +1,11 @@
 package recipe;
 
 import interfacepack.Serializable;
+import interfacepack.SerializableObject;
 
 import java.util.HashMap;
 
-public class Recipe implements Serializable {
+public class Recipe extends SerializableObject {
    public String name;
    public String description;
    public HashMap<String, String> ingredients;
@@ -32,21 +33,5 @@ public class Recipe implements Serializable {
                 ", procedures=" + procedures.toString() +
                 ", estimatedCookingTime=" + estimatedCookingTime +
                 '}';
-    }
-
-    @Override
-    public HashMap<String, Object> serialize() {
-       HashMap<String, Object> map = new HashMap<>();
-       map.put("name", this.name);
-       map.put("description", this.description);
-       return map;
-    }
-
-    @Override
-    public void deserialize(HashMap<String, Object> record) {
-       String name = (String) record.get("name");
-       String description = (String) record.get("description");
-       this.name = name;
-       this.description = description;
     }
 }

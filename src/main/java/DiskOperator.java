@@ -34,11 +34,18 @@ public class DiskOperator {
 
     public void save(String filename, Serializable object) throws IOException {
         HashMap<String, Object> map = object.serialize();
-        this.mapper.writeValue(getPath(filename).toFile(), map);
+        if (map == null){
+            throw new Error(
+                    "Invalid object " + object + " to save."
+            );
+        }
+        File file = getPath(filename).toFile();
+        this.mapper.writeValue(file, map);
     }
 
-    public void read(String filename, Serializable object) throws IOException {
-        HashMap<String, Object> map = this.mapper.readValue(getPath(filename).toFile(), HashMap.class);
-        object.deserialize(map);
+    public Serializable read(String filename, Serializable object) throws IOException {
+        File file = getPath(filename).toFile();
+        HashMap<String, Object> map = this.mapper.readValue(file, HashMap.class);
+        return object.deserialize(map);
     }
 }

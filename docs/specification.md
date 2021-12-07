@@ -122,3 +122,7 @@ list: Display a list of all the recipes.
     of a recipe.
 
 help: Display the help message for all the commands related to recipe.
+
+### Exit
+
+exit: Exit the app and auto-save data to disk.

@@ -32,9 +32,13 @@ public class CommandFactory {
         put("search", new SearchRecipeCommand());
         put("help", new HelpRecipeCommand());
     }};
+    public HashMap<String, ExitCommand> exitCommandMap = new HashMap<>() {{
+        put("exit", new ExitCommand());
+    }};
     public HashMap<String, HashMap> commandMap = new HashMap<>() {{
         put("user", userCommandMap);
         put("recipe", recipeCommandMap);
+        put("exit", exitCommandMap);
     }};
 
     public CommandFactory(Token token) {

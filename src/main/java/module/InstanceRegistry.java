@@ -7,6 +7,7 @@ public class InstanceRegistry {
 
     private static UserManager userManager;
     private static RecipeManager recipeManager;
+    private static Shell shell;
 
     public InstanceRegistry () {}
 
@@ -30,5 +31,16 @@ public class InstanceRegistry {
 
     public static void setRecipeManager(RecipeManager recipeManager) {
         InstanceRegistry.recipeManager = recipeManager;
+    }
+
+    public static Shell getShell() {
+        if (shell == null) {
+            shell = new Shell();
+        }
+        return shell;
+    }
+
+    public static void setShell(Shell shell) {
+        InstanceRegistry.shell = shell;
     }
 }

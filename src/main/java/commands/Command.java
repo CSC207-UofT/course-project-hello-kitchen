@@ -13,6 +13,7 @@ public abstract class Command {
     private static final HashSet<String> acceptRoots = new HashSet<>() {{
         add("user");
         add("recipe");
+        add("exit");
     }};
 
     public Command() {

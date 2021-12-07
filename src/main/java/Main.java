@@ -12,6 +12,12 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
+
+    /**
+     * Use InstanceRegistry to ensure project state.
+     * @param args Arguments
+     * @throws IOException For data accessing purpose
+     */
     public static void main(String[] args) throws IOException {
         System.out.println("Hello");
         ObjectMapper mapper = new ObjectMapper();
@@ -27,7 +33,7 @@ public class Main {
         }
         UserManager userManager = InstanceRegistry.getUserManager();
         RecipeManager recipeManager = InstanceRegistry.getRecipeManager();
-        Shell shell = new Shell();
+        Shell shell = InstanceRegistry.getShell();
         Scanner in = new Scanner(System.in);
         while (shell.isRunning()) {
             System.out.print("$ ");

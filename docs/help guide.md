@@ -155,3 +155,10 @@ provided a `value` to it with themselves as the `key` to the `value`. If the
         required arguments: none.
 
     Example input: `recipe help`
+
+
+### exit (root)
+
+- exit: Exit the app and auto-save data to disk.
+
+    Example input: `exit`

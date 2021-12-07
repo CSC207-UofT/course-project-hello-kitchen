@@ -1,6 +1,7 @@
 package commands.usercommands;
 
 import manager.UserManager;
+import module.InstanceRegistry;
 import module.Token;
 import module.ValuePair;
 
@@ -44,7 +45,7 @@ public class DeleteUserCommand extends UserCommand {
         for (ValuePair valuePair: this.valuePairs) {
             map.put(valuePair.field, valuePair.value);
         }
-        this.userManager = UserManager.getInstance();
+        this.userManager = InstanceRegistry.getUserManager();
         this.userManager.removeUser(map.get("username"));
     }
 }

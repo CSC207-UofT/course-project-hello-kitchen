@@ -1,6 +1,7 @@
 package commands.usercommands;
 
 import manager.UserManager;
+import module.InstanceRegistry;
 import module.Token;
 import module.User;
 import module.ValuePair;
@@ -45,7 +46,7 @@ public class ModifyUserCommand extends UserCommand {
         for (ValuePair valuePair: this.valuePairs) {
             map.put(valuePair.field, valuePair.value);
         }
-        this.userManager = UserManager.getInstance();
+        this.userManager = InstanceRegistry.getUserManager();
         User user = this.userManager.getUser(map.get("username"));
         if(Objects.equals(map.get("field"), "password")) {
             System.out.println("Please enter your new password:");

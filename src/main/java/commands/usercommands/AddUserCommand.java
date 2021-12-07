@@ -1,6 +1,7 @@
 package commands.usercommands;
 
 import manager.UserManager;
+import module.InstanceRegistry;
 import module.Token;
 import module.User;
 import module.ValuePair;
@@ -49,7 +50,7 @@ public class AddUserCommand extends UserCommand {
             map.put(valuePair.field, valuePair.value);
         }
         User user = new User(map.get("username"), map.get("password"), map.get("description"));
-        this.userManager = UserManager.getInstance();
+        this.userManager = InstanceRegistry.getUserManager();
         this.userManager.register(user);
     }
 }

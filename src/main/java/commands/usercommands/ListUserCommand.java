@@ -1,6 +1,7 @@
 package commands.usercommands;
 
 import manager.UserManager;
+import module.InstanceRegistry;
 import module.User;
 
 public class ListUserCommand extends UserCommand {
@@ -24,7 +25,7 @@ public class ListUserCommand extends UserCommand {
      */
     public void execute() {
         StringBuilder outPut = new StringBuilder();
-        this.userManager = UserManager.getInstance();
+        this.userManager = InstanceRegistry.getUserManager();
         User[] usersList = this.userManager.getUserList();
         for(User user: usersList) {
             outPut.append("username: ").append(user.username).append(", description: ").

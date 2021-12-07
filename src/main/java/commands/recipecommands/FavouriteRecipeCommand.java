@@ -2,6 +2,7 @@ package commands.recipecommands;
 
 import manager.RecipeManager;
 import manager.UserManager;
+import module.InstanceRegistry;
 import module.Recipe;
 import module.Token;
 import module.ValuePair;
@@ -46,8 +47,8 @@ public class FavouriteRecipeCommand extends RecipeCommand {
         for (ValuePair valuePair: this.valuePairs) {
             map.put(valuePair.field, valuePair.value);
         }
-        UserManager userManager = UserManager.getInstance();
-        this.recipeManager = RecipeManager.getInstance();
+        UserManager userManager = InstanceRegistry.getUserManager();
+        this.recipeManager = InstanceRegistry.getRecipeManager();
         Recipe recipe = this.recipeManager.getRecipe(Integer.parseInt(map.get("id")));
         userManager.favourite(recipe);
     }

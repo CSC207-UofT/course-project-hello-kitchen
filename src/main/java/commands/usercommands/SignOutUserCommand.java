@@ -1,6 +1,7 @@
 package commands.usercommands;
 
 import manager.UserManager;
+import module.InstanceRegistry;
 
 
 public class SignOutUserCommand extends UserCommand {
@@ -22,7 +23,7 @@ public class SignOutUserCommand extends UserCommand {
      * Execute the command.
      */
     public void execute() {
-        this.userManager = UserManager.getInstance();
+        this.userManager = InstanceRegistry.getUserManager();
         this.userManager.signOut();
     }
 }

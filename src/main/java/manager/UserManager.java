@@ -9,9 +9,8 @@ import java.util.HashMap;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UserManager extends Manager {
-    private final HashMap<String, User> userMap;
+    private HashMap<String, User> userMap;
     private User currentUser;
-    private static UserManager instance;
 
     public UserManager() {
         this.userMap = new HashMap<>();
@@ -19,7 +18,11 @@ public class UserManager extends Manager {
 
 
     public HashMap<String, User> getUserMap() {
-        return userMap;
+        return this.userMap;
+    }
+
+    public void setUserMap(HashMap<String, User> userMap) {
+        this.userMap = userMap;
     }
 
     /**
@@ -112,12 +115,4 @@ public class UserManager extends Manager {
         }
         this.currentUser.unFavourite(recipe);
     }
-
-    public static UserManager getInstance() {
-        if(instance == null) {
-            instance = new UserManager();
-        }
-        return instance;
-    }
-
 }

@@ -1,6 +1,7 @@
 package commands.usercommands;
 
 import manager.UserManager;
+import module.InstanceRegistry;
 import module.Token;
 import module.ValuePair;
 
@@ -46,7 +47,7 @@ public class SignInUserCommand extends UserCommand {
         for (ValuePair valuePair: this.valuePairs) {
             map.put(valuePair.field, valuePair.value);
         }
-        this.userManager = UserManager.getInstance();
+        this.userManager = InstanceRegistry.getUserManager();
         this.userManager.signIn(map.get("username"), map.get("password"));
     }
 }

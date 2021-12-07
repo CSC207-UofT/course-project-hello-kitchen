@@ -5,11 +5,10 @@ import module.Recipe;
 import java.util.ArrayList;
 
 public class RecipeManager extends Manager {
-    private final ArrayList<Recipe> recipes;
+    private ArrayList<Recipe> recipes;
     private int counter;
-    private static RecipeManager instance;
 
-    private RecipeManager() {
+    public RecipeManager() {
         this.recipes = new ArrayList<>();
         this.counter = 0;
     }
@@ -58,9 +57,11 @@ public class RecipeManager extends Manager {
      * Get recipe list in this manager.
      * @return The recipe list in this manager.
      */
-    public ArrayList<Recipe> getRecipeList() {
+    public ArrayList<Recipe> getRecipes() {
         return recipes;
     }
+
+    public void setRecipes(ArrayList<Recipe> recipes) {this.recipes = recipes;}
 
     /**
      * Get a list of recipes according to desired `keyWord`.
@@ -78,10 +79,11 @@ public class RecipeManager extends Manager {
         return searchResult;
     }
 
-    public static RecipeManager getInstance() {
-        if(instance == null) {
-            instance = new RecipeManager();
-        }
-        return instance;
+    public int getCounter() {
+        return this.counter;
+    }
+
+    public void setCounter(int counter) {
+        this.counter = counter;
     }
 }

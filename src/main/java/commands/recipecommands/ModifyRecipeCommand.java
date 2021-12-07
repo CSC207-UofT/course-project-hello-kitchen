@@ -1,6 +1,7 @@
 package commands.recipecommands;
 
 import manager.RecipeManager;
+import module.InstanceRegistry;
 import module.Recipe;
 import module.Token;
 import module.ValuePair;
@@ -45,7 +46,7 @@ public class ModifyRecipeCommand extends RecipeCommand {
         for (ValuePair valuePair : this.valuePairs) {
             map.put(valuePair.field, valuePair.value);
         }
-        this.recipeManager = RecipeManager.getInstance();
+        this.recipeManager = InstanceRegistry.getRecipeManager();
         Recipe recipe = this.recipeManager.getRecipe(Integer.parseInt(map.get("id")));
         if(map.get("field").equals("name")) {
             System.out.println("Please enter the new name:");

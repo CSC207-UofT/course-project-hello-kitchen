@@ -2,6 +2,7 @@ package commands.recipecommands;
 
 import commands.recipecommands.RecipeCommand;
 import manager.RecipeManager;
+import module.InstanceRegistry;
 import module.Recipe;
 import module.Token;
 import module.ValuePair;
@@ -47,7 +48,7 @@ public class SearchRecipeCommand extends RecipeCommand {
         for (ValuePair valuePair: this.valuePairs) {
             map.put(valuePair.field, valuePair.value);
         }
-        this.recipeManager = RecipeManager.getInstance();
+        this.recipeManager = InstanceRegistry.getRecipeManager();
         ArrayList<Recipe> searchResult = this.recipeManager.searchRecipe(map.get("keyword"));
         if(searchResult.isEmpty()) {
             System.out.println("No search result available.");

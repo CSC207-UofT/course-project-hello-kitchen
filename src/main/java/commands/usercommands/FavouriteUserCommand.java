@@ -1,6 +1,7 @@
 package commands.usercommands;
 
 import manager.UserManager;
+import module.InstanceRegistry;
 import module.Recipe;
 import module.User;
 
@@ -25,7 +26,7 @@ public class FavouriteUserCommand extends UserCommand {
      */
     public void execute() {
         StringBuilder outPut = new StringBuilder();
-        this.userManager = UserManager.getInstance();
+        this.userManager = InstanceRegistry.getUserManager();
         User curr = this.userManager.getCurrentUser();
         ArrayList<Recipe> favouriteList = curr.favouriteList;
         if(favouriteList.isEmpty()) {

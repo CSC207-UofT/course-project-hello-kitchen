@@ -1,6 +1,7 @@
 package commands.recipecommands;
 
 import manager.RecipeManager;
+import module.InstanceRegistry;
 import module.Recipe;
 
 import java.util.HashMap;
@@ -27,7 +28,7 @@ public class AddRecipeCommand extends RecipeCommand {
      */
     public void execute() {
         Scanner scanner = new Scanner(System.in);
-        this.recipeManager = RecipeManager.getInstance();
+        this.recipeManager = InstanceRegistry.getRecipeManager();
         System.out.println("Please enter the name of the recipe:");
         String name = scanner.nextLine();
         System.out.println("Please enter the description of the recipe:");

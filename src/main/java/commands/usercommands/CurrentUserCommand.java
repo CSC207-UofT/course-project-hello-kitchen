@@ -1,6 +1,7 @@
 package commands.usercommands;
 
 import manager.UserManager;
+import module.InstanceRegistry;
 import module.User;
 
 public class CurrentUserCommand extends UserCommand {
@@ -23,7 +24,7 @@ public class CurrentUserCommand extends UserCommand {
      * Execute the command.
      */
     public void execute() {
-        this.userManager = UserManager.getInstance();
+        this.userManager = InstanceRegistry.getUserManager();
         User curr = this.userManager.getCurrentUser();
         System.out.println("Current User is, username:" + curr.username + ", description:" + curr.description);
     }

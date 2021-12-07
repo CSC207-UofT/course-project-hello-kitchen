@@ -3,6 +3,7 @@ package commands.recipecommands;
 import commands.recipecommands.RecipeCommand;
 import manager.RecipeManager;
 import manager.UserManager;
+import module.InstanceRegistry;
 import module.Recipe;
 import module.Token;
 import module.ValuePair;
@@ -47,8 +48,8 @@ public class UnFavouriteRecipeCommand extends RecipeCommand {
         for (ValuePair valuePair: this.valuePairs) {
             map.put(valuePair.field, valuePair.value);
         }
-        UserManager userManager = UserManager.getInstance();
-        this.recipeManager = RecipeManager.getInstance();
+        UserManager userManager = InstanceRegistry.getUserManager();
+        this.recipeManager = InstanceRegistry.getRecipeManager();
         Recipe recipe = this.recipeManager.getRecipe(Integer.parseInt(map.get("id")));
         userManager.unFavourite(recipe);
     }

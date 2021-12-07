@@ -1,6 +1,7 @@
 package commands.recipecommands;
 
 import manager.RecipeManager;
+import module.InstanceRegistry;
 import module.Token;
 import module.ValuePair;
 
@@ -45,7 +46,7 @@ public class DeleteRecipeCommand extends RecipeCommand {
         for (ValuePair valuePair: this.valuePairs) {
             map.put(valuePair.field, valuePair.value);
         }
-        this.recipeManager = RecipeManager.getInstance();
+        this.recipeManager = InstanceRegistry.getRecipeManager();
         this.recipeManager.removeRecipe(Integer.parseInt(map.get("id")));
     }
 

@@ -2,6 +2,7 @@ package commands.recipecommands;
 
 import commands.recipecommands.RecipeCommand;
 import manager.RecipeManager;
+import module.InstanceRegistry;
 import module.Recipe;
 import module.Token;
 import module.ValuePair;
@@ -46,7 +47,7 @@ public class ShowRecipeCommand extends RecipeCommand {
         for (ValuePair valuePair: this.valuePairs) {
             map.put(valuePair.field, valuePair.value);
         }
-        this.recipeManager = RecipeManager.getInstance();
+        this.recipeManager = InstanceRegistry.getRecipeManager();
         Recipe recipe = this.recipeManager.getRecipe(Integer.parseInt(map.get("id")));
         StringBuilder outPut = new StringBuilder("Recipe \n"
                 + "name: " + recipe.name + "\n"

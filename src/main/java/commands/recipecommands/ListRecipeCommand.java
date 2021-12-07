@@ -1,6 +1,8 @@
 package commands.recipecommands;
 
+
 import manager.RecipeManager;
+import module.InstanceRegistry;
 import module.Recipe;
 
 import java.util.ArrayList;
@@ -25,8 +27,8 @@ public class ListRecipeCommand extends RecipeCommand {
      */
     public void execute() {
         StringBuilder outPut = new StringBuilder();
-        this.recipeManager = RecipeManager.getInstance();
-        ArrayList<Recipe> recipesList = this.recipeManager.getRecipeList();
+        this.recipeManager = InstanceRegistry.getRecipeManager();
+        ArrayList<Recipe> recipesList = this.recipeManager.getRecipes();
         for (Recipe recipe : recipesList) {
             outPut.append("name: ").append(recipe.name).append(", id: ").append(recipe.id).append("\n").
                     append("description: ").append(recipe.description).append("\n");

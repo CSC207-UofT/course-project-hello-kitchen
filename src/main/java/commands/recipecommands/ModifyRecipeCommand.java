@@ -1,5 +1,6 @@
 package commands.recipecommands;
 
+import controller.recipecontrollers.ModifyRecipeController;
 import manager.RecipeManager;
 import module.InstanceRegistry;
 import module.Recipe;
@@ -47,18 +48,19 @@ public class ModifyRecipeCommand extends RecipeCommand {
             map.put(valuePair.field, valuePair.value);
         }
         this.recipeManager = InstanceRegistry.getRecipeManager();
-        Recipe recipe = this.recipeManager.getRecipe(Integer.parseInt(map.get("id")));
         if(map.get("field").equals("name")) {
             System.out.println("Please enter the new name:");
-            recipe.name = scanner.nextLine();
+            ModifyRecipeController.modifyName(Integer.parseInt(map.get("id")), scanner.nextLine(), this.recipeManager);
         }
         if(map.get("field").equals("description")) {
             System.out.println("Please enter the new description:");
-            recipe.description = scanner.nextLine();
+            ModifyRecipeController.modifyDescription(Integer.parseInt(map.get("id")),
+                    scanner.nextLine(), this.recipeManager);
         }
         if(map.get("field").equals("time")) {
             System.out.println("Please enter the new estimated cooking time (in minutes):");
-            recipe.estimatedCookingTime = Integer.parseInt(scanner.nextLine());
+            ModifyRecipeController.modifyTime(Integer.parseInt(map.get("id")),
+                    Integer.parseInt(scanner.nextLine()), this.recipeManager);
         }
         if(map.get("field").equals("ingredients")) {
             System.out.println("Please indicate your action (add/delete/modify):");
@@ -68,18 +70,21 @@ public class ModifyRecipeCommand extends RecipeCommand {
                 String ingredient = scanner.nextLine();
                 System.out.println("Please enter the amount of this ingredient (including unit of measurement):");
                 String amount = scanner.nextLine();
-                recipe.ingredients.put(ingredient, amount);
+                ModifyRecipeController.addIngredients(Integer.parseInt(map.get("id")),
+                        ingredient, amount, this.recipeManager);
             }
             if(action.equals("delete")) {
                 System.out.println("Please indicate the ingredient you would like to remove:");
-                recipe.ingredients.remove(scanner.nextLine());
+                ModifyRecipeController.deleteIngredients(Integer.parseInt(map.get("id")),
+                        scanner.nextLine(), this.recipeManager);
             }
             if (action.equals("modify")) {
                 System.out.println("Please indicate the ingredient you would like to modify:");
                 String ingredient = scanner.nextLine();
                 System.out.println("Please enter the new amount of this ingredient (include unit of measurement):");
                 String amount = scanner.nextLine();
-                recipe.ingredients.put(ingredient, amount);
+                ModifyRecipeController.addIngredients(Integer.parseInt(map.get("id")),
+                        ingredient, amount, this.recipeManager);
             }
         }
         if(map.get("field").equals("procedures")) {
@@ -90,29 +95,21 @@ public class ModifyRecipeCommand extends RecipeCommand {
                 String procedure = scanner.nextLine();
                 System.out.println("Please enter the number of the procedure:");
                 int number = Integer.parseInt(scanner.nextLine());
-                int counter = Collections.max(recipe.procedures.keySet());
-                for(int i = counter; i >= number; i --) {
-                    String currProcedure = recipe.procedures.get(i);
-                    recipe.procedures.put(i + 1, currProcedure);
-                }
-                recipe.procedures.put(number, procedure);
+                ModifyRecipeController.addProcedures(Integer.parseInt(map.get("id")),
+                        number, procedure, this.recipeManager);
             }
             if(action.equals("delete")) {
                 System.out.println("Please indicate the number of the procedure you would like to remove:");
                 int number = Integer.parseInt(scanner.nextLine());
-                for(int i = number + 1; i <= recipe.procedures.size(); i ++) {
-                    String currProcedure = recipe.procedures.get(i);
-                    recipe.procedures.put(i - 1, currProcedure);
-                }
-                int lastEntry = recipe.procedures.size();
-                recipe.procedures.remove(lastEntry);
+                ModifyRecipeController.deleteProcedures(Integer.parseInt(map.get("id")), number, this.recipeManager);
             }
             if (action.equals("modify")) {
                 System.out.println("Please indicate the number of the procedure you would like to modify:");
-                String number = scanner.nextLine();
+                int number = Integer.parseInt(scanner.nextLine());
                 System.out.println("Please enter the new procedure:");
                 String procedure = scanner.nextLine();
-                recipe.procedures.put(Integer.parseInt(number), procedure);
+                ModifyRecipeController.modifyProcedures(Integer.parseInt(map.get("id")),
+                        number, procedure, this.recipeManager);
             }
         }
     }

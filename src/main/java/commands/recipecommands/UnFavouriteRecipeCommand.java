@@ -1,6 +1,7 @@
 package commands.recipecommands;
 
 import commands.recipecommands.RecipeCommand;
+import controller.recipecontrollers.FavouriteRecipeController;
 import manager.RecipeManager;
 import manager.UserManager;
 import module.InstanceRegistry;
@@ -50,7 +51,6 @@ public class UnFavouriteRecipeCommand extends RecipeCommand {
         }
         UserManager userManager = InstanceRegistry.getUserManager();
         this.recipeManager = InstanceRegistry.getRecipeManager();
-        Recipe recipe = this.recipeManager.getRecipe(Integer.parseInt(map.get("id")));
-        userManager.unFavourite(recipe);
+        FavouriteRecipeController.unFavouriteRecipe(Integer.parseInt(map.get("id")), this.recipeManager, userManager);
     }
 }

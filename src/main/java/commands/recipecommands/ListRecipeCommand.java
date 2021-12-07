@@ -1,6 +1,7 @@
 package commands.recipecommands;
 
 
+import controller.recipecontrollers.ListRecipeController;
 import manager.RecipeManager;
 import module.InstanceRegistry;
 import module.Recipe;
@@ -29,10 +30,7 @@ public class ListRecipeCommand extends RecipeCommand {
         StringBuilder outPut = new StringBuilder();
         this.recipeManager = InstanceRegistry.getRecipeManager();
         ArrayList<Recipe> recipesList = this.recipeManager.getRecipes();
-        for (Recipe recipe : recipesList) {
-            outPut.append("name: ").append(recipe.name).append(", id: ").append(recipe.id).append("\n").
-                    append("description: ").append(recipe.description).append("\n");
-        }
+        ListRecipeController.constructOutPut(recipesList, outPut);
         System.out.println(outPut);
     }
 }

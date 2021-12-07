@@ -2,7 +2,7 @@ package user;
 
 import org.junit.Assert;
 import org.junit.Test;
-import recipe.Recipe;
+import module.Recipe;
 
 import java.util.HashMap;
 

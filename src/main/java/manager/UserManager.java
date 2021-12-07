@@ -1,9 +1,8 @@
 package manager;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import interfacepack.Serializable;
-import recipe.Recipe;
-import user.User;
+import module.Recipe;
+import module.User;
 
 import java.util.HashMap;
 

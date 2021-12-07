@@ -35,20 +35,12 @@ public class DiskOperator {
 
     public void save(String filename, Serializable object) throws IOException {
         HashMap<String, Object> map = object.serialize();
-        if (map == null){
-            throw new Error(
-                    "Invalid object " + object + " to save."
-            );
-        }
         File file = getPath(filename).toFile();
         this.mapper.writeValue(file, map);
     }
 
     public Serializable read(String filename, Serializable object) throws IOException {
         File file = getPath(filename).toFile();
-        if(file.length() == 0){
-            throw new Error("Nothing can be read from this file");
-        }
         HashMap<String, Object> map = this.mapper.readValue(file, HashMap.class);
         return object.deserialize(map);
     }

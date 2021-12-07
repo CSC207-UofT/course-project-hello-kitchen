@@ -46,6 +46,9 @@ public class DiskOperator {
 
     public Serializable read(String filename, Serializable object) throws IOException {
         File file = getPath(filename).toFile();
+        if(file.length() == 0){
+            throw new Error("Nothing can be read from this file");
+        }
         HashMap<String, Object> map = this.mapper.readValue(file, HashMap.class);
         return object.deserialize(map);
     }

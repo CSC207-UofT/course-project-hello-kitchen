@@ -1,8 +1,8 @@
 package commands.recipecommands;
 
+import controller.recipecontrollers.AddRecipeController;
 import manager.RecipeManager;
 import module.InstanceRegistry;
-import module.Recipe;
 
 import java.util.HashMap;
 import java.util.Scanner;
@@ -63,8 +63,8 @@ public class AddRecipeCommand extends RecipeCommand {
         }
         System.out.println("Please enter the estimated cooking time of this recipe (in minutes):");
         int estimatedCookingTime = Integer.parseInt(scanner.nextLine());
-        Recipe recipe = new Recipe(name, description, ingredients, procedures, estimatedCookingTime);
-        this.recipeManager.createRecipe(recipe);
+        AddRecipeController.addRecipe(name, description,
+                ingredients, procedures, estimatedCookingTime, this.recipeManager);
     }
 
 }

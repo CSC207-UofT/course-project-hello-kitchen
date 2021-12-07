@@ -1,6 +1,7 @@
 package commands.recipecommands;
 
 import commands.recipecommands.RecipeCommand;
+import controller.recipecontrollers.ShowRecipeController;
 import manager.RecipeManager;
 import module.InstanceRegistry;
 import module.Recipe;
@@ -48,20 +49,8 @@ public class ShowRecipeCommand extends RecipeCommand {
             map.put(valuePair.field, valuePair.value);
         }
         this.recipeManager = InstanceRegistry.getRecipeManager();
-        Recipe recipe = this.recipeManager.getRecipe(Integer.parseInt(map.get("id")));
-        StringBuilder outPut = new StringBuilder("Recipe \n"
-                + "name: " + recipe.name + "\n"
-                + "id: " + recipe.id + "\n"
-                + "description: " + recipe.description + "\n"
-                + "Ingredients: \n");
-        for (String ingredient: recipe.ingredients.keySet()) {
-            outPut.append(ingredient).append(": ").append(recipe.ingredients.get(ingredient)).append("\n");
-        }
-        outPut.append("Steps: \n");
-        for (int procedure: recipe.procedures.keySet()) {
-            outPut.append("Step").append(procedure).append(": ").append(recipe.procedures.get(procedure)).append("\n");
-        }
-        outPut.append("Estimated cooking time: ").append(recipe.estimatedCookingTime).append(" minutes");
+        StringBuilder outPut = new StringBuilder();
+        ShowRecipeController.showConstructor(Integer.parseInt(map.get("id")), this.recipeManager, outPut);
         System.out.println(outPut);
     }
 }

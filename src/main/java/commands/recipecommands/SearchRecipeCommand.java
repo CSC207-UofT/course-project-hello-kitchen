@@ -1,6 +1,7 @@
 package commands.recipecommands;
 
 import commands.recipecommands.RecipeCommand;
+import controller.recipecontrollers.ListRecipeController;
 import manager.RecipeManager;
 import module.InstanceRegistry;
 import module.Recipe;
@@ -54,10 +55,7 @@ public class SearchRecipeCommand extends RecipeCommand {
             System.out.println("No search result available.");
         }
         else {
-            for(Recipe recipe: searchResult) {
-                outPut.append("name: ").append(recipe.name).append(", id: ").append(recipe.id).append("\n")
-                        .append("description: ").append(recipe.description).append("\n");
-            }
+            ListRecipeController.constructOutPut(searchResult, outPut);
         }
         System.out.println(outPut);
     }

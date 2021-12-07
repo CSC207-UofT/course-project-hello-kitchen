@@ -1,6 +1,10 @@
 package commands;
 
 
+import commands.recipecommands.*;
+import commands.usercommands.*;
+import module.Token;
+
 import java.util.Arrays;
 import java.util.HashMap;
 

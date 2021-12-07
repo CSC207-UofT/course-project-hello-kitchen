@@ -1,8 +1,7 @@
 package manager;
 
 
-import interfacepack.Serializable;
-import interfacepack.SerializableObject;
+import diskoperator.SerializableObject;
 
 public abstract class Manager extends SerializableObject {
 

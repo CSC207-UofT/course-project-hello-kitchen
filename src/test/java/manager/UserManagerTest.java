@@ -1,8 +1,7 @@
 package manager;
 
 import junit.framework.Assert;
-import manager.UserManager;
-import user.User;
+import module.User;
 
 import org.junit.Test;
 

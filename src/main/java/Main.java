@@ -1,10 +1,8 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
 import commands.Command;
 import commands.CommandFactory;
-import commands.Token;
-import driver.Shell;
-import manager.RecipeManager;
-import manager.UserManager;
+import module.Token;
+import module.Shell;
 
 import java.io.IOException;
 import java.util.Scanner;

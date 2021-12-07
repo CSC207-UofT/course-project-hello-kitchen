@@ -3,7 +3,7 @@ package manager;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-import recipe.Recipe;
+import module.Recipe;
 
 import java.util.ArrayList;
 import java.util.HashMap;

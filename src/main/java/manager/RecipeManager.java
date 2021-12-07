@@ -1,6 +1,6 @@
 package manager;
 
-import recipe.Recipe;
+import module.Recipe;
 
 import java.util.ArrayList;
 

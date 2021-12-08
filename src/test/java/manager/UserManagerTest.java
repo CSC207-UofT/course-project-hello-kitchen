@@ -1,6 +1,7 @@
 package manager;
 
 import junit.framework.Assert;
+import module.InstanceRegistry;
 import module.User;
 
 import org.junit.Test;
@@ -13,7 +14,7 @@ public class UserManagerTest {
 
 
     HashMap<String, User> users = new HashMap<>();
-    UserManager userManager = UserManager.getInstance();
+    UserManager userManager = InstanceRegistry.getUserManager();
 
     /**
      * Test the Error of Register method

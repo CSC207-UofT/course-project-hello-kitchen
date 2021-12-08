@@ -27,6 +27,8 @@ public class Main {
                     read("userManager.json", InstanceRegistry.getUserManager());
             RecipeManager recipeManager = (RecipeManager) diskOperator.
                     read("recipeManager.json", InstanceRegistry.getRecipeManager());
+            InstanceRegistry.setUserManager(userManager);
+            InstanceRegistry.setRecipeManager(recipeManager);
         }
         catch (IOException e) {
             System.out.println("No data found, starting with empty dataset.");

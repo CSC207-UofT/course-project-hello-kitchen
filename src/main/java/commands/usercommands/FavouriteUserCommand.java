@@ -1,5 +1,6 @@
 package commands.usercommands;
 
+import controller.usercontrollers.FavouriteUserController;
 import manager.UserManager;
 import module.InstanceRegistry;
 import module.Recipe;
@@ -27,17 +28,7 @@ public class FavouriteUserCommand extends UserCommand {
     public void execute() {
         StringBuilder outPut = new StringBuilder();
         this.userManager = InstanceRegistry.getUserManager();
-        User curr = this.userManager.getCurrentUser();
-        ArrayList<Recipe> favouriteList = curr.favouriteList;
-        if(favouriteList.isEmpty()) {
-            System.out.println("No favourite recipes.");
-        }
-        else {
-            for (Recipe recipe : favouriteList) {
-                outPut.append("name: ").append(recipe.name).append(", id: ").append(recipe.id).append("\n")
-                        .append("description: ").append(recipe.description).append("\n");
-            }
+        FavouriteUserController.constructFavouriteList(this.userManager, outPut);
             System.out.println(outPut);
         }
-    }
 }

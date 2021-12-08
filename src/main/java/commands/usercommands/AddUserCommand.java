@@ -1,5 +1,6 @@
 package commands.usercommands;
 
+import controller.usercontrollers.AddUserController;
 import manager.UserManager;
 import module.InstanceRegistry;
 import module.Token;
@@ -49,8 +50,7 @@ public class AddUserCommand extends UserCommand {
         for (ValuePair valuePair: this.valuePairs) {
             map.put(valuePair.field, valuePair.value);
         }
-        User user = new User(map.get("username"), map.get("password"), map.get("description"));
         this.userManager = InstanceRegistry.getUserManager();
-        this.userManager.register(user);
+        AddUserController.addUser(map.get("username"), map.get("password"), map.get("description"), this.userManager);
     }
 }

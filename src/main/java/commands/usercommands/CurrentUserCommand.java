@@ -1,5 +1,6 @@
 package commands.usercommands;
 
+import controller.usercontrollers.CurrentUserController;
 import manager.UserManager;
 import module.InstanceRegistry;
 import module.User;
@@ -25,7 +26,8 @@ public class CurrentUserCommand extends UserCommand {
      */
     public void execute() {
         this.userManager = InstanceRegistry.getUserManager();
-        User curr = this.userManager.getCurrentUser();
-        System.out.println("Current User is, username:" + curr.username + ", description:" + curr.description);
+        StringBuilder outPut = new StringBuilder();
+        CurrentUserController.showCurrent(this.userManager, outPut);
+        System.out.println(outPut);
     }
 }

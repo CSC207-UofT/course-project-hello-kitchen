@@ -1,5 +1,6 @@
 package commands.usercommands;
 
+import controller.usercontrollers.ListUserController;
 import manager.UserManager;
 import module.InstanceRegistry;
 import module.User;
@@ -27,10 +28,7 @@ public class ListUserCommand extends UserCommand {
         StringBuilder outPut = new StringBuilder();
         this.userManager = InstanceRegistry.getUserManager();
         User[] usersList = this.userManager.getUserList();
-        for(User user: usersList) {
-            outPut.append("username: ").append(user.username).append(", description: ").
-                    append(user.description).append("\n");
-        }
+        ListUserController.constructUserList(usersList, outPut);
         System.out.println(outPut);
     }
 }

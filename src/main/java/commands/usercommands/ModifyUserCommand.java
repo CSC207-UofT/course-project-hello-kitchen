@@ -1,5 +1,6 @@
 package commands.usercommands;
 
+import controller.usercontrollers.ModifyUserController;
 import manager.UserManager;
 import module.InstanceRegistry;
 import module.Token;
@@ -47,14 +48,13 @@ public class ModifyUserCommand extends UserCommand {
             map.put(valuePair.field, valuePair.value);
         }
         this.userManager = InstanceRegistry.getUserManager();
-        User user = this.userManager.getUser(map.get("username"));
         if(Objects.equals(map.get("field"), "password")) {
             System.out.println("Please enter your new password:");
-            user.password = scanner.nextLine();
+            ModifyUserController.modifyPassword(map.get("username"), scanner.nextLine(), this.userManager);
         }
         if (Objects.equals(map.get("field"), "description")) {
             System.out.println("Please enter your new description:");
-            user.description = scanner.nextLine();
+            ModifyUserController.modifyDescription(map.get("username"), scanner.nextLine(), this.userManager);
         }
     }
 

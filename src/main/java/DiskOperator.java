@@ -1,5 +1,8 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
 import interfacepack.Serializable;
+import manager.UserManager;
+import user.User;
+import recipe.Recipe;
 
 import java.io.File;
 import java.io.IOException;
@@ -32,10 +35,10 @@ public class DiskOperator {
         return Paths.get(this.folderName, filename);
     }
 
-    public void save(String filename, Serializable object) throws IOException {
+    public void save(String filename, Serializable object) throws Exception {
         HashMap<String, Object> map = object.serialize();
         if (map == null){
-            throw new Error(
+            throw new Exception(
                     "Invalid object " + object + " to save."
             );
         }
@@ -43,12 +46,22 @@ public class DiskOperator {
         this.mapper.writeValue(file, map);
     }
 
-    public Serializable read(String filename, Serializable object) throws IOException {
-        File file = getPath(filename).toFile();
-        if(file.length() == 0){
-            throw new Error("Nothing can be read from this file");
+    public Serializable read(String filename, Serializable object) {
+        try {
+            File file = getPath(filename).toFile();
+            HashMap<String, Object> map = this.mapper.readValue(file, HashMap.class);
+            return object.deserialize(map);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            if (object instanceof User){
+                return new User();
+            }
+            if (object instanceof UserManager){
+                return new UserManager();
+            } else {
+                return new Recipe();
+            }
         }
-        HashMap<String, Object> map = this.mapper.readValue(file, HashMap.class);
-        return object.deserialize(map);
+
     }
 }

@@ -1,6 +1,5 @@
 package commands.recipecommands;
 
-import commands.recipecommands.RecipeCommand;
 import controller.recipecontrollers.ListRecipeController;
 import manager.RecipeManager;
 import module.InstanceRegistry;
@@ -19,10 +18,12 @@ public class SearchRecipeCommand extends RecipeCommand {
         add("keyword");
     }};
 
-    public SearchRecipeCommand() {}
+    public SearchRecipeCommand() {
+    }
 
     /**
      * Parse the `commandLine` according to usage template and execute command after parsing.
+     *
      * @param commandLine The `commandLine` to be processed.
      */
     @Override
@@ -46,15 +47,14 @@ public class SearchRecipeCommand extends RecipeCommand {
     public void execute() {
         StringBuilder outPut = new StringBuilder();
         HashMap<String, String> map = new HashMap<>();
-        for (ValuePair valuePair: this.valuePairs) {
+        for (ValuePair valuePair : this.valuePairs) {
             map.put(valuePair.field, valuePair.value);
         }
         this.recipeManager = InstanceRegistry.getRecipeManager();
         ArrayList<Recipe> searchResult = this.recipeManager.searchRecipe(map.get("keyword"));
-        if(searchResult.isEmpty()) {
+        if (searchResult.isEmpty()) {
             System.out.println("No search result available.");
-        }
-        else {
+        } else {
             ListRecipeController.constructOutPut(searchResult, outPut);
         }
         System.out.println(outPut);

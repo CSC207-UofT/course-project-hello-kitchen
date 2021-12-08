@@ -2,10 +2,12 @@ package commands.recipecommands;
 
 public class HelpRecipeCommand extends RecipeCommand {
 
-    public HelpRecipeCommand() {}
+    public HelpRecipeCommand() {
+    }
 
     /**
      * Execute the command since there's no args to be taken in.
+     *
      * @param commandLine Keep the same structure.
      */
     @Override

@@ -12,10 +12,12 @@ import java.util.ArrayList;
 public class ListRecipeCommand extends RecipeCommand {
     public RecipeManager recipeManager;
 
-    public ListRecipeCommand() {}
+    public ListRecipeCommand() {
+    }
 
     /**
      * Execute the command since there's no args to be taken in.
+     *
      * @param commandLine Keep the same structure.
      */
     @Override

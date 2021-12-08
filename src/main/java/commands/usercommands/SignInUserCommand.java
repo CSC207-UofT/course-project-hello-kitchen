@@ -22,6 +22,7 @@ public class SignInUserCommand extends UserCommand {
 
     /**
      * Parse the `commandLine` according to usage template and execute command after parsing.
+     *
      * @param commandLine The `commandLine` to be processed.
      */
     @Override
@@ -29,7 +30,7 @@ public class SignInUserCommand extends UserCommand {
         Token token = new Token(commandLine);
         this.valuePairs = new ArrayList<>();
         String[] valuePairs = token.body.split("&");
-        for(String rawValuePair: valuePairs) {
+        for (String rawValuePair : valuePairs) {
             ValuePair valuePair = new ValuePair(rawValuePair);
             if (!acceptArgs.contains(valuePair.field)) {
                 throw new Error("Invalid Command");
@@ -44,7 +45,7 @@ public class SignInUserCommand extends UserCommand {
      */
     public void execute() {
         HashMap<String, String> map = new HashMap<>();
-        for (ValuePair valuePair: this.valuePairs) {
+        for (ValuePair valuePair : this.valuePairs) {
             map.put(valuePair.field, valuePair.value);
         }
         this.userManager = InstanceRegistry.getUserManager();

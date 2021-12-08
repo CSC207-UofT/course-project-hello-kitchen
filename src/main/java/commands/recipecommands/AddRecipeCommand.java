@@ -16,10 +16,11 @@ public class AddRecipeCommand extends RecipeCommand {
 
     /**
      * Execute the command since there's no args to be taken in.
+     *
      * @param commandLine Keep the same structure.
      */
     @Override
-    public void run(String commandLine){
+    public void run(String commandLine) {
         this.execute();
     }
 
@@ -43,7 +44,7 @@ public class AddRecipeCommand extends RecipeCommand {
             ingredients.put(ingredient, amount);
             System.out.println("Do you need to add more entry? (y/n):");
             String intention = scanner.nextLine();
-            if(intention.equals("n")) {
+            if (intention.equals("n")) {
                 moreIngredients = false;
             }
         }
@@ -57,7 +58,7 @@ public class AddRecipeCommand extends RecipeCommand {
             counter += 1;
             System.out.println("Do you need to add more entry? (y/n):");
             String intention = scanner.nextLine();
-            if(intention.equals("n")) {
+            if (intention.equals("n")) {
                 moreProcedures = false;
             }
         }

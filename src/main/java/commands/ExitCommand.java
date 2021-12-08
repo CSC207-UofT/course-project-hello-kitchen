@@ -3,10 +3,12 @@ package commands;
 import module.InstanceRegistry;
 import module.Shell;
 
-public class ExitCommand extends Command{
+public class ExitCommand extends Command {
 
     public Shell shell;
-    public ExitCommand() {}
+
+    public ExitCommand() {
+    }
 
     @Override
     public void run(String commandLine) {

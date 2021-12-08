@@ -1,10 +1,8 @@
 package commands.recipecommands;
 
-import commands.recipecommands.RecipeCommand;
 import controller.recipecontrollers.ShowRecipeController;
 import manager.RecipeManager;
 import module.InstanceRegistry;
-import module.Recipe;
 import module.Token;
 import module.ValuePair;
 
@@ -19,10 +17,12 @@ public class ShowRecipeCommand extends RecipeCommand {
         add("id");
     }};
 
-    public ShowRecipeCommand() {}
+    public ShowRecipeCommand() {
+    }
 
     /**
      * Parse the `commandLine` according to usage template and execute command after parsing.
+     *
      * @param commandLine The `commandLine` to be processed.
      */
     @Override
@@ -45,7 +45,7 @@ public class ShowRecipeCommand extends RecipeCommand {
      */
     public void execute() {
         HashMap<String, String> map = new HashMap<>();
-        for (ValuePair valuePair: this.valuePairs) {
+        for (ValuePair valuePair : this.valuePairs) {
             map.put(valuePair.field, valuePair.value);
         }
         this.recipeManager = InstanceRegistry.getRecipeManager();

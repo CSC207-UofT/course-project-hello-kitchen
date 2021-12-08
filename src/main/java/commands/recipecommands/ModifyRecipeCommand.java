@@ -3,11 +3,13 @@ package commands.recipecommands;
 import controller.recipecontrollers.ModifyRecipeController;
 import manager.RecipeManager;
 import module.InstanceRegistry;
-import module.Recipe;
 import module.Token;
 import module.ValuePair;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Scanner;
 
 public class ModifyRecipeCommand extends RecipeCommand {
     public ArrayList<ValuePair> valuePairs;
@@ -17,10 +19,12 @@ public class ModifyRecipeCommand extends RecipeCommand {
         add("field");
     }};
 
-    public ModifyRecipeCommand() {}
+    public ModifyRecipeCommand() {
+    }
 
     /**
      * Parse the `commandLine` according to usage template and execute command after parsing.
+     *
      * @param commandLine The `commandLine` to be processed.
      */
     @Override
@@ -48,24 +52,24 @@ public class ModifyRecipeCommand extends RecipeCommand {
             map.put(valuePair.field, valuePair.value);
         }
         this.recipeManager = InstanceRegistry.getRecipeManager();
-        if(map.get("field").equals("name")) {
+        if (map.get("field").equals("name")) {
             System.out.println("Please enter the new name:");
             ModifyRecipeController.modifyName(Integer.parseInt(map.get("id")), scanner.nextLine(), this.recipeManager);
         }
-        if(map.get("field").equals("description")) {
+        if (map.get("field").equals("description")) {
             System.out.println("Please enter the new description:");
             ModifyRecipeController.modifyDescription(Integer.parseInt(map.get("id")),
                     scanner.nextLine(), this.recipeManager);
         }
-        if(map.get("field").equals("time")) {
+        if (map.get("field").equals("time")) {
             System.out.println("Please enter the new estimated cooking time (in minutes):");
             ModifyRecipeController.modifyTime(Integer.parseInt(map.get("id")),
                     Integer.parseInt(scanner.nextLine()), this.recipeManager);
         }
-        if(map.get("field").equals("ingredients")) {
+        if (map.get("field").equals("ingredients")) {
             System.out.println("Please indicate your action (add/delete/modify):");
             String action = scanner.nextLine();
-            if(action.equals("add")) {
+            if (action.equals("add")) {
                 System.out.println("Please enter one ingredient:");
                 String ingredient = scanner.nextLine();
                 System.out.println("Please enter the amount of this ingredient (including unit of measurement):");
@@ -73,7 +77,7 @@ public class ModifyRecipeCommand extends RecipeCommand {
                 ModifyRecipeController.addIngredients(Integer.parseInt(map.get("id")),
                         ingredient, amount, this.recipeManager);
             }
-            if(action.equals("delete")) {
+            if (action.equals("delete")) {
                 System.out.println("Please indicate the ingredient you would like to remove:");
                 ModifyRecipeController.deleteIngredients(Integer.parseInt(map.get("id")),
                         scanner.nextLine(), this.recipeManager);
@@ -87,10 +91,10 @@ public class ModifyRecipeCommand extends RecipeCommand {
                         ingredient, amount, this.recipeManager);
             }
         }
-        if(map.get("field").equals("procedures")) {
+        if (map.get("field").equals("procedures")) {
             System.out.println("Please indicate your action (add/delete/modify):");
             String action = scanner.nextLine();
-            if(action.equals("add")) {
+            if (action.equals("add")) {
                 System.out.println("Please enter one procedure:");
                 String procedure = scanner.nextLine();
                 System.out.println("Please enter the number of the procedure:");
@@ -98,7 +102,7 @@ public class ModifyRecipeCommand extends RecipeCommand {
                 ModifyRecipeController.addProcedures(Integer.parseInt(map.get("id")),
                         number, procedure, this.recipeManager);
             }
-            if(action.equals("delete")) {
+            if (action.equals("delete")) {
                 System.out.println("Please indicate the number of the procedure you would like to remove:");
                 int number = Integer.parseInt(scanner.nextLine());
                 ModifyRecipeController.deleteProcedures(Integer.parseInt(map.get("id")), number, this.recipeManager);

@@ -21,13 +21,14 @@ public class DeleteUserCommand extends UserCommand {
 
     /**
      * Parse the `commandLine` according to usage template and execute command after parsing.
+     *
      * @param commandLine The `commandLine` to be processed.
      */
     public void run(String commandLine) {
         Token token = new Token(commandLine);
         this.valuePairs = new ArrayList<>();
         String[] valuePairs = token.body.split("&");
-        for(String rawValuePair: valuePairs) {
+        for (String rawValuePair : valuePairs) {
             ValuePair valuePair = new ValuePair(rawValuePair);
             if (!acceptArgs.contains(valuePair.field)) {
                 throw new Error("Invalid Command");
@@ -42,7 +43,7 @@ public class DeleteUserCommand extends UserCommand {
      */
     public void execute() {
         HashMap<String, String> map = new HashMap<>();
-        for (ValuePair valuePair: this.valuePairs) {
+        for (ValuePair valuePair : this.valuePairs) {
             map.put(valuePair.field, valuePair.value);
         }
         this.userManager = InstanceRegistry.getUserManager();

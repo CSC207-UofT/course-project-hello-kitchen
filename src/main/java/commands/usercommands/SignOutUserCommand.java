@@ -12,6 +12,7 @@ public class SignOutUserCommand extends UserCommand {
 
     /**
      * Execute the command since there's no args to be taken in.
+     *
      * @param commandLine Keep the same structure.
      */
     @Override

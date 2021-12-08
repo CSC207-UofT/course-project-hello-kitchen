@@ -52,6 +52,7 @@ public class CommandFactory {
     /**
      * Using the hashmap stored, identify the root and type of the token, and process it as required.
      * Command according to the query will be produced and returned.
+     *
      * @return The command according to the query.
      */
     public Command getCommand() {
@@ -59,15 +60,15 @@ public class CommandFactory {
         if (subcommandMap == null) {
             String acceptedCommands = this.getKeysRepr(commandMap);
             throw new Error(
-                "Unrecognized command '" + this.token.root + "'. Accepted commands are: " + acceptedCommands + "."
+                    "Unrecognized command '" + this.token.root + "'. Accepted commands are: " + acceptedCommands + "."
             );
         }
         Command command = (Command) this.commandMap.get(this.token.root).get(this.token.type);
         if (command == null) {
             String acceptedSubcommands = this.getKeysRepr(subcommandMap);
             throw new Error(
-                "Unrecognized subcommand '" + this.token.type + "' for command '" + this.token.root + "'. " +
-                "Accepted subcommands are: " + acceptedSubcommands + "."
+                    "Unrecognized subcommand '" + this.token.type + "' for command '" + this.token.root + "'. " +
+                            "Accepted subcommands are: " + acceptedSubcommands + "."
             );
         }
         return command;

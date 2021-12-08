@@ -4,7 +4,6 @@ import controller.recipecontrollers.FavouriteRecipeController;
 import manager.RecipeManager;
 import manager.UserManager;
 import module.InstanceRegistry;
-import module.Recipe;
 import module.Token;
 import module.ValuePair;
 
@@ -19,10 +18,12 @@ public class FavouriteRecipeCommand extends RecipeCommand {
         add("id");
     }};
 
-    public FavouriteRecipeCommand() {}
+    public FavouriteRecipeCommand() {
+    }
 
     /**
      * Parse the `commandLine` according to usage template and execute command after parsing.
+     *
      * @param commandLine The `commandLine` to be processed.
      */
     @Override
@@ -30,7 +31,7 @@ public class FavouriteRecipeCommand extends RecipeCommand {
         Token token = new Token(commandLine);
         this.valuePairs = new ArrayList<>();
         String[] valuePairs = token.body.split("&");
-        for(String rawValuePair: valuePairs) {
+        for (String rawValuePair : valuePairs) {
             ValuePair valuePair = new ValuePair(rawValuePair);
             if (!acceptArgs.contains(valuePair.field)) {
                 throw new Error("Invalid Command");
@@ -45,7 +46,7 @@ public class FavouriteRecipeCommand extends RecipeCommand {
      */
     public void execute() {
         HashMap<String, String> map = new HashMap<>();
-        for (ValuePair valuePair: this.valuePairs) {
+        for (ValuePair valuePair : this.valuePairs) {
             map.put(valuePair.field, valuePair.value);
         }
         UserManager userManager = InstanceRegistry.getUserManager();

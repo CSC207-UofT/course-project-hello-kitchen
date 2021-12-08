@@ -3,7 +3,6 @@ package commands.usercommands;
 import controller.usercontrollers.CurrentUserController;
 import manager.UserManager;
 import module.InstanceRegistry;
-import module.User;
 
 public class CurrentUserCommand extends UserCommand {
     public UserManager userManager;
@@ -14,6 +13,7 @@ public class CurrentUserCommand extends UserCommand {
 
     /**
      * Execute the command since there's no args to be taken in.
+     *
      * @param commandLine Keep the same structure.
      */
     @Override

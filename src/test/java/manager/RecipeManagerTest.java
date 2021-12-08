@@ -1,5 +1,6 @@
 package manager;
 
+import module.InstanceRegistry;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -9,7 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class RecipeManagerTest {
-    RecipeManager recipeManager = RecipeManager.getInstance();
+    RecipeManager recipeManager = InstanceRegistry.getRecipeManager();
 
     @Test
     public void testCreateRecipe() {

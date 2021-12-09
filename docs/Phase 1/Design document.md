@@ -8,7 +8,7 @@
 user class, the manager package will only contain manager classes. The command package will only contain files which 
 contributes to commands.
 - However, we are still a little confused about use cases and controllers. We are still keeping abstract entity classes
-and children classes in case we need to differ them for future usage. But, currently, we find out that the children 
+and child classes in case we need to differ them for future usage. But, currently, we find out that the children 
 classes for user and recipes are not required, and we are planning to delete them to make the architecture cleaner.
 - We also introduced some interface to meet the requirements of our feature. For example the searchable interface
 for future implementation of search feature. However, I am still thinking that whether I can change some classes

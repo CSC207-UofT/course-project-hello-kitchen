@@ -42,8 +42,9 @@
   After we add GUI to our program, we can make the size of the characters adjustable to support this principle.
 
 ##2. Who we would market our program towards
-  Our program is marketing towards people who like cooking and want a simple and easy-use recipe program. The recipe programs or recipe websites now we have are found to be unnecessary redundant.
-  For example, they usually have some features like timer,even calendar. Some people like our group member want to have a simple program which only use for viewing recipes. So we design this program and want to market this program to people who have same needs like us.
+  Our program is marketing towards people who like cooking and want a simple and easy-use recipe organizing program. The recipe programs or recipe websites now we have are found to be unnecessary redundant.
+  For example, they usually have some features like timer,even calendar. For people who only want to have a simple program which they can view recipes details, follow the instructions, and save recipes to favorite lists, our design fits their needs perfectly.
   
 ##3. Our program is less likely to be used by certain demographics
-  Obviously, our program will not be used by people who never cooking. Also people who want some assistance form the program may not use our program. Some people do want things like timer to help them to cook, so our program looks to simple for them.
+  Obviously, our program will not be used by people who never cooking. Since our program does not involve graphs in it, people who want graph and pictures along the texts may be less likely to use it.
+  Also, for people who want additional tools such as timer to help them to cook, our program may not satisfy them.

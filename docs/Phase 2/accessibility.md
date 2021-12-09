@@ -41,7 +41,6 @@
 
   After we add GUI to our program, we can make the size of the characters adjustable to support this principle.
 
-
 ##2. Who we would market our program towards
   Our program is marketing towards people who like cooking and want a simple and easy-use recipe program. The recipe programs or recipe websites now we have are found to be unnecessary redundant.
   For example, they usually have some features like timer,even calendar. Some people like our group member want to have a simple program which only use for viewing recipes. So we design this program and want to market this program to people who have same needs like us.

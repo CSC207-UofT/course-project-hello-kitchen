@@ -17,7 +17,8 @@ Phase 2 tasks
 - Chengyuan Xue:[IOadapter](https://github.com/CSC207-UofT/course-project-hello-kitchen/pull/48) By implemented the IO adapter, the program can save and read.
 - Wanting Hu: [Serializable](https://github.com/CSC207-UofT/course-project-hello-kitchen/pull/51) DiskOperator and Serializable can collaborate to change objects from classes into strings and save in json files, as well as reading from existing json files and output as classes. 
 [Gradle](https://github.com/CSC207-UofT/course-project-hello-kitchen/pull/46) By adding the build.gradle and settings.gradle, where the plugins and paths are defined, we can build the program more flexible.
-- Jiantong Lyu: [Instance Registry](https://github.com/CSC207-UofT/course-project-hello-kitchen/pull/63) By adding Instance Registry, where all the instance of the classes
+- Jiantong Lyu: [Instance Registry](https://github.com/CSC207-UofT/course-project-hello-kitchen/pull/63) By adding Instance Registry, the program can then get the instance of userManager and recipeManager simpler.
+[Command Factory](https://github.com/CSC207-UofT/course-project-hello-kitchen/pull/37) The command factory define an interface and let the subclasses decide which object to instantiate.
 
 ## What has worked well so far:
 - Use adapter pattern to implement serialization so that repeated code are avoided and make the program best follow clean architecture.

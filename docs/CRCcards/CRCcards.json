@@ -1,0 +1,714 @@
+[
+  {
+    "name": "User",
+    "superclasses": "SerializableObject ",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Includes username",
+      "Includes password",
+      "Includes description",
+      "Includes favoriteList",
+      "addFavorite",
+      "unFavorite"
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "ValuePair",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Includes field",
+      "Includes value"
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "Token",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "knows root",
+      "knows type",
+      "knows body"
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "Shell",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "check isRunning",
+      "stopRunning"
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "Recipe",
+    "superclasses": "SerializableObject",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "know name",
+      "know description",
+      "know ingredients",
+      "know procedures",
+      "know estimatedCookingTime",
+      "know id"
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "InstanceRegistry",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "know UserManager",
+      "know RecipeManager",
+      "know shell",
+      "getUserManager",
+      "setUserManager",
+      "getRecipeManager",
+      "setRecipeManager",
+      "setShell"
+    ],
+    "collaborators": [
+      "RecipeManager",
+      "UserManager",
+      "Shell"
+    ]
+  },
+  {
+    "name": "UserManager",
+    "superclasses": "Manager",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "getUserMap",
+      "setUserMap",
+      "register",
+      "removeUser",
+      "signIn",
+      "signOut",
+      "getCurrentUser",
+      "getUser",
+      "getUserList",
+      "favourite",
+      "unFavorite"
+    ],
+    "collaborators": [
+      "Recipe",
+      "User"
+    ]
+  },
+  {
+    "name": "RecipeManager",
+    "superclasses": "Manager",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "know recipe",
+      "know counter",
+      "createRecipe",
+      "removeRecipe",
+      "getRecipe",
+      "getRecipes",
+      "searchRecipe",
+      "getCounter",
+      "setCounter"
+    ],
+    "collaborators": [
+      "Recipe"
+    ]
+  },
+  {
+    "name": "Manager",
+    "superclasses": "SerializableObject",
+    "subclasses": "UserManager, RecipeManager",
+    "type": 1,
+    "responsibilities": [
+      ""
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "DiskOperator",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "know folderName",
+      "know mapper",
+      "createFolderIfNotExist",
+      "getPath",
+      "save",
+      "read"
+    ],
+    "collaborators": [
+      "Serializable"
+    ]
+  },
+  {
+    "name": "SerializableObject",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "serialize",
+      "deserialize"
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "Serializable",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 3,
+    "responsibilities": [
+      "serialize",
+      "deserialize"
+    ],
+    "collaborators": [
+      "SerializableObject",
+      ""
+    ]
+  },
+  {
+    "name": "AddRecipeController",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "addRecipe"
+    ],
+    "collaborators": [
+      "Recipe",
+      "RecipeManager"
+    ]
+  },
+  {
+    "name": "FavouriteRecipeController",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "favouriteRecipe",
+      "unFavouriteRecipe"
+    ],
+    "collaborators": [
+      "RecipeManager",
+      "UserManager",
+      "Recipe"
+    ]
+  },
+  {
+    "name": "ListRecipeController",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "constructOutPut"
+    ],
+    "collaborators": [
+      "Recipe"
+    ]
+  },
+  {
+    "name": "ModifyRecipeController",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "modifyName",
+      "modifyDescription",
+      "modifyTime",
+      "addIngredients",
+      "deleteIngredients",
+      "addProcedures",
+      "deleteProcedures",
+      "modifyProcedures"
+    ],
+    "collaborators": [
+      "RecipeManager",
+      "Recipe"
+    ]
+  },
+  {
+    "name": "ShowRecipeController",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "showConstructor"
+    ],
+    "collaborators": [
+      "RecipeManager",
+      "Recipe"
+    ]
+  },
+  {
+    "name": "AddUserController",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "addUser"
+    ],
+    "collaborators": [
+      "UserManager",
+      "User"
+    ]
+  },
+  {
+    "name": "CurrentUserController",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "showCurrent"
+    ],
+    "collaborators": [
+      "UserManager",
+      "User"
+    ]
+  },
+  {
+    "name": "FavouriteUserController",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "constructFavouriteList"
+    ],
+    "collaborators": [
+      "UserManager",
+      "Recip",
+      "User"
+    ]
+  },
+  {
+    "name": "ListUserController",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "constructUserList"
+    ],
+    "collaborators": [
+      "User"
+    ]
+  },
+  {
+    "name": "ModifyUserController",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "modifyPassword",
+      "modifyDescription",
+      ""
+    ],
+    "collaborators": [
+      "UserManager",
+      "User"
+    ]
+  },
+  {
+    "name": "AddRecipeCommand ",
+    "superclasses": "RecipeCommand",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "know recipeManager"
+    ],
+    "collaborators": [
+      "AddRecipeController",
+      "RecipeManager",
+      "InstanceRegistry"
+    ]
+  },
+  {
+    "name": "DeleteRecipeCommand",
+    "superclasses": "RecipeCommand",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "know valuePairs",
+      "know recipeManager",
+      "acceptArgs"
+    ],
+    "collaborators": [
+      "RecipeManager",
+      "InstanceRegistry",
+      "Token",
+      "ValuePair"
+    ]
+  },
+  {
+    "name": "FavouriteRecipeCommand",
+    "superclasses": "RecipeCommand",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      ""
+    ],
+    "collaborators": [
+      "FavouriteRecipeController",
+      "RecipeManager",
+      "UserManager",
+      "InstanceRegistry",
+      "Token",
+      "ValuePair"
+    ]
+  },
+  {
+    "name": "HelpRecipeCommand",
+    "superclasses": "RecipeCommand",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      ""
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "ListRecipeCommand",
+    "superclasses": "RecipeCommand",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "know recipeManager"
+    ],
+    "collaborators": [
+      "ListRecipeController",
+      "RecipeManager",
+      "InstanceRegistry",
+      "Recipe"
+    ]
+  },
+  {
+    "name": "ModifyRecipeCommand",
+    "superclasses": "RecipeCommand",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "know valuePairs",
+      "know recipeManager",
+      "acceptArgs"
+    ],
+    "collaborators": [
+      "ModifyRecipeController",
+      "RecipeManager",
+      "InstanceRegistry",
+      "Token",
+      "ValuePair"
+    ]
+  },
+  {
+    "name": "RecipeCommand",
+    "superclasses": "Command",
+    "subclasses": "AddRecipeCommand, DeleteRecipeCommand, FavouriteRecipeCommand, HelpRecipeCommand, ListRecipeCommand, ModifyRecipeCommand, SearchRecipeCommand, ShowRecipeCommand, UnFavouriteRecipeCommand",
+    "type": 1,
+    "responsibilities": [
+      "know acceptArgs",
+      "know acceptRoots"
+    ],
+    "collaborators": [
+      "Command",
+      "Token",
+      "ValuePair"
+    ]
+  },
+  {
+    "name": "SearchRecipeCommand",
+    "superclasses": "RecipeCommand",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      ""
+    ],
+    "collaborators": [
+      "ListRecipeController",
+      "RecipeManager",
+      "InstanceRegistry",
+      "Recipe",
+      "Token",
+      "ValuePair"
+    ]
+  },
+  {
+    "name": "ShowRecipeCommand",
+    "superclasses": "RecipeCommand",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      ""
+    ],
+    "collaborators": [
+      "ShowRecipeController",
+      "RecipeManager",
+      "InstanceRegistry",
+      "Token",
+      "ValuePair",
+      ""
+    ]
+  },
+  {
+    "name": "UnFavouriteRecipeCommand",
+    "superclasses": "RecipeCommand ",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      ""
+    ],
+    "collaborators": [
+      "FavouriteRecipeController",
+      "RecipeManager",
+      "UserManager",
+      "InstanceRegistry",
+      "Token",
+      "ValuePair"
+    ]
+  },
+  {
+    "name": "AddUserCommand",
+    "superclasses": "UserCommand",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "know valuePairs",
+      "know userManager",
+      "know acceptArgs"
+    ],
+    "collaborators": [
+      "AddUserController",
+      "UserManager",
+      "InstanceRegistry",
+      "Token",
+      "ValuePair"
+    ]
+  },
+  {
+    "name": "CurrentUserCommand",
+    "superclasses": "UserCommand",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "know userManager"
+    ],
+    "collaborators": [
+      "CurrentUserController",
+      "UserManager",
+      "InstanceRegistry"
+    ]
+  },
+  {
+    "name": "DeleteUserCommand",
+    "superclasses": "UserCommand",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      ""
+    ],
+    "collaborators": [
+      "UserManager",
+      "InstanceRegistry",
+      "Token",
+      "ValuePair"
+    ]
+  },
+  {
+    "name": "FavouriteUserCommand",
+    "superclasses": "UserCommand",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      ""
+    ],
+    "collaborators": [
+      "FavouriteUserController",
+      "UserManager",
+      "InstanceRegistry"
+    ]
+  },
+  {
+    "name": "HelpUserCommand",
+    "superclasses": "UserCommand",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "print out user help guide"
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "ListUserCommand",
+    "superclasses": "UserCommand",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      ""
+    ],
+    "collaborators": [
+      "ListUserController",
+      "UserManager",
+      "InstanceRegistry",
+      "User",
+      "",
+      ""
+    ]
+  },
+  {
+    "name": "ModifyUserCommand",
+    "superclasses": "UserCommand",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      ""
+    ],
+    "collaborators": [
+      "ModifyUserController",
+      "UserManager",
+      "InstanceRegistry",
+      "Token",
+      "ValuePair",
+      ""
+    ]
+  },
+  {
+    "name": "SignInUserComman",
+    "superclasses": "UserCommand",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Parse the `commandLine`"
+    ],
+    "collaborators": [
+      "UserManager",
+      "InstanceRegistry",
+      "Token",
+      "ValuePair",
+      ""
+    ]
+  },
+  {
+    "name": "SignOutUserCommand",
+    "superclasses": "UserCommand",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Run the command"
+    ],
+    "collaborators": [
+      "UserManager",
+      "InstanceRegistry"
+    ]
+  },
+  {
+    "name": "UserCommand",
+    "superclasses": "Command",
+    "subclasses": "AddUserCommand, CurrentUserCommand, DeleteUserCommand, FavouriteUserCommand, HelpUserCommand, ListUserCommand, ModifyUserCommand, SignInUserCommand, SignOutUserCommand",
+    "type": 1,
+    "responsibilities": [
+      "execute command",
+      "run command"
+    ],
+    "collaborators": [
+      "Command",
+      "Token",
+      "ValuePair",
+      ""
+    ]
+  },
+  {
+    "name": "Command",
+    "superclasses": "",
+    "subclasses": "UserCommand, RecipeCommand, ExitCommand",
+    "type": 2,
+    "responsibilities": [
+      "execute command",
+      "run command"
+    ],
+    "collaborators": [
+      "Token",
+      "ValuePair"
+    ]
+  },
+  {
+    "name": "CommandFactory",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "add command to userCommandMap",
+      "add command to recipeCommandMap",
+      "add command to exitCommandMap",
+      "add commandmaps to commandMap",
+      "getKeysRepr",
+      "getCommand"
+    ],
+    "collaborators": [
+      "recipecommands",
+      "usercommands",
+      "Token"
+    ]
+  },
+  {
+    "name": "ExitCommand",
+    "superclasses": "Command",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "execute command",
+      "run command"
+    ],
+    "collaborators": [
+      "InstanceRegistry",
+      "Shell"
+    ]
+  },
+  {
+    "name": "Main",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "run main"
+    ],
+    "collaborators": [
+      "Command",
+      "CommandFactory",
+      "DiskOperator",
+      "RecipeManager",
+      "UserManager",
+      "InstanceRegistry",
+      "Token",
+      "Shell",
+      ""
+    ]
+  }
+]
